@@ -1,0 +1,488 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Medident - Advanced Sensitivity Protection for Every Smile</title>
+    <meta name="description" content="Medident toothpaste - Local excellence in dental care. Advanced sensitivity protection for Bangladeshi families. Made in Bangladesh with pride.">
+    
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <nav class="navbar">
+            <div class="nav-container">
+                <div class="nav-logo">
+                    <img src="images/medident-logo.png" alt="Medident Logo" class="logo">
+                    <span class="brand-name">Medident</span>
+                </div>
+                
+                <ul class="nav-menu">
+                    <li class="nav-item">
+                        <a href="#home" class="nav-link">Home</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a href="#products" class="nav-link">Products <i class="fas fa-chevron-down"></i></a>
+                        <div class="dropdown-content">
+                            <a href="pages/products.html">Medident Sensitive Care</a>
+                            <a href="#benefits">Product Benefits</a>
+                            <a href="#usage">Usage Instructions</a>
+                        </div>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a href="#oral-health" class="nav-link">Oral Health <i class="fas fa-chevron-down"></i></a>
+                        <div class="dropdown-content">
+                            <a href="#sensitivity">Understanding Sensitivity</a>
+                            <a href="#tips">Dental Care Tips</a>
+                            <a href="#faq">FAQ</a>
+                        </div>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#about" class="nav-link">About Us</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#contact" class="nav-link">Contact</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#buy" class="nav-link cta-btn">Buy Online</a>
+                    </li>
+                </ul>
+                
+                <div class="hamburger">
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-container">
+            <div class="hero-content">
+                <div class="hero-text">
+                    <h1 class="hero-title">Advanced Sensitivity Protection for Every Smile</h1>
+                    <p class="hero-subtitle">Local excellence in dental care. Made in Bangladesh with pride for Bangladeshi families.</p>
+                    <div class="hero-badges">
+                        <span class="badge local-badge">
+                            <i class="fas fa-flag"></i>
+                            Made in Bangladesh
+                        </span>
+                        <span class="badge quality-badge">
+                            <i class="fas fa-award"></i>
+                            International Quality
+                        </span>
+                    </div>
+                    <div class="hero-buttons">
+                        <a href="#buy" class="btn btn-primary">Shop Now</a>
+                        <a href="#sensitivity" class="btn btn-secondary">Learn About Sensitivity</a>
+                    </div>
+                </div>
+                <div class="hero-image">
+                    <img src="images/medident-hero-product.png" alt="Medident Toothpaste" class="product-image">
+                    <div class="floating-elements">
+                        <div class="float-element tooth">
+                            <i class="fas fa-tooth"></i>
+                        </div>
+                        <div class="float-element shield">
+                            <i class="fas fa-shield-alt"></i>
+                        </div>
+                        <div class="float-element sparkle">
+                            <i class="fas fa-sparkles"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Product Showcase -->
+    <section id="products" class="product-showcase">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Our Products</h2>
+                <p class="section-subtitle">Advanced dental care solutions for sensitive teeth</p>
+            </div>
+            
+            <div class="product-carousel">
+                <div class="product-card active">
+                    <div class="product-image">
+                        <img src="images/medident-sensitive-care.png" alt="Medident Sensitive Care">
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-name">Medident Sensitive Care</h3>
+                        <p class="product-description">Advanced formula for immediate and lasting relief from tooth sensitivity</p>
+                        <ul class="product-benefits">
+                            <li><i class="fas fa-check"></i> 24/7 Protection</li>
+                            <li><i class="fas fa-check"></i> Clinically Proven</li>
+                            <li><i class="fas fa-check"></i> Fresh Mint Flavor</li>
+                            <li><i class="fas fa-check"></i> Strengthens Enamel</li>
+                        </ul>
+                        <div class="product-price">৳85 <span class="original-price">৳95</span></div>
+                        <button class="btn btn-primary">Add to Cart</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sensitivity Quiz Section -->
+    <section id="sensitivity" class="sensitivity-quiz">
+        <div class="container">
+            <div class="quiz-container">
+                <div class="quiz-header">
+                    <h2>Do You Have Sensitive Teeth?</h2>
+                    <p>Take our quick assessment to find out if Medident is right for you</p>
+                </div>
+                
+                <div class="quiz-content">
+                    <div class="quiz-question active" data-question="1">
+                        <h3>Do you experience sharp pain when eating ice cream or drinking hot beverages?</h3>
+                        <div class="quiz-options">
+                            <button class="quiz-option" data-value="yes">Yes, frequently</button>
+                            <button class="quiz-option" data-value="sometimes">Sometimes</button>
+                            <button class="quiz-option" data-value="no">Never</button>
+                        </div>
+                    </div>
+                    
+                    <div class="quiz-question" data-question="2">
+                        <h3>Do you avoid certain foods because they cause tooth discomfort?</h3>
+                        <div class="quiz-options">
+                            <button class="quiz-option" data-value="yes">Yes, often</button>
+                            <button class="quiz-option" data-value="sometimes">Occasionally</button>
+                            <button class="quiz-option" data-value="no">No, never</button>
+                        </div>
+                    </div>
+                    
+                    <div class="quiz-question" data-question="3">
+                        <h3>Does brushing your teeth sometimes cause discomfort?</h3>
+                        <div class="quiz-options">
+                            <button class="quiz-option" data-value="yes">Yes, it's painful</button>
+                            <button class="quiz-option" data-value="sometimes">Sometimes sensitive</button>
+                            <button class="quiz-option" data-value="no">No discomfort</button>
+                        </div>
+                    </div>
+                    
+                    <div class="quiz-result" style="display: none;">
+                        <div class="result-content">
+                            <h3>Your Result</h3>
+                            <div class="result-text"></div>
+                            <div class="result-recommendation">
+                                <p>Based on your answers, we recommend:</p>
+                                <div class="recommended-product">
+                                    <img src="images/medident-sensitive-care.png" alt="Medident Sensitive Care">
+                                    <div class="product-details">
+                                        <h4>Medident Sensitive Care</h4>
+                                        <p>Specially formulated for sensitive teeth protection</p>
+                                        <button class="btn btn-primary">Shop Now</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="quiz-navigation">
+                        <button class="btn btn-secondary quiz-prev" style="display: none;">Previous</button>
+                        <button class="btn btn-primary quiz-next">Next</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Education Section -->
+    <section class="education">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Understanding Tooth Sensitivity</h2>
+                <p class="section-subtitle">Learn about causes, prevention, and treatment</p>
+            </div>
+            
+            <div class="education-grid">
+                <div class="education-card">
+                    <div class="card-icon">
+                        <i class="fas fa-search"></i>
+                    </div>
+                    <h3>What Causes Sensitivity?</h3>
+                    <p>Tooth sensitivity occurs when the tooth's enamel wears down, exposing the underlying dentin and nerve endings.</p>
+                    <a href="#learn-more" class="learn-more">Learn More <i class="fas fa-arrow-right"></i></a>
+                </div>
+                
+                <div class="education-card">
+                    <div class="card-icon">
+                        <i class="fas fa-shield-alt"></i>
+                    </div>
+                    <h3>Prevention Tips</h3>
+                    <p>Use a soft-bristled toothbrush, avoid acidic foods, and choose toothpaste specifically designed for sensitive teeth.</p>
+                    <a href="#prevention" class="learn-more">Learn More <i class="fas fa-arrow-right"></i></a>
+                </div>
+                
+                <div class="education-card">
+                    <div class="card-icon">
+                        <i class="fas fa-heart"></i>
+                    </div>
+                    <h3>Treatment Options</h3>
+                    <p>Regular use of sensitivity toothpaste like Medident can provide relief and long-term protection.</p>
+                    <a href="#treatment" class="learn-more">Learn More <i class="fas fa-arrow-right"></i></a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section class="testimonials">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">What Our Customers Say</h2>
+                <p class="section-subtitle">Real experiences from real people</p>
+            </div>
+            
+            <div class="testimonials-grid">
+                <div class="testimonial-card">
+                    <div class="testimonial-content">
+                        <div class="stars">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                        <p>"I've been using Medident for 6 months now, and my sensitivity issues are completely gone. Great local product!"</p>
+                    </div>
+                    <div class="testimonial-author">
+                        <img src="images/customer-1.jpg" alt="Customer" class="author-image">
+                        <div class="author-info">
+                            <h4>Rashida Begum</h4>
+                            <span>Dhaka, Bangladesh</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="testimonial-card">
+                    <div class="testimonial-content">
+                        <div class="stars">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                        <p>"Finally, a Bangladeshi toothpaste that works as well as international brands. Proud to support local business."</p>
+                    </div>
+                    <div class="testimonial-author">
+                        <img src="images/customer-2.jpg" alt="Customer" class="author-image">
+                        <div class="author-info">
+                            <h4>Karim Ahmed</h4>
+                            <span>Chittagong, Bangladesh</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="testimonial-card">
+                    <div class="testimonial-content">
+                        <div class="stars">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                        <p>"My dentist recommended Medident, and I can now enjoy cold drinks without pain. Excellent value for money."</p>
+                    </div>
+                    <div class="testimonial-author">
+                        <img src="images/customer-3.jpg" alt="Customer" class="author-image">
+                        <div class="author-info">
+                            <h4>Dr. Fatima Khan</h4>
+                            <span>Sylhet, Bangladesh</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about">
+        <div class="container">
+            <div class="about-content">
+                <div class="about-text">
+                    <h2>About Vertex International</h2>
+                    <p class="about-intro">Committed to providing world-class dental care products made right here in Bangladesh.</p>
+                    
+                    <div class="about-features">
+                        <div class="feature">
+                            <i class="fas fa-flask"></i>
+                            <div class="feature-content">
+                                <h3>Scientific Research</h3>
+                                <p>Our products are developed using the latest dental research and clinical studies.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="feature">
+                            <i class="fas fa-medal"></i>
+                            <div class="feature-content">
+                                <h3>Quality Assurance</h3>
+                                <p>International quality standards with local manufacturing excellence.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="feature">
+                            <i class="fas fa-heart"></i>
+                            <div class="feature-content">
+                                <h3>Local Pride</h3>
+                                <p>Supporting Bangladesh's economy while providing superior dental care.</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="cta-section">
+                        <h3>Ready to try Medident?</h3>
+                        <p>Join thousands of satisfied customers who trust Medident for their dental care needs.</p>
+                        <button class="btn btn-primary btn-large">Shop Now</button>
+                    </div>
+                </div>
+                
+                <div class="about-image">
+                    <img src="images/about-manufacturing.jpg" alt="Manufacturing Facility">
+                    <div class="image-overlay">
+                        <div class="overlay-content">
+                            <h4>Made in Bangladesh</h4>
+                            <p>State-of-the-art manufacturing facility</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+        <div class="container">
+            <div class="contact-content">
+                <div class="contact-info">
+                    <h2>Get in Touch</h2>
+                    <p>Have questions about our products? We're here to help!</p>
+                    
+                    <div class="contact-details">
+                        <div class="contact-item">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <div>
+                                <h4>Address</h4>
+                                <p>House-10, Road-5, Block-B<br>Rampura, Banasree<br>Dhaka-1219, Bangladesh</p>
+                            </div>
+                        </div>
+                        
+                        <div class="contact-item">
+                            <i class="fas fa-phone"></i>
+                            <div>
+                                <h4>Phone</h4>
+                                <p>+880 1328990900</p>
+                            </div>
+                        </div>
+                        
+                        <div class="contact-item">
+                            <i class="fas fa-envelope"></i>
+                            <div>
+                                <h4>Email</h4>
+                                <p>sales.vertex23@gmail.com</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="contact-form">
+                    <form class="form">
+                        <div class="form-group">
+                            <input type="text" class="form-input" placeholder="Your Name" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="email" class="form-input" placeholder="Your Email" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="tel" class="form-input" placeholder="Phone Number">
+                        </div>
+                        <div class="form-group">
+                            <textarea class="form-input" rows="5" placeholder="Your Message" required></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary btn-full">Send Message</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <div class="footer-logo">
+                        <img src="images/medident-logo.png" alt="Medident Logo" class="logo">
+                        <span class="brand-name">Medident</span>
+                    </div>
+                    <p>Advanced sensitivity protection for every smile. Made in Bangladesh with pride.</p>
+                    <div class="social-links">
+                        <a href="#" class="social-link"><i class="fab fa-facebook"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-youtube"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-linkedin"></i></a>
+                    </div>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Products</h4>
+                    <ul class="footer-links">
+                        <li><a href="#products">Medident Sensitive Care</a></li>
+                        <li><a href="#benefits">Product Benefits</a></li>
+                        <li><a href="#usage">Usage Instructions</a></li>
+                        <li><a href="#buy">Buy Online</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Oral Health</h4>
+                    <ul class="footer-links">
+                        <li><a href="#sensitivity">Understanding Sensitivity</a></li>
+                        <li><a href="#tips">Dental Care Tips</a></li>
+                        <li><a href="#faq">FAQ</a></li>
+                        <li><a href="#education">Educational Resources</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Company</h4>
+                    <ul class="footer-links">
+                        <li><a href="#about">About Us</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                        <li><a href="#quality">Quality Standards</a></li>
+                        <li><a href="#manufacturing">Manufacturing</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <div class="footer-bottom-content">
+                    <p>&copy; 2024 Vertex International. All rights reserved.</p>
+                    <div class="footer-bottom-links">
+                        <a href="#privacy">Privacy Policy</a>
+                        <a href="#terms">Terms of Service</a>
+                        <a href="#sitemap">Sitemap</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="js/main.js"></script>
+</body>
+</html>
