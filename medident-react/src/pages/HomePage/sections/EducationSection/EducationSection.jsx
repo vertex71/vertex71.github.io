@@ -97,7 +97,7 @@ const EducationSection = () => {
             </div>
             <div className={styles.detailImage}>
               <img 
-                src="/assets/images/medident-sensitive-care.svg" 
+                src="/assets/medident-sensitive-care.svg" 
                 alt="Medident Sensitive Care Benefits"
               />
             </div>

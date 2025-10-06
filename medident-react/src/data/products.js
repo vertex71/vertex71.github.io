@@ -14,13 +14,13 @@ export const products = [
     rating: 4.8,
     reviewCount: 234,
     images: {
-      main: '/assets/images/products/medident-sensitive-care-large.svg',
-      hero: '/assets/images/medident-sensitive-care.svg',
+      main: '/assets/products/medident-sensitive-care-large.svg',
+      hero: '/assets/medident-sensitive-care.svg',
       thumbnails: [
-        '/assets/images/products/medident-front.svg',
-        '/assets/images/products/medident-back.svg',
-        '/assets/images/products/medident-side.svg',
-        '/assets/images/products/medident-tube.svg'
+        '/assets/products/medident-front.svg',
+        '/assets/products/medident-back.svg',
+        '/assets/products/medident-side.svg',
+        '/assets/products/medident-tube.svg'
       ]
     },
     variants: [
@@ -160,7 +160,7 @@ export const relatedProducts = [
     description: 'Alcohol-free formula for sensitive mouths',
     price: 120,
     currency: '৳',
-    image: '/assets/images/products/medident-mouthwash.svg',
+    image: '/assets/products/medident-mouthwash.svg',
     category: 'mouthwash'
   },
   {
@@ -169,7 +169,7 @@ export const relatedProducts = [
     description: 'Extra soft bristles for sensitive teeth',
     price: 45,
     currency: '৳',
-    image: '/assets/images/products/medident-toothbrush.svg',
+    image: '/assets/products/medident-toothbrush.svg',
     category: 'toothbrush'
   },
   {
@@ -178,7 +178,7 @@ export const relatedProducts = [
     description: 'Gentle floss for complete cleaning',
     price: 65,
     currency: '৳',
-    image: '/assets/images/products/medident-floss.svg',
+    image: '/assets/products/medident-floss.svg',
     category: 'floss'
   }
 ];

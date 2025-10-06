@@ -1,152 +1,57 @@
-import React, { useState, useEffect } from 'react';
-import { Link, useLocation } from 'react-router-dom';
-import styles from './Header.module.css';
-import { navigationItems } from '../../../data/navigation';
-import { IMAGE_PATHS } from '../../../utils/constants';
-import { useCart } from '../../../context/CartContext';
-import { useToggle } from '../../../hooks/useToggle';
+import React, { useState } from 'react';
+import './Header.css';
 
 const Header = () => {
-  const location = useLocation();
-  const { cartItems } = useCart();
-  const [mobileMenuOpen, toggleMobileMenu, , closeMobileMenu] = useToggle(false);
-  const [scrolled, setScrolled] = useState(false);
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
 
-  // Handle scroll effect
-  useEffect(() => {
-    const handleScroll = () => {
-      setScrolled(window.scrollY > 50);
-    };
-
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
-
-  // Close mobile menu when route changes
-  useEffect(() => {
-    closeMobileMenu();
-  }, [location, closeMobileMenu]);
-
-  // Close mobile menu when clicking outside
-  useEffect(() => {
-    const handleClickOutside = (event) => {
-      if (mobileMenuOpen && !event.target.closest(`.${styles.navbar}`)) {
-        closeMobileMenu();
-      }
-    };
-
-    document.addEventListener('click', handleClickOutside);
-    return () => document.removeEventListener('click', handleClickOutside);
-  }, [mobileMenuOpen, closeMobileMenu]);
-
-  const cartItemCount = cartItems.reduce((total, item) => total + item.quantity, 0);
-
-  const isActiveLink = (path) => {
-    if (path === '/') {
-      return location.pathname === '/';
-    }
-    return location.pathname.startsWith(path);
-  };
-
-  const handleLinkClick = (path) => {
-    if (path.startsWith('#')) {
-      // Handle anchor links
-      const element = document.querySelector(path);
-      if (element) {
-        element.scrollIntoView({ behavior: 'smooth' });
-      }
-    }
-    closeMobileMenu();
-  };
-
-  const renderNavItem = (item) => {
-    const isActive = isActiveLink(item.path);
-
-    if (item.type === 'dropdown') {
-      return (
-        <li key={item.id} className={`${styles.navItem} ${styles.dropdown}`}>
-          <span className={`${styles.navLink} ${isActive ? styles.active : ''}`}>
-            {item.label}
-            {item.icon && <i className={item.icon} />}
-          </span>
-          <div className={styles.dropdownContent}>
-            {item.children?.map((child) => (
-              <Link
-                key={child.id}
-                to={child.path}
-                className={styles.dropdownLink}
-                onClick={() => handleLinkClick(child.path)}
-              >
-                {child.label}
-              </Link>
-            ))}
-          </div>
-        </li>
-      );
-    }
-
-    if (item.type === 'cta') {
-      return (
-        <li key={item.id} className={styles.navItem}>
-          <Link
-            to={item.path}
-            className={`${styles.navLink} ${styles.ctaBtn}`}
-            onClick={() => handleLinkClick(item.path)}
-          >
-            {item.label}
-          </Link>
-        </li>
-      );
-    }
-
-    return (
-      <li key={item.id} className={styles.navItem}>
-        <Link
-          to={item.path}
-          className={`${styles.navLink} ${isActive ? styles.active : ''}`}
-          onClick={() => handleLinkClick(item.path)}
-        >
-          {item.label}
-        </Link>
-      </li>
-    );
+  const toggleMenu = () => {
+    setIsMenuOpen(!isMenuOpen);
   };
 
   return (
-    <header className={`${styles.header} ${scrolled ? styles.scrolled : ''}`}>
-      <nav className={styles.navbar}>
-        <div className={styles.navContainer}>
-          <Link to="/" className={styles.navLogo} onClick={closeMobileMenu}>
-            <img src={IMAGE_PATHS.LOGO} alt="Medident Logo" className={styles.logo} />
-            <span className={styles.brandName}>Medident</span>
-          </Link>
-
-          <ul className={`${styles.navMenu} ${mobileMenuOpen ? styles.active : ''}`}>
-            {navigationItems.map(renderNavItem)}
+    <header className="header">
+      <nav className="navbar">
+        <div className="nav-container">
+          <div className="nav-logo">
+            <img src="/assets/medident-logo.svg" alt="Medident Logo" className="logo" />
+            <span className="brand-name">Medident</span>
+          </div>
+          
+          <ul className={`nav-menu ${isMenuOpen ? 'active' : ''}`}>
+            <li className="nav-item">
+              <a href="#home" className="nav-link">Home</a>
+            </li>
+            <li className="nav-item dropdown">
+              <a href="#products" className="nav-link">Products <i className="fas fa-chevron-down"></i></a>
+              <div className="dropdown-content">
+                <a href="#products">Medident Sensitive Care</a>
+                <a href="#benefits">Product Benefits</a>
+                <a href="#usage">Usage Instructions</a>
+              </div>
+            </li>
+            <li className="nav-item dropdown">
+              <a href="#sensitivity" className="nav-link">Oral Health <i className="fas fa-chevron-down"></i></a>
+              <div className="dropdown-content">
+                <a href="#sensitivity">Understanding Sensitivity</a>
+                <a href="#education">Dental Care Tips</a>
+                <a href="#faq">FAQ</a>
+              </div>
+            </li>
+            <li className="nav-item">
+              <a href="#about" className="nav-link">About Us</a>
+            </li>
+            <li className="nav-item">
+              <a href="#contact" className="nav-link">Contact</a>
+            </li>
+            <li className="nav-item">
+              <a href="#products" className="nav-link cta-btn">Buy Online</a>
+            </li>
           </ul>
-
-          <div className={styles.rightSection}>
-            {/* Cart Icon */}
-            <Link to="/cart" className={styles.cartIcon} title="Shopping Cart">
-              <i className="fas fa-shopping-cart" />
-              {cartItemCount > 0 && (
-                <span className={styles.cartBadge}>{cartItemCount}</span>
-              )}
-            </Link>
-
-            {/* Mobile Menu Toggle */}
-            <div 
-              className={`${styles.hamburger} ${mobileMenuOpen ? styles.active : ''}`}
-              onClick={toggleMobileMenu}
-              role="button"
-              tabIndex={0}
-              aria-label="Toggle mobile menu"
-              onKeyDown={(e) => e.key === 'Enter' && toggleMobileMenu()}
-            >
-              <span className={styles.bar}></span>
-              <span className={styles.bar}></span>
-              <span className={styles.bar}></span>
-            </div>
+          
+          <div className={`hamburger ${isMenuOpen ? 'active' : ''}`} onClick={toggleMenu}>
+            <span className="bar"></span>
+            <span className="bar"></span>
+            <span className="bar"></span>
           </div>
         </div>
       </nav>

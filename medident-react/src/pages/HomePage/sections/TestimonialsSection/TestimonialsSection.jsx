@@ -10,7 +10,7 @@ const TestimonialsSection = () => {
       name: 'Sarah Johnson',
       age: 34,
       location: 'New York, NY',
-      image: '/assets/images/testimonial-1.svg',
+      image: '/assets/testimonial-1.svg',
       rating: 5,
       text: 'I\'ve suffered from sensitive teeth for years. Medident has been a game-changer! I can finally enjoy ice cream again without pain.',
       condition: 'Severe Sensitivity'
@@ -20,7 +20,7 @@ const TestimonialsSection = () => {
       name: 'Michael Chen',
       age: 28,
       location: 'Los Angeles, CA',
-      image: '/assets/images/testimonial-2.svg',
+      image: '/assets/testimonial-2.svg',
       rating: 5,
       text: 'As a coffee lover, I was constantly experiencing sensitivity. Medident allows me to enjoy my morning coffee without worry.',
       condition: 'Temperature Sensitivity'
@@ -30,7 +30,7 @@ const TestimonialsSection = () => {
       name: 'Emily Rodriguez',
       age: 42,
       location: 'Chicago, IL',
-      image: '/assets/images/testimonial-3.svg',
+      image: '/assets/testimonial-3.svg',
       rating: 5,
       text: 'My dentist recommended Medident and I couldn\'t be happier. The relief was noticeable within just a few days.',
       condition: 'General Sensitivity'
@@ -40,7 +40,7 @@ const TestimonialsSection = () => {
       name: 'David Thompson',
       age: 51,
       location: 'Houston, TX',
-      image: '/assets/images/testimonial-4.svg',
+      image: '/assets/testimonial-4.svg',
       rating: 5,
       text: 'I was skeptical at first, but Medident truly works. I can eat normally again without constant tooth pain.',
       condition: 'Chronic Sensitivity'

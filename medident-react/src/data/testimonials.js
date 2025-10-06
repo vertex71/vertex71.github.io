@@ -3,7 +3,7 @@ export const testimonials = [
     id: 1,
     name: 'Rashida Begum',
     location: 'Dhaka, Bangladesh',
-    avatar: '/assets/images/customers/customer-1.svg',
+    avatar: '/assets/customers/customer-1.svg',
     rating: 5,
     text: "I've been using Medident for 6 months now, and my sensitivity issues are completely gone. Great local product!",
     date: '2024-06-15'
@@ -12,7 +12,7 @@ export const testimonials = [
     id: 2,
     name: 'Karim Ahmed',
     location: 'Chittagong, Bangladesh',
-    avatar: '/assets/images/customers/customer-2.svg',
+    avatar: '/assets/customers/customer-2.svg',
     rating: 5,
     text: "Finally, a Bangladeshi toothpaste that works as well as international brands. Proud to support local business.",
     date: '2024-07-02'
@@ -21,7 +21,7 @@ export const testimonials = [
     id: 3,
     name: 'Dr. Fatima Khan',
     location: 'Sylhet, Bangladesh',
-    avatar: '/assets/images/customers/customer-3.svg',
+    avatar: '/assets/customers/customer-3.svg',
     rating: 5,
     text: "My dentist recommended Medident, and I can now enjoy cold drinks without pain. Excellent value for money.",
     date: '2024-07-20'
@@ -33,7 +33,7 @@ export const productReviews = [
     id: 1,
     reviewer: {
       name: 'Fatima Rahman',
-      avatar: '/assets/images/customers/reviewer-1.svg',
+      avatar: '/assets/customers/reviewer-1.svg',
       verified: false
     },
     rating: 5,
@@ -49,7 +49,7 @@ export const productReviews = [
     id: 2,
     reviewer: {
       name: 'Abdul Karim',
-      avatar: '/assets/images/customers/reviewer-2.svg',
+      avatar: '/assets/customers/reviewer-2.svg',
       verified: false
     },
     rating: 5,
@@ -65,7 +65,7 @@ export const productReviews = [
     id: 3,
     reviewer: {
       name: 'Dr. Nasreen Sultana',
-      avatar: '/assets/images/customers/reviewer-3.svg',
+      avatar: '/assets/customers/reviewer-3.svg',
       verified: true
     },
     rating: 5,

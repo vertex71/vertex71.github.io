@@ -83,12 +83,12 @@ export const API_ENDPOINTS = {
 
 // Image Paths
 export const IMAGE_PATHS = {
-  LOGO: '/assets/images/medident-logo.svg',
-  HERO_PRODUCT: '/assets/images/medident-hero-product.svg',
-  MANUFACTURING: '/assets/images/company/about-manufacturing.svg',
-  PRODUCTS: '/assets/images/products/',
-  CUSTOMERS: '/assets/images/customers/',
-  COMPANY: '/assets/images/company/'
+  LOGO: '/assets/medident-logo.svg',
+  HERO_PRODUCT: '/assets/medident-hero-product.svg',
+  MANUFACTURING: '/assets/company/about-manufacturing.svg',
+  PRODUCTS: '/assets/products/',
+  CUSTOMERS: '/assets/customers/',
+  COMPANY: '/assets/company/'
 };
 
 // Social Media URLs

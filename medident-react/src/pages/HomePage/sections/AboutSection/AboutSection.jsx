@@ -1,6 +1,6 @@
 import React from 'react';
 import styles from './AboutSection.module.css';
-import Button from '../../../components/ui/Button';
+import Button from '../../../../components/ui/Button';
 
 const AboutSection = () => {
   const features = [
@@ -102,7 +102,7 @@ const AboutSection = () => {
           <div className={styles.aboutVisual}>
             <div className={styles.imageContainer}>
               <img 
-                src="/assets/images/about-medident.svg" 
+                src="/assets/about-medident.svg" 
                 alt="Medident Laboratory and Research"
                 className={styles.aboutImage}
               />
@@ -191,7 +191,7 @@ const AboutSection = () => {
             </div>
             <div className={styles.valuesImage}>
               <img 
-                src="/assets/images/medident-values.svg" 
+                src="/assets/medident-values.svg" 
                 alt="Medident Company Values"
               />
             </div>

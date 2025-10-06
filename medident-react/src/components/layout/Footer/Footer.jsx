@@ -1,80 +1,66 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
-import styles from './Footer.module.css';
-import { footerLinks, socialLinks } from '../../../data/navigation';
-import { IMAGE_PATHS, COMPANY_NAME } from '../../../utils/constants';
+import './Footer.css';
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
 
   return (
-    <footer className={styles.footer}>
-      <div className={styles.footerContent}>
-        <div className={styles.footerSection}>
-          <div className={styles.footerLogo}>
-            <img src={IMAGE_PATHS.LOGO} alt="Medident Logo" className={styles.logo} />
-            <span className={styles.brandName}>Medident</span>
+    <footer className="footer">
+      <div className="container">
+        <div className="footer-content">
+          <div className="footer-section">
+            <div className="footer-logo">
+              <img src="/assets/medident-logo.svg" alt="Medident Logo" className="logo" />
+              <span className="brand-name">Medident</span>
+            </div>
+            <p>Advanced sensitivity protection for every smile. Made in Bangladesh with pride.</p>
+            <div className="social-links">
+              <a href="#" className="social-link"><i className="fab fa-facebook"></i></a>
+              <a href="#" className="social-link"><i className="fab fa-instagram"></i></a>
+              <a href="#" className="social-link"><i className="fab fa-youtube"></i></a>
+              <a href="#" className="social-link"><i className="fab fa-linkedin"></i></a>
+            </div>
           </div>
-          <p>Advanced sensitivity protection for every smile. Made in Bangladesh with pride.</p>
-          <div className={styles.socialLinks}>
-            {socialLinks.map((social) => (
-              <a
-                key={social.id}
-                href={social.url}
-                className={styles.socialLink}
-                target="_blank"
-                rel="noopener noreferrer"
-                aria-label={social.label}
-              >
-                <i className={social.icon} />
-              </a>
-            ))}
+          
+          <div className="footer-section">
+            <h4>Products</h4>
+            <ul className="footer-links">
+              <li><a href="#products">Medident Sensitive Care</a></li>
+              <li><a href="#benefits">Product Benefits</a></li>
+              <li><a href="#usage">Usage Instructions</a></li>
+              <li><a href="#buy">Buy Online</a></li>
+            </ul>
+          </div>
+          
+          <div className="footer-section">
+            <h4>Oral Health</h4>
+            <ul className="footer-links">
+              <li><a href="#sensitivity">Understanding Sensitivity</a></li>
+              <li><a href="#tips">Dental Care Tips</a></li>
+              <li><a href="#faq">FAQ</a></li>
+              <li><a href="#education">Educational Resources</a></li>
+            </ul>
+          </div>
+          
+          <div className="footer-section">
+            <h4>Company</h4>
+            <ul className="footer-links">
+              <li><a href="#about">About Us</a></li>
+              <li><a href="#contact">Contact</a></li>
+              <li><a href="#quality">Quality Standards</a></li>
+              <li><a href="#manufacturing">Manufacturing</a></li>
+            </ul>
           </div>
         </div>
-
-        <div className={styles.footerSection}>
-          <h4>Products</h4>
-          <ul className={styles.footerLinks}>
-            {footerLinks.products.map((link, index) => (
-              <li key={index}>
-                <Link to={link.path}>{link.label}</Link>
-              </li>
-            ))}
-          </ul>
-        </div>
-
-        <div className={styles.footerSection}>
-          <h4>Oral Health</h4>
-          <ul className={styles.footerLinks}>
-            {footerLinks.oralHealth.map((link, index) => (
-              <li key={index}>
-                <Link to={link.path}>{link.label}</Link>
-              </li>
-            ))}
-          </ul>
-        </div>
-
-        <div className={styles.footerSection}>
-          <h4>Company</h4>
-          <ul className={styles.footerLinks}>
-            {footerLinks.company.map((link, index) => (
-              <li key={index}>
-                <Link to={link.path}>{link.label}</Link>
-              </li>
-            ))}
-          </ul>
-        </div>
-      </div>
-
-      <div className={styles.footerBottom}>
-        <div className={styles.footerBottomContent}>
-          <p>&copy; {currentYear} {COMPANY_NAME}. All rights reserved.</p>
-          <div className={styles.footerBottomLinks}>
-            {footerLinks.legal.map((link, index) => (
-              <Link key={index} to={link.path}>
-                {link.label}
-              </Link>
-            ))}
+        
+        <div className="footer-bottom">
+          <div className="footer-bottom-content">
+            <p>&copy; {currentYear} Vertex International. All rights reserved.</p>
+            <div className="footer-bottom-links">
+              <a href="#privacy">Privacy Policy</a>
+              <a href="#terms">Terms of Service</a>
+              <a href="#sitemap">Sitemap</a>
+            </div>
           </div>
         </div>
       </div>
