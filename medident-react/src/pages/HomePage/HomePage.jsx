@@ -5,6 +5,66 @@ const HomePage = () => {
   const [currentQuestion, setCurrentQuestion] = useState(1);
   const [quizAnswers, setQuizAnswers] = useState({});
   const [showResult, setShowResult] = useState(false);
+  
+  // Hero slider state
+  const [currentSlide, setCurrentSlide] = useState(0);
+  
+  const heroSlides = [
+    {
+      id: 1,
+      title: "Say Goodbye to Tooth Sensitivity",
+      subtitle: "Enjoy your favorite hot and cold foods again with Medident Sensitive Care",
+      description: "Clinically proven formula provides 24/7 protection from tooth sensitivity",
+      primaryCTA: "Shop Sensitive Care",
+      secondaryCTA: "Learn More",
+      backgroundClass: "slide-sensitivity",
+      productImage: "/assets/medident-sensetive-care.jpeg",
+      badge: "Most Popular"
+    },
+    {
+      id: 2,
+      title: "Healthy Gums, Confident Smile",
+      subtitle: "Advanced gum protection with Medident-G Gum Care toothpaste",
+      description: "Anti-bacterial formula prevents bleeding and strengthens gums naturally",
+      primaryCTA: "Shop Gum Care",
+      secondaryCTA: "Learn More",
+      backgroundClass: "slide-gum-care",
+      productImage: "/assets/medident-g.jpeg",
+      badge: "New Formula"
+    },
+    {
+      id: 3,
+      title: "Complete Oral Care Solutions",
+      subtitle: "From sensitivity relief to gum protection - Made in Bangladesh with pride",
+      description: "Choose the perfect solution for your oral health needs",
+      primaryCTA: "Shop All Products",
+      secondaryCTA: "Take Product Quiz",
+      backgroundClass: "slide-complete",
+      productImage: "/assets/medident-sensetive-care.jpeg",
+      badge: "Made in Bangladesh"
+    }
+  ];
+
+  // Auto-play slider
+  React.useEffect(() => {
+    const timer = setInterval(() => {
+      setCurrentSlide((prev) => (prev + 1) % heroSlides.length);
+    }, 5000); // Change slide every 5 seconds
+
+    return () => clearInterval(timer);
+  }, [heroSlides.length]);
+
+  const nextSlide = () => {
+    setCurrentSlide((prev) => (prev + 1) % heroSlides.length);
+  };
+
+  const prevSlide = () => {
+    setCurrentSlide((prev) => (prev - 1 + heroSlides.length) % heroSlides.length);
+  };
+
+  const goToSlide = (index) => {
+    setCurrentSlide(index);
+  };
 
   const handleQuizOption = (value) => {
     setQuizAnswers({ ...quizAnswers, [currentQuestion]: value });
@@ -45,42 +105,83 @@ const HomePage = () => {
 
   return (
     <div>
-      {/* Hero Section */}
-      <section id="home" className="hero">
-        <div className="hero-container">
-          <div className="hero-content">
-            <div className="hero-text">
-              <h1 className="hero-title">Complete Oral Care Solutions for Every Smile</h1>
-              <p className="hero-subtitle">From sensitivity relief to gum protection - Local excellence in dental care. Made in Bangladesh with pride for Bangladeshi families.</p>
-              <div className="hero-badges">
-                <span className="badge local-badge">
-                  <i className="fas fa-flag"></i>
-                  Made in Bangladesh
-                </span>
-                <span className="badge quality-badge">
-                  <i className="fas fa-award"></i>
-                  International Quality
-                </span>
-              </div>
-              <div className="hero-buttons">
-                <a href="#products" className="btn btn-primary">Shop Now</a>
-                <a href="#sensitivity" className="btn btn-secondary">Learn About Sensitivity</a>
+      {/* Hero Slider Section */}
+      <section id="home" className="hero-slider">
+        <div className="slider-container">
+          {heroSlides.map((slide, index) => (
+            <div
+              key={slide.id}
+              className={`slide ${index === currentSlide ? 'active' : ''} ${slide.backgroundClass}`}
+            >
+              <div className="hero-container">
+                <div className="hero-content">
+                  <div className="hero-text">
+                    <div className="slide-badge">
+                      <span className="badge">{slide.badge}</span>
+                    </div>
+                    <h1 className="hero-title">{slide.title}</h1>
+                    <p className="hero-subtitle">{slide.subtitle}</p>
+                    <p className="hero-description">{slide.description}</p>
+                    <div className="hero-buttons">
+                      <a href="#products" className="btn btn-primary btn-large">
+                        {slide.primaryCTA}
+                      </a>
+                      <a href="#sensitivity" className="btn btn-secondary btn-large">
+                        {slide.secondaryCTA}
+                      </a>
+                    </div>
+                  </div>
+                  <div className="hero-image">
+                    <img 
+                      src={slide.productImage} 
+                      alt={slide.title} 
+                      className="product-image" 
+                    />
+                    <div className="floating-elements">
+                      <div className="float-element tooth">
+                        <i className="fas fa-tooth"></i>
+                      </div>
+                      <div className="float-element shield">
+                        <i className="fas fa-shield-alt"></i>
+                      </div>
+                      <div className="float-element sparkle">
+                        <i className="fas fa-sparkles"></i>
+                      </div>
+                    </div>
+                  </div>
+                </div>
               </div>
             </div>
-            <div className="hero-image">
-              <img src="/assets/medident-hero-product.svg" alt="Medident Toothpaste" className="product-image" />
-              <div className="floating-elements">
-                <div className="float-element tooth">
-                  <i className="fas fa-tooth"></i>
-                </div>
-                <div className="float-element shield">
-                  <i className="fas fa-shield-alt"></i>
-                </div>
-                <div className="float-element sparkle">
-                  <i className="fas fa-sparkles"></i>
-                </div>
-              </div>
-            </div>
+          ))}
+
+          {/* Slider Navigation */}
+          <div className="slider-nav">
+            <button 
+              className="nav-btn prev-btn" 
+              onClick={prevSlide}
+              aria-label="Previous slide"
+            >
+              <i className="fas fa-chevron-left"></i>
+            </button>
+            <button 
+              className="nav-btn next-btn" 
+              onClick={nextSlide}
+              aria-label="Next slide"
+            >
+              <i className="fas fa-chevron-right"></i>
+            </button>
+          </div>
+
+          {/* Slider Dots */}
+          <div className="slider-dots">
+            {heroSlides.map((_, index) => (
+              <button
+                key={index}
+                className={`dot ${index === currentSlide ? 'active' : ''}`}
+                onClick={() => goToSlide(index)}
+                aria-label={`Go to slide ${index + 1}`}
+              />
+            ))}
           </div>
         </div>
       </section>
@@ -100,7 +201,7 @@ const HomePage = () => {
                 <span className="badge featured">Most Popular</span>
               </div>
               <div className="product-image">
-                <img src="/assets/medident-sensitive-care.svg" alt="Medident Sensitive Care" />
+                <img src="/assets/medident-sensetive-care.jpeg" alt="Medident Sensitive Care" />
               </div>
               <div className="product-info">
                 <div className="product-category">Sensitivity Relief</div>
@@ -130,7 +231,7 @@ const HomePage = () => {
                 <span className="badge new">New Formula</span>
               </div>
               <div className="product-image">
-                <img src="/assets/medident-sensitive-care.svg" alt="Medident-G Gum Care" />
+                <img src="/assets/medident-g.jpeg" alt="Medident-G Gum Care" />
               </div>
               <div className="product-info">
                 <div className="product-category">Gum Health</div>
@@ -230,7 +331,7 @@ const HomePage = () => {
                     <div className="result-recommendation">
                       <p>Based on your answers, we recommend:</p>
                       <div className="recommended-product">
-                        <img src="/assets/medident-sensitive-care.svg" alt="Medident Sensitive Care" />
+                        <img src="/assets/medident-sensetive-care.jpeg" alt="Medident Sensitive Care" />
                         <div className="product-details">
                           <h4>Medident Sensitive Care</h4>
                           <p>Specially formulated for sensitive teeth protection</p>
