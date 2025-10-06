@@ -137,17 +137,6 @@ const HomePage = () => {
                       alt={slide.title} 
                       className="product-image" 
                     />
-                    <div className="floating-elements">
-                      <div className="float-element tooth">
-                        <i className="fas fa-tooth"></i>
-                      </div>
-                      <div className="float-element shield">
-                        <i className="fas fa-shield-alt"></i>
-                      </div>
-                      <div className="float-element sparkle">
-                        <i className="fas fa-sparkles"></i>
-                      </div>
-                    </div>
                   </div>
                 </div>
               </div>
