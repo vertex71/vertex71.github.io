@@ -50,8 +50,8 @@ const HomePage = () => {
         <div className="hero-container">
           <div className="hero-content">
             <div className="hero-text">
-              <h1 className="hero-title">Advanced Sensitivity Protection for Every Smile</h1>
-              <p className="hero-subtitle">Local excellence in dental care. Made in Bangladesh with pride for Bangladeshi families.</p>
+              <h1 className="hero-title">Complete Oral Care Solutions for Every Smile</h1>
+              <p className="hero-subtitle">From sensitivity relief to gum protection - Local excellence in dental care. Made in Bangladesh with pride for Bangladeshi families.</p>
               <div className="hero-badges">
                 <span className="badge local-badge">
                   <i className="fas fa-flag"></i>
@@ -89,27 +89,84 @@ const HomePage = () => {
       <section id="products" className="product-showcase">
         <div className="container">
           <div className="section-header">
-            <h2 className="section-title">Our Products</h2>
-            <p className="section-subtitle">Advanced dental care solutions for sensitive teeth</p>
+            <h2 className="section-title">Our Complete Oral Care Range</h2>
+            <p className="section-subtitle">Choose the perfect solution for your oral health needs</p>
           </div>
           
-          <div className="product-carousel">
-            <div className="product-card active">
+          <div className="products-grid">
+            {/* Sensitive Care Product */}
+            <div className="product-card" id="sensitive-care">
+              <div className="product-badge">
+                <span className="badge featured">Most Popular</span>
+              </div>
               <div className="product-image">
                 <img src="/assets/medident-sensitive-care.svg" alt="Medident Sensitive Care" />
               </div>
               <div className="product-info">
+                <div className="product-category">Sensitivity Relief</div>
                 <h3 className="product-name">Medident Sensitive Care</h3>
                 <p className="product-description">Advanced formula for immediate and lasting relief from tooth sensitivity</p>
                 <ul className="product-benefits">
-                  <li><i className="fas fa-check"></i> 24/7 Protection</li>
-                  <li><i className="fas fa-check"></i> Clinically Proven</li>
-                  <li><i className="fas fa-check"></i> Fresh Mint Flavor</li>
-                  <li><i className="fas fa-check"></i> Strengthens Enamel</li>
+                  <li><i className="fas fa-shield-alt"></i> 24/7 Protection</li>
+                  <li><i className="fas fa-check-circle"></i> Clinically Proven</li>
+                  <li><i className="fas fa-leaf"></i> Fresh Mint Flavor</li>
+                  <li><i className="fas fa-tooth"></i> Strengthens Enamel</li>
                 </ul>
-                <div className="product-price">৳85 <span className="original-price">৳95</span></div>
-                <button className="btn btn-primary">Add to Cart</button>
+                <div className="product-price">
+                  <span className="price">৳85</span>
+                  <span className="original-price">৳95</span>
+                  <span className="discount">Save 11%</span>
+                </div>
+                <div className="product-actions">
+                  <button className="btn btn-primary btn-full">Add to Cart</button>
+                  <button className="btn btn-secondary btn-outline">Learn More</button>
+                </div>
               </div>
+            </div>
+
+            {/* Gum Care Product */}
+            <div className="product-card" id="gum-care">
+              <div className="product-badge">
+                <span className="badge new">New Formula</span>
+              </div>
+              <div className="product-image">
+                <img src="/assets/medident-sensitive-care.svg" alt="Medident-G Gum Care" />
+              </div>
+              <div className="product-info">
+                <div className="product-category">Gum Health</div>
+                <h3 className="product-name">Medident-G Gum Care</h3>
+                <p className="product-description">Advanced gum protection formula for healthy gums and fresh breath</p>
+                <ul className="product-benefits">
+                  <li><i className="fas fa-heart"></i> Gum Protection</li>
+                  <li><i className="fas fa-shield-alt"></i> Anti-bacterial</li>
+                  <li><i className="fas fa-droplet"></i> Prevents Bleeding</li>
+                  <li><i className="fas fa-leaf"></i> Natural Extracts</li>
+                </ul>
+                <div className="product-price">
+                  <span className="price">৳90</span>
+                  <span className="original-price">৳100</span>
+                  <span className="discount">Save 10%</span>
+                </div>
+                <div className="product-actions">
+                  <button className="btn btn-primary btn-full">Add to Cart</button>
+                  <button className="btn btn-secondary btn-outline">Learn More</button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          {/* Product Comparison Section */}
+          <div className="product-comparison" id="compare">
+            <h3>Not sure which product is right for you?</h3>
+            <div className="comparison-options">
+              <button className="btn btn-secondary">
+                <i className="fas fa-balance-scale"></i>
+                Compare Products
+              </button>
+              <button className="btn btn-primary">
+                <i className="fas fa-search"></i>
+                Take Product Quiz
+              </button>
             </div>
           </div>
         </div>

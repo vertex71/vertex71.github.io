@@ -976,6 +976,259 @@ p {
     outline-offset: 2px;
 }
 
+/* Enhanced Product Showcase Styles */
+.products-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3rem;
+    margin-bottom: 3rem;
+}
+
+.product-card {
+    background: var(--white);
+    border-radius: 20px;
+    padding: 2.5rem;
+    box-shadow: 0 4px 25px rgba(0,0,0,0.1);
+    transition: all 0.3s ease;
+    position: relative;
+    border: 2px solid transparent;
+    overflow: hidden;
+}
+
+.product-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 15px 40px rgba(0,0,0,0.15);
+    border-color: var(--primary-color);
+}
+
+.product-badge {
+    position: absolute;
+    top: 1.5rem;
+    right: 1.5rem;
+    z-index: 2;
+}
+
+.badge {
+    display: inline-block;
+    padding: 0.5rem 1rem;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.badge.featured {
+    background: linear-gradient(135deg, #FF6B6B, #FF8E53);
+    color: var(--white);
+}
+
+.badge.new {
+    background: linear-gradient(135deg, var(--secondary-color), #2ECC71);
+    color: var(--white);
+}
+
+.product-image {
+    text-align: center;
+    margin-bottom: 2rem;
+    padding: 1rem;
+    background: linear-gradient(135deg, #F8F9FA, #E3F2FD);
+    border-radius: 16px;
+    transition: all 0.3s ease;
+}
+
+.product-card:hover .product-image {
+    background: linear-gradient(135deg, #E3F2FD, #BBDEFB);
+    transform: scale(1.02);
+}
+
+.product-image img {
+    width: 100%;
+    max-width: 200px;
+    height: auto;
+    transition: transform 0.3s ease;
+}
+
+.product-category {
+    color: var(--primary-color);
+    font-weight: 600;
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin-bottom: 0.5rem;
+}
+
+.product-name {
+    font-family: 'Poppins', sans-serif;
+    font-size: 1.5rem;
+    color: var(--text-dark);
+    margin-bottom: 1rem;
+    font-weight: 600;
+}
+
+.product-description {
+    color: var(--text-light);
+    line-height: 1.6;
+    margin-bottom: 1.5rem;
+    font-size: 1rem;
+}
+
+.product-benefits {
+    list-style: none;
+    padding: 0;
+    margin-bottom: 2rem;
+}
+
+.product-benefits li {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    margin-bottom: 0.75rem;
+    color: var(--text-dark);
+    font-size: 0.95rem;
+}
+
+.product-benefits i {
+    color: var(--primary-color);
+    font-size: 1rem;
+    width: 16px;
+}
+
+.product-price {
+    margin-bottom: 2rem;
+}
+
+.product-price .price {
+    font-family: 'Poppins', sans-serif;
+    font-size: 2rem;
+    font-weight: 700;
+    color: var(--primary-color);
+}
+
+.product-price .original-price {
+    font-size: 1.2rem;
+    color: var(--text-light);
+    text-decoration: line-through;
+    margin-left: 0.5rem;
+}
+
+.product-price .discount {
+    background: var(--secondary-color);
+    color: var(--white);
+    padding: 0.25rem 0.75rem;
+    border-radius: 12px;
+    font-size: 0.8rem;
+    font-weight: 600;
+    margin-left: 1rem;
+}
+
+.product-actions {
+    display: flex;
+    gap: 1rem;
+    flex-direction: column;
+}
+
+.btn-full {
+    width: 100%;
+    justify-content: center;
+}
+
+.btn-outline {
+    background: transparent;
+    border: 2px solid var(--primary-color);
+    color: var(--primary-color);
+}
+
+.btn-outline:hover {
+    background: var(--primary-color);
+    color: var(--white);
+}
+
+/* Product Comparison Section */
+.product-comparison {
+    text-align: center;
+    padding: 3rem;
+    background: linear-gradient(135deg, var(--light-gray), #F0F8FF);
+    border-radius: 16px;
+    margin-top: 3rem;
+}
+
+.product-comparison h3 {
+    font-family: 'Poppins', sans-serif;
+    color: var(--text-dark);
+    margin-bottom: 2rem;
+    font-size: 1.5rem;
+}
+
+.comparison-options {
+    display: flex;
+    gap: 1.5rem;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.comparison-options .btn {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 1rem 2rem;
+    font-size: 1.1rem;
+}
+
+/* Responsive Design for New Product Grid */
+@media (max-width: 1023px) {
+    .products-grid {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+    
+    .product-card {
+        padding: 2rem;
+    }
+    
+    .product-actions {
+        flex-direction: row;
+    }
+}
+
+@media (max-width: 767px) {
+    .product-card {
+        padding: 1.5rem;
+    }
+    
+    .product-name {
+        font-size: 1.3rem;
+    }
+    
+    .product-price .price {
+        font-size: 1.75rem;
+    }
+    
+    .product-actions {
+        flex-direction: column;
+    }
+    
+    .comparison-options {
+        flex-direction: column;
+        align-items: center;
+    }
+}
+
+@media (max-width: 480px) {
+    .products-grid {
+        gap: 1.5rem;
+    }
+    
+    .product-card {
+        padding: 1.25rem;
+    }
+    
+    .product-badge {
+        top: 1rem;
+        right: 1rem;
+    }
+}
+
 /* Print styles */
 @media print {
     .header,

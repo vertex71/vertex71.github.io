@@ -24,9 +24,34 @@ const Header = () => {
             <li className="nav-item dropdown">
               <a href="#products" className="nav-link">Products <i className="fas fa-chevron-down"></i></a>
               <div className="dropdown-content">
-                <a href="#products">Medident Sensitive Care</a>
-                <a href="#benefits">Product Benefits</a>
-                <a href="#usage">Usage Instructions</a>
+                <div className="dropdown-section">
+                  <h5>Our Products</h5>
+                  <a href="#sensitive-care">
+                    <i className="fas fa-tooth"></i>
+                    Medident Sensitive Care
+                  </a>
+                  <a href="#gum-care">
+                    <i className="fas fa-heart"></i>
+                    Medident-G Gum Care
+                  </a>
+                </div>
+                <div className="dropdown-section">
+                  <h5>Product Tools</h5>
+                  <a href="#compare">
+                    <i className="fas fa-balance-scale"></i>
+                    Compare Products
+                  </a>
+                  <a href="#product-finder">
+                    <i className="fas fa-search"></i>
+                    Find Right Product
+                  </a>
+                </div>
+                <div className="dropdown-section">
+                  <a href="#buy" className="dropdown-cta">
+                    <i className="fas fa-shopping-cart"></i>
+                    Buy Online
+                  </a>
+                </div>
               </div>
             </li>
             <li className="nav-item dropdown">
