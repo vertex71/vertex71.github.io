@@ -452,7 +452,7 @@ const HomePage = () => {
         <div className="container">
           <div className="about-content">
             <div className="about-text">
-              <h2>About Vertex International</h2>
+              <h2>About VERTEX International</h2>
               <p className="about-intro">Committed to providing world-class dental care products made right here in Bangladesh.</p>
               
               <div className="about-features">

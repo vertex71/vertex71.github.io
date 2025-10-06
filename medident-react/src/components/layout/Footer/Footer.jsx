@@ -10,10 +10,10 @@ const Footer = () => {
         <div className="footer-content">
           <div className="footer-section">
             <div className="footer-logo">
-              <img src="/assets/medident-logo.svg" alt="Medident Logo" className="logo" />
-              <span className="brand-name">Medident</span>
+              <img src="/assets/vi-logo.jpeg" alt="VERTEX International Logo" className="logo" />
+              <span className="brand-name">VERTEX International</span>
             </div>
-            <p>Advanced sensitivity protection for every smile. Made in Bangladesh with pride.</p>
+            <p>Leading manufacturer of quality oral care products. Made in Bangladesh with pride.</p>
             <div className="social-links">
               <a href="#" className="social-link"><i className="fab fa-facebook"></i></a>
               <a href="#" className="social-link"><i className="fab fa-instagram"></i></a>

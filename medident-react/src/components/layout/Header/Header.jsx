@@ -13,8 +13,8 @@ const Header = () => {
       <nav className="navbar">
         <div className="nav-container">
           <div className="nav-logo">
-            <img src="/assets/medident-logo.svg" alt="Medident Logo" className="logo" />
-            <span className="brand-name">Medident</span>
+            <img src="/assets/vi-logo.jpeg" alt="VERTEX International Logo" className="logo" />
+            <span className="brand-name">VERTEX International</span>
           </div>
           
           <ul className={`nav-menu ${isMenuOpen ? 'active' : ''}`}>

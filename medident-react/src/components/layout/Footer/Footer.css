@@ -27,13 +27,17 @@
 .footer-logo .logo {
     height: 40px;
     width: auto;
+    object-fit: contain;
+    border-radius: 4px;
 }
 
 .footer-logo .brand-name {
     color: white;
     font-family: 'Poppins', sans-serif;
-    font-size: 1.5rem;
+    font-size: 1.2rem;
     font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
 }
 
 .footer-section p {

@@ -1,7 +1,7 @@
 // App Constants
 export const APP_NAME = 'Medident';
 export const APP_TAGLINE = 'Advanced Sensitivity Protection for Every Smile';
-export const COMPANY_NAME = 'Vertex International';
+export const COMPANY_NAME = 'VERTEX International';
 
 // Contact Information
 export const CONTACT_INFO = {
@@ -83,7 +83,7 @@ export const API_ENDPOINTS = {
 
 // Image Paths
 export const IMAGE_PATHS = {
-  LOGO: '/assets/medident-logo.svg',
+  LOGO: '/assets/vi-logo.jpeg',
   HERO_PRODUCT: '/assets/medident-hero-product.svg',
   MANUFACTURING: '/assets/company/about-manufacturing.svg',
   PRODUCTS: '/assets/products/',
