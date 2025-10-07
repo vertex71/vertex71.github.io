@@ -1062,7 +1062,7 @@ p {
 /* Specific styling for real product images in product showcase */
 .product-showcase .product-image img {
     max-width: 250px;
-    height: 150px;
+    height: 220px;
     object-fit: contain;
     border-radius: 8px;
 }
