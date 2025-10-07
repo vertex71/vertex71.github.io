@@ -1,7 +1,10 @@
 import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import './HomePage.css';
 
 const HomePage = () => {
+  const navigate = useNavigate();
+  
   const [currentQuestion, setCurrentQuestion] = useState(1);
   const [quizAnswers, setQuizAnswers] = useState({});
   const [showResult, setShowResult] = useState(false);
@@ -13,6 +16,12 @@ const HomePage = () => {
   const [showImageModal, setShowImageModal] = useState(false);
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
   const [zoomLevel, setZoomLevel] = useState(1);
+  
+  // Product variant state
+  const [selectedVariants, setSelectedVariants] = useState({
+    'sensitive-care': 0, // Default to first variant (100g)
+    'gum-care': 0
+  });
   
   const heroSlides = [
     {
@@ -49,6 +58,20 @@ const HomePage = () => {
       badge: "Made in Bangladesh"
     }
   ];
+
+  // Product variants data
+  const productVariants = {
+    'sensitive-care': [
+      { size: '100g', price: 120, originalPrice: 135, discount: '11%' },
+      { size: '40g', price: 50, originalPrice: 55, discount: '9%' },
+      { size: '140g', price: 150, originalPrice: 170, discount: '12%' }
+    ],
+    'gum-care': [
+      { size: '100g', price: 120, originalPrice: 135, discount: '11%' },
+      { size: '40g', price: 50, originalPrice: 55, discount: '9%' },
+      { size: '140g', price: 150, originalPrice: 170, discount: '12%' }
+    ]
+  };
 
   // Product image galleries
   const productImageGalleries = {
@@ -113,6 +136,14 @@ const HomePage = () => {
     const newIndex = adjustedIndex === 0 ? currentImages.length - 1 : adjustedIndex - 1;
     const baseIndex = currentImageIndex < 3 ? 0 : 3;
     setCurrentImageIndex(baseIndex + newIndex);
+  };
+
+  // Variant selection function
+  const selectVariant = (productType, variantIndex) => {
+    setSelectedVariants(prev => ({
+      ...prev,
+      [productType]: variantIndex
+    }));
   };
 
   // Auto-play slider
@@ -264,7 +295,9 @@ const HomePage = () => {
               </div>
               <div className="product-info">
                 <div className="product-category">Sensitivity Relief</div>
-                <h3 className="product-name">Medident Sensitive Care</h3>
+                <h3 className="product-name clickable-name" onClick={() => navigate('/product-details/sensitive-care')}>
+                  Medident Sensitive Care
+                </h3>
                 <p className="product-description">Advanced formula for immediate and lasting relief from tooth sensitivity</p>
                 <ul className="product-benefits">
                   <li><i className="fas fa-shield-alt"></i> 24/7 Protection</li>
@@ -272,14 +305,20 @@ const HomePage = () => {
                   <li><i className="fas fa-leaf"></i> Fresh Mint Flavor</li>
                   <li><i className="fas fa-tooth"></i> Strengthens Enamel</li>
                 </ul>
-                <div className="product-price">
-                  <span className="price">৳85</span>
-                  <span className="original-price">৳95</span>
-                  <span className="discount">Save 11%</span>
+                
+                <div className="product-price-summary">
+                  <div className="price">৳120</div>
+                  <div className="price-info">
+                    <span className="original-price">was ৳135</span>
+                    <span className="savings">Save 11%</span>
+                  </div>
+                  <div className="size-info">100g tube</div>
                 </div>
                 <div className="product-actions">
-                  <button className="btn btn-primary btn-full">Add to Cart</button>
-                  <button className="btn btn-secondary btn-outline">Learn More</button>
+                  <button className="btn btn-primary btn-full">Quick Add to Cart</button>
+                  <button className="btn btn-secondary btn-outline" onClick={() => navigate('/product-details/sensitive-care')}>
+                    View Details
+                  </button>
                 </div>
               </div>
             </div>
@@ -294,7 +333,9 @@ const HomePage = () => {
               </div>
               <div className="product-info">
                 <div className="product-category">Gum Health</div>
-                <h3 className="product-name">Medident-G Gum Care</h3>
+                <h3 className="product-name clickable-name" onClick={() => navigate('/product-details/gum-care')}>
+                  Medident-G Gum Care
+                </h3>
                 <p className="product-description">Advanced gum protection formula for healthy gums and fresh breath</p>
                 <ul className="product-benefits">
                   <li><i className="fas fa-heart"></i> Gum Protection</li>
@@ -302,14 +343,20 @@ const HomePage = () => {
                   <li><i className="fas fa-droplet"></i> Prevents Bleeding</li>
                   <li><i className="fas fa-leaf"></i> Natural Extracts</li>
                 </ul>
-                <div className="product-price">
-                  <span className="price">৳90</span>
-                  <span className="original-price">৳100</span>
-                  <span className="discount">Save 10%</span>
+                
+                <div className="product-price-summary">
+                  <div className="price">৳120</div>
+                  <div className="price-info">
+                    <span className="original-price">was ৳135</span>
+                    <span className="savings">Save 11%</span>
+                  </div>
+                  <div className="size-info">100g tube</div>
                 </div>
                 <div className="product-actions">
-                  <button className="btn btn-primary btn-full">Add to Cart</button>
-                  <button className="btn btn-secondary btn-outline">Learn More</button>
+                  <button className="btn btn-primary btn-full">Quick Add to Cart</button>
+                  <button className="btn btn-secondary btn-outline" onClick={() => navigate('/product-details/gum-care')}>
+                    View Details
+                  </button>
                 </div>
               </div>
             </div>

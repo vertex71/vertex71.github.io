@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Header from './components/layout/Header';
 import Footer from './components/layout/Footer';
 import HomePage from './pages/HomePage';
+import ProductDetails from './pages/ProductDetails/ProductDetails';
 import './App.css';
 
 function App() {
@@ -13,6 +14,7 @@ function App() {
         <main>
           <Routes>
             <Route path="/" element={<HomePage />} />
+            <Route path="/product-details/:productId" element={<ProductDetails />} />
           </Routes>
         </main>
         <Footer />
