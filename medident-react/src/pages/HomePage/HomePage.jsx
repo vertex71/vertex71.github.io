@@ -450,51 +450,248 @@ const HomePage = () => {
       {/* About Section */}
       <section id="about" className="about">
         <div className="container">
+          {/* Company Overview */}
           <div className="about-content">
             <div className="about-text">
-              <h2>About VERTEX International</h2>
-              <p className="about-intro">Committed to providing world-class dental care products made right here in Bangladesh.</p>
-              
-              <div className="about-features">
-                <div className="feature">
-                  <i className="fas fa-flask"></i>
-                  <div className="feature-content">
-                    <h3>Scientific Research</h3>
-                    <p>Our products are developed using the latest dental research and clinical studies.</p>
-                  </div>
-                </div>
-                
-                <div className="feature">
-                  <i className="fas fa-medal"></i>
-                  <div className="feature-content">
-                    <h3>Quality Assurance</h3>
-                    <p>International quality standards with local manufacturing excellence.</p>
-                  </div>
-                </div>
-                
-                <div className="feature">
-                  <i className="fas fa-heart"></i>
-                  <div className="feature-content">
-                    <h3>Local Pride</h3>
-                    <p>Supporting Bangladesh's economy while providing superior dental care.</p>
-                  </div>
-                </div>
+              <div className="section-header">
+                <h2 className="section-title">About VERTEX International</h2>
+                <p className="section-subtitle">Leading the future of oral care in Bangladesh since 2008</p>
               </div>
               
-              <div className="cta-section">
-                <h3>Ready to try Medident?</h3>
-                <p>Join thousands of satisfied customers who trust Medident for their dental care needs.</p>
-                <button className="btn btn-primary btn-large">Shop Now</button>
+              <div className="about-description">
+                <p className="about-intro">
+                  VERTEX International is a pioneering pharmaceutical and healthcare company based in Bangladesh, 
+                  dedicated to improving oral health through innovative, scientifically-backed products. 
+                  Since our establishment in 2008, we have been at the forefront of dental care innovation, 
+                  developing specialized solutions that meet the unique needs of Bangladeshi families.
+                </p>
+                
+                <p>
+                  Our flagship brand, Medident, represents our commitment to excellence in oral care. 
+                  We understand that oral health is fundamental to overall well-being, which is why we've 
+                  invested extensively in research and development to create products that provide real, 
+                  measurable benefits to our customers.
+                </p>
+                
+                <p>
+                  As a proud Bangladeshi company, we believe in supporting local communities while 
+                  maintaining international quality standards. Our state-of-the-art manufacturing 
+                  facility employs cutting-edge technology and adheres to strict quality control 
+                  measures to ensure every product meets the highest standards of safety and efficacy.
+                </p>
               </div>
             </div>
             
             <div className="about-image">
-              <img src="/assets/company/about-manufacturing.svg" alt="Manufacturing Facility" />
+              <img src="/assets/company/about-manufacturing.svg" alt="VERTEX International Manufacturing Facility" />
               <div className="image-overlay">
                 <div className="overlay-content">
                   <h4>Made in Bangladesh</h4>
-                  <p>State-of-the-art manufacturing facility</p>
+                  <p>ISO 9001:2015 Certified Manufacturing</p>
                 </div>
+              </div>
+            </div>
+          </div>
+
+          {/* Company Statistics */}
+          <div className="company-stats">
+            <div className="stats-grid">
+              <div className="stat-item">
+                <div className="stat-number">15+</div>
+                <div className="stat-label">Years of Excellence</div>
+                <div className="stat-description">Serving Bangladesh since 2008</div>
+              </div>
+              <div className="stat-item">
+                <div className="stat-number">50M+</div>
+                <div className="stat-label">Products Sold</div>
+                <div className="stat-description">Trusted by millions nationwide</div>
+              </div>
+              <div className="stat-item">
+                <div className="stat-number">500+</div>
+                <div className="stat-label">Retail Partners</div>
+                <div className="stat-description">Available across Bangladesh</div>
+              </div>
+              <div className="stat-item">
+                <div className="stat-number">98%</div>
+                <div className="stat-label">Customer Satisfaction</div>
+                <div className="stat-description">Based on customer surveys</div>
+              </div>
+            </div>
+          </div>
+
+          {/* Core Values */}
+          <div className="core-values">
+            <h3 className="values-title">Our Core Values</h3>
+            <div className="values-grid">
+              <div className="value-card">
+                <div className="value-icon">
+                  <i className="fas fa-microscope"></i>
+                </div>
+                <h4>Innovation</h4>
+                <p>Continuously researching and developing new formulations to address evolving oral health needs.</p>
+              </div>
+              
+              <div className="value-card">
+                <div className="value-icon">
+                  <i className="fas fa-shield-alt"></i>
+                </div>
+                <h4>Quality</h4>
+                <p>Maintaining the highest standards in manufacturing, testing, and quality assurance processes.</p>
+              </div>
+              
+              <div className="value-card">
+                <div className="value-icon">
+                  <i className="fas fa-heart"></i>
+                </div>
+                <h4>Care</h4>
+                <p>Putting customer health and satisfaction at the center of everything we do.</p>
+              </div>
+              
+              <div className="value-card">
+                <div className="value-icon">
+                  <i className="fas fa-flag"></i>
+                </div>
+                <h4>Local Pride</h4>
+                <p>Contributing to Bangladesh's economy while serving our local communities with pride.</p>
+              </div>
+            </div>
+          </div>
+
+          {/* Our Mission & Vision */}
+          <div className="mission-vision">
+            <div className="mission-vision-grid">
+              <div className="mission-card">
+                <div className="card-header">
+                  <i className="fas fa-bullseye"></i>
+                  <h3>Our Mission</h3>
+                </div>
+                <p>
+                  To provide innovative, effective, and affordable oral care solutions that empower 
+                  every Bangladeshi family to achieve optimal oral health, while contributing to 
+                  the nation's healthcare sector and economic growth.
+                </p>
+              </div>
+              
+              <div className="vision-card">
+                <div className="card-header">
+                  <i className="fas fa-eye"></i>
+                  <h3>Our Vision</h3>
+                </div>
+                <p>
+                  To become Bangladesh's most trusted oral care brand and a leading pharmaceutical 
+                  company in South Asia, recognized for our commitment to innovation, quality, 
+                  and community well-being.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          {/* Certifications & Awards */}
+          <div className="certifications">
+            <h3 className="certifications-title">Certifications & Recognition</h3>
+            <div className="certifications-grid">
+              <div className="cert-item">
+                <i className="fas fa-certificate"></i>
+                <div className="cert-info">
+                  <h4>ISO 9001:2015</h4>
+                  <p>Quality Management System</p>
+                </div>
+              </div>
+              
+              <div className="cert-item">
+                <i className="fas fa-leaf"></i>
+                <div className="cert-info">
+                  <h4>ISO 14001:2015</h4>
+                  <p>Environmental Management</p>
+                </div>
+              </div>
+              
+              <div className="cert-item">
+                <i className="fas fa-medkit"></i>
+                <div className="cert-info">
+                  <h4>BSTI Approved</h4>
+                  <p>Bangladesh Standards Certified</p>
+                </div>
+              </div>
+              
+              <div className="cert-item">
+                <i className="fas fa-award"></i>
+                <div className="cert-info">
+                  <h4>Best Local Brand</h4>
+                  <p>Bangladesh Business Awards 2023</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          {/* Social Responsibility */}
+          <div className="social-responsibility">
+            <div className="social-content">
+              <div className="social-text">
+                <h3>Our Social Responsibility</h3>
+                <p>
+                  At VERTEX International, we believe in giving back to the community that has 
+                  supported our growth. Our social responsibility initiatives focus on:
+                </p>
+                <ul className="responsibility-list">
+                  <li>
+                    <i className="fas fa-graduation-cap"></i>
+                    <span><strong>Oral Health Education:</strong> Free dental awareness programs in schools and communities</span>
+                  </li>
+                  <li>
+                    <i className="fas fa-clinic-medical"></i>
+                    <span><strong>Healthcare Support:</strong> Sponsoring dental camps in rural areas</span>
+                  </li>
+                  <li>
+                    <i className="fas fa-seedling"></i>
+                    <span><strong>Environmental Care:</strong> Sustainable manufacturing practices and eco-friendly packaging</span>
+                  </li>
+                  <li>
+                    <i className="fas fa-hands-helping"></i>
+                    <span><strong>Community Development:</strong> Supporting local employment and skill development</span>
+                  </li>
+                </ul>
+              </div>
+              
+              <div className="social-image">
+                <div className="social-card">
+                  <h4>Community Impact</h4>
+                  <div className="impact-stats">
+                    <div className="impact-item">
+                      <span className="impact-number">10,000+</span>
+                      <span className="impact-label">Students Educated</span>
+                    </div>
+                    <div className="impact-item">
+                      <span className="impact-number">50+</span>
+                      <span className="impact-label">Health Camps</span>
+                    </div>
+                    <div className="impact-item">
+                      <span className="impact-number">200+</span>
+                      <span className="impact-label">Jobs Created</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          {/* Call to Action */}
+          <div className="about-cta">
+            <div className="cta-content">
+              <h3>Join the VERTEX International Family</h3>
+              <p>
+                Discover why millions of Bangladeshi families trust our products for their oral health needs. 
+                Experience the difference that local innovation and international quality can make.
+              </p>
+              <div className="cta-buttons">
+                <a href="#products" className="btn btn-primary btn-large">
+                  <i className="fas fa-shopping-cart"></i>
+                  Shop Our Products
+                </a>
+                <a href="#contact" className="btn btn-secondary btn-large">
+                  <i className="fas fa-envelope"></i>
+                  Contact Us
+                </a>
               </div>
             </div>
           </div>
