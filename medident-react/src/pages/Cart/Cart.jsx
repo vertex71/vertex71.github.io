@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useCart } from '../../contexts/CartContext';
 import './Cart.css';
@@ -16,11 +16,27 @@ const Cart = () => {
     getTotalSavings
   } = useCart();
 
+  const [shippingAddress, setShippingAddress] = useState({
+    fullName: '',
+    phone: '',
+    address: '',
+    city: '',
+    area: '',
+    postalCode: ''
+  });
+
   const handleQuantityChange = (itemId, currentQuantity, change) => {
     const newQuantity = currentQuantity + change;
     if (newQuantity >= 1 && newQuantity <= 10) {
       updateQuantity(itemId, newQuantity);
     }
+  };
+
+  const handleShippingAddressChange = (field, value) => {
+    setShippingAddress(prev => ({
+      ...prev,
+      [field]: value
+    }));
   };
 
   const handleProceedToCheckout = () => {
@@ -183,27 +199,97 @@ const Cart = () => {
               </div>
             </div>
 
-            <div className="shipping-info">
-              <h4>Free Shipping</h4>
-              <p>Free standard shipping on all orders across Bangladesh</p>
-              <ul>
-                <li><i className="fas fa-truck"></i> Delivery in 2-3 business days</li>
-                <li><i className="fas fa-undo"></i> 30-day return policy</li>
-                <li><i className="fas fa-shield-alt"></i> 100% authentic products</li>
-              </ul>
+            <div className="shipping-address">
+              <h4>Shipping Address</h4>
+              <form className="address-form">
+                <div className="form-group">
+                  <label htmlFor="fullName">Full Name *</label>
+                  <input
+                    type="text"
+                    id="fullName"
+                    value={shippingAddress.fullName}
+                    onChange={(e) => handleShippingAddressChange('fullName', e.target.value)}
+                    placeholder="Enter your full name"
+                    required
+                  />
+                </div>
+                
+                <div className="form-group">
+                  <label htmlFor="phone">Phone Number *</label>
+                  <input
+                    type="tel"
+                    id="phone"
+                    value={shippingAddress.phone}
+                    onChange={(e) => handleShippingAddressChange('phone', e.target.value)}
+                    placeholder="01XXXXXXXXX"
+                    required
+                  />
+                </div>
+                
+                <div className="form-group">
+                  <label htmlFor="address">Address *</label>
+                  <textarea
+                    id="address"
+                    value={shippingAddress.address}
+                    onChange={(e) => handleShippingAddressChange('address', e.target.value)}
+                    placeholder="House/Flat number, Street name"
+                    rows="3"
+                    required
+                  ></textarea>
+                </div>
+                
+                <div className="form-row">
+                  <div className="form-group">
+                    <label htmlFor="city">City *</label>
+                    <input
+                      type="text"
+                      id="city"
+                      value={shippingAddress.city}
+                      onChange={(e) => handleShippingAddressChange('city', e.target.value)}
+                      placeholder="City"
+                      required
+                    />
+                  </div>
+                  
+                  <div className="form-group">
+                    <label htmlFor="area">Area *</label>
+                    <input
+                      type="text"
+                      id="area"
+                      value={shippingAddress.area}
+                      onChange={(e) => handleShippingAddressChange('area', e.target.value)}
+                      placeholder="Area/Thana"
+                      required
+                    />
+                  </div>
+                </div>
+                
+                <div className="form-group">
+                  <label htmlFor="postalCode">Postal Code</label>
+                  <input
+                    type="text"
+                    id="postalCode"
+                    value={shippingAddress.postalCode}
+                    onChange={(e) => handleShippingAddressChange('postalCode', e.target.value)}
+                    placeholder="1000"
+                  />
+                </div>
+              </form>
+              
+              <div className="shipping-info-note">
+                <div className="delivery-info">
+                  <h5><i className="fas fa-truck"></i> Delivery Information</h5>
+                  <ul>
+                    <li>Free delivery across Bangladesh</li>
+                    <li>Delivery in 2-3 business days</li>
+                    <li>Cash on delivery available</li>
+                  </ul>
+                </div>
+              </div>
             </div>
           </div>
         </div>
 
-        <div className="continue-shopping">
-          <button 
-            onClick={() => navigate('/')} 
-            className="btn btn-secondary"
-          >
-            <i className="fas fa-arrow-left"></i>
-            Continue Shopping
-          </button>
-        </div>
       </div>
     </div>
   );
