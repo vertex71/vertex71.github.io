@@ -295,7 +295,7 @@ const HomePage = () => {
               </div>
               <div className="product-info">
                 <div className="product-category">Sensitivity Relief</div>
-                <h3 className="product-name clickable-name" onClick={() => navigate('/product-details/sensitive-care')}>
+                <h3 className="product-name">
                   Medident Sensitive Care
                 </h3>
                 <p className="product-description">Advanced formula for immediate and lasting relief from tooth sensitivity</p>
@@ -333,7 +333,7 @@ const HomePage = () => {
               </div>
               <div className="product-info">
                 <div className="product-category">Gum Health</div>
-                <h3 className="product-name clickable-name" onClick={() => navigate('/product-details/gum-care')}>
+                <h3 className="product-name">
                   Medident-G Gum Care
                 </h3>
                 <p className="product-description">Advanced gum protection formula for healthy gums and fresh breath</p>
