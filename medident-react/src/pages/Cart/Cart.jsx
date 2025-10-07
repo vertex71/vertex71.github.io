@@ -82,16 +82,6 @@ const Cart = () => {
           <span className="breadcrumb-current">Shopping Cart</span>
         </nav>
 
-        <div className="cart-header">
-          <h1>Shopping Cart</h1>
-          <div className="cart-summary-header">
-            <span className="item-count">{getTotalItems()} {getTotalItems() === 1 ? 'item' : 'items'}</span>
-            <button onClick={clearCart} className="clear-cart-btn">
-              <i className="fas fa-trash"></i>
-              Clear Cart
-            </button>
-          </div>
-        </div>
 
         <div className="cart-content">
           <div className="cart-items">
