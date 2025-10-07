@@ -15,10 +15,10 @@ const Footer = () => {
             </div>
             <p>Leading manufacturer of quality oral care products. Made in Bangladesh with pride.</p>
             <div className="social-links">
-              <a href="#" className="social-link"><i className="fab fa-facebook"></i></a>
-              <a href="#" className="social-link"><i className="fab fa-instagram"></i></a>
-              <a href="#" className="social-link"><i className="fab fa-youtube"></i></a>
-              <a href="#" className="social-link"><i className="fab fa-linkedin"></i></a>
+              <a href="https://facebook.com/medident" className="social-link" aria-label="Follow us on Facebook"><i className="fab fa-facebook"></i></a>
+              <a href="https://instagram.com/medident" className="social-link" aria-label="Follow us on Instagram"><i className="fab fa-instagram"></i></a>
+              <a href="https://youtube.com/medident" className="social-link" aria-label="Subscribe to our YouTube channel"><i className="fab fa-youtube"></i></a>
+              <a href="https://linkedin.com/company/medident" className="social-link" aria-label="Connect with us on LinkedIn"><i className="fab fa-linkedin"></i></a>
             </div>
           </div>
           

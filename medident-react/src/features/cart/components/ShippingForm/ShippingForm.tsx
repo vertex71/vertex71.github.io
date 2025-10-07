@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { ShippingAddress } from '../../types';
+import { ShippingAddress } from '../../types/cart.types';
 import './ShippingForm.styles.css';
 
 interface ShippingFormProps {

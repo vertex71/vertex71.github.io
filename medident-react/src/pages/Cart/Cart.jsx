@@ -9,7 +9,6 @@ const Cart = () => {
     items,
     removeFromCart,
     updateQuantity,
-    clearCart,
     getTotalItems,
     getTotalPrice,
     getOriginalTotalPrice,

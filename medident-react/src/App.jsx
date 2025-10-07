@@ -1,16 +1,16 @@
 import React from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import { CartProvider } from './context/CartContext';
+import { CartProvider } from './context/CartContext/cart-context.exports';
 
 // Layout Components
-import Header from './components/layout/Header';
-import Footer from './components/layout/Footer';
+import Header from './components/layout/Header/header-component.exports';
+import Footer from './components/layout/Footer/footer-component.exports';
 
 // Page Components
-import HomePage from './pages/HomePage';
-import ProductPage from './pages/ProductPage';
-import ContactPage from './pages/ContactPage';
-import NotFoundPage from './pages/NotFoundPage';
+import HomePage from './pages/HomePage/home-page.exports';
+import ProductPage from './pages/ProductPage/product-page.exports';
+import ContactPage from './pages/ContactPage/contact-page.exports';
+import NotFoundPage from './pages/NotFoundPage/not-found-page.exports';
 
 // Styles
 import styles from './App.module.css';

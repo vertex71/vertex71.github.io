@@ -20,10 +20,6 @@ const HomePage = () => {
   const [zoomLevel, setZoomLevel] = useState(1);
   
   // Product variant state
-  const [selectedVariants, setSelectedVariants] = useState({
-    'sensitive-care': 0, // Default to first variant (100g)
-    'gum-care': 0
-  });
   
   const heroSlides = [
     {
@@ -140,13 +136,6 @@ const HomePage = () => {
     setCurrentImageIndex(baseIndex + newIndex);
   };
 
-  // Variant selection function
-  const selectVariant = (productType, variantIndex) => {
-    setSelectedVariants(prev => ({
-      ...prev,
-      [productType]: variantIndex
-    }));
-  };
 
   // Add to cart function
   const handleQuickAddToCart = (productType) => {
@@ -916,7 +905,7 @@ const HomePage = () => {
             <div className="image-container">
               <img 
                 src={getCurrentImages()[getAdjustedIndex()]} 
-                alt="Product Image" 
+                alt="Product view" 
                 style={{ transform: `scale(${zoomLevel})` }}
                 className="modal-image"
               />
