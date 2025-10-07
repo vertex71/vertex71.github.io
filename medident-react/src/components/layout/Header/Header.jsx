@@ -1,11 +1,19 @@
 import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
+import { useCart } from '../../../contexts/CartContext';
 import './Header.css';
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const navigate = useNavigate();
+  const { getTotalItems } = useCart();
 
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
+  };
+
+  const handleCartClick = () => {
+    navigate('/cart');
   };
 
   return (
@@ -67,6 +75,14 @@ const Header = () => {
             </li>
             <li className="nav-item">
               <a href="#contact" className="nav-link">Contact</a>
+            </li>
+            <li className="nav-item">
+              <button onClick={handleCartClick} className="cart-btn">
+                <i className="fas fa-shopping-cart"></i>
+                {getTotalItems() > 0 && (
+                  <span className="cart-count">{getTotalItems()}</span>
+                )}
+              </button>
             </li>
             <li className="nav-item">
               <a href="#products" className="nav-link cta-btn">Buy Online</a>

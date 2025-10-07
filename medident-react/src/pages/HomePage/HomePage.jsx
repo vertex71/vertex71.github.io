@@ -1,9 +1,11 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
+import { useCart } from '../../contexts/CartContext';
 import './HomePage.css';
 
 const HomePage = () => {
   const navigate = useNavigate();
+  const { addToCart } = useCart();
   
   const [currentQuestion, setCurrentQuestion] = useState(1);
   const [quizAnswers, setQuizAnswers] = useState({});
@@ -144,6 +146,32 @@ const HomePage = () => {
       ...prev,
       [productType]: variantIndex
     }));
+  };
+
+  // Add to cart function
+  const handleQuickAddToCart = (productType) => {
+    const productInfo = {
+      'sensitive-care': {
+        id: 'sensitive-care',
+        name: 'Medident Sensitive Care',
+        category: 'Sensitivity Relief',
+        image: '/assets/medident-4.png'
+      },
+      'gum-care': {
+        id: 'gum-care',
+        name: 'Medident-G Gum Care',
+        category: 'Gum Health',
+        image: '/assets/medident-5.png'
+      }
+    };
+
+    const product = productInfo[productType];
+    const variant = productVariants[productType][0]; // Always use 100g variant (index 0)
+
+    addToCart(product, variant, 1);
+    
+    // Navigate to cart page
+    navigate('/cart');
   };
 
   // Auto-play slider
@@ -315,7 +343,10 @@ const HomePage = () => {
                   <div className="size-info">100g tube</div>
                 </div>
                 <div className="product-actions">
-                  <button className="btn btn-primary btn-full">Quick Add to Cart</button>
+                  <button className="btn btn-primary btn-full" onClick={() => handleQuickAddToCart('sensitive-care')}>
+                    <i className="fas fa-shopping-cart"></i>
+                    Quick Add to Cart
+                  </button>
                   <button className="btn btn-secondary btn-outline" onClick={() => navigate('/product-details/sensitive-care')}>
                     View Details
                   </button>
@@ -353,7 +384,10 @@ const HomePage = () => {
                   <div className="size-info">100g tube</div>
                 </div>
                 <div className="product-actions">
-                  <button className="btn btn-primary btn-full">Quick Add to Cart</button>
+                  <button className="btn btn-primary btn-full" onClick={() => handleQuickAddToCart('gum-care')}>
+                    <i className="fas fa-shopping-cart"></i>
+                    Quick Add to Cart
+                  </button>
                   <button className="btn btn-secondary btn-outline" onClick={() => navigate('/product-details/gum-care')}>
                     View Details
                   </button>
