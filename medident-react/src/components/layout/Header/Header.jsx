@@ -16,6 +16,23 @@ const Header = () => {
     navigate('/cart');
   };
 
+  const handleNavClick = (sectionId) => {
+    if (window.location.pathname !== '/') {
+      navigate('/', { replace: true });
+      setTimeout(() => {
+        const element = document.getElementById(sectionId);
+        if (element) {
+          element.scrollIntoView({ behavior: 'smooth' });
+        }
+      }, 100);
+    } else {
+      const element = document.getElementById(sectionId);
+      if (element) {
+        element.scrollIntoView({ behavior: 'smooth' });
+      }
+    }
+  };
+
   return (
     <header className="header">
       <nav className="navbar">
@@ -27,10 +44,10 @@ const Header = () => {
           
           <ul className={`nav-menu ${isMenuOpen ? 'active' : ''}`}>
             <li className="nav-item">
-              <a href="#home" className="nav-link">Home</a>
+              <button onClick={() => handleNavClick('home')} className="nav-link">Home</button>
             </li>
             <li className="nav-item dropdown">
-              <a href="#products" className="nav-link">Products <i className="fas fa-chevron-down"></i></a>
+              <button onClick={() => handleNavClick('products')} className="nav-link">Products <i className="fas fa-chevron-down"></i></button>
               <div className="dropdown-content">
                 <div className="dropdown-section">
                   <h5>Our Products</h5>
@@ -63,7 +80,7 @@ const Header = () => {
               </div>
             </li>
             <li className="nav-item dropdown">
-              <a href="#sensitivity" className="nav-link">Oral Health <i className="fas fa-chevron-down"></i></a>
+              <button onClick={() => handleNavClick('sensitivity')} className="nav-link">Oral Health <i className="fas fa-chevron-down"></i></button>
               <div className="dropdown-content">
                 <a href="#sensitivity">Understanding Sensitivity</a>
                 <a href="#education">Dental Care Tips</a>
@@ -71,10 +88,10 @@ const Header = () => {
               </div>
             </li>
             <li className="nav-item">
-              <a href="#about" className="nav-link">About Us</a>
+              <button onClick={() => handleNavClick('about')} className="nav-link">About Us</button>
             </li>
             <li className="nav-item">
-              <a href="#contact" className="nav-link">Contact</a>
+              <button onClick={() => handleNavClick('contact')} className="nav-link">Contact</button>
             </li>
             <li className="nav-item">
               <button onClick={handleCartClick} className="cart-btn">
@@ -85,7 +102,7 @@ const Header = () => {
               </button>
             </li>
             <li className="nav-item">
-              <a href="#products" className="nav-link cta-btn">Buy Online</a>
+              <button onClick={() => handleNavClick('products')} className="nav-link cta-btn">Buy Online</button>
             </li>
           </ul>
           
