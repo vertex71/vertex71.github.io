@@ -190,7 +190,7 @@ const HomePage = () => {
                 <span className="badge featured">Most Popular</span>
               </div>
               <div className="product-image">
-                <img src="/assets/medident-sensetive-care.jpeg" alt="Medident Sensitive Care" />
+                <img src="/assets/medident-4.png" alt="Medident Sensitive Care" />
               </div>
               <div className="product-info">
                 <div className="product-category">Sensitivity Relief</div>
@@ -220,7 +220,7 @@ const HomePage = () => {
                 <span className="badge new">New Formula</span>
               </div>
               <div className="product-image">
-                <img src="/assets/medident-g.jpeg" alt="Medident-G Gum Care" />
+                <img src="/assets/medident-5.png" alt="Medident-G Gum Care" />
               </div>
               <div className="product-info">
                 <div className="product-category">Gum Health</div>
