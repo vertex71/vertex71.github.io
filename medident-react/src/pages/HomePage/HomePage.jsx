@@ -9,6 +9,11 @@ const HomePage = () => {
   // Hero slider state
   const [currentSlide, setCurrentSlide] = useState(0);
   
+  // Image modal state
+  const [showImageModal, setShowImageModal] = useState(false);
+  const [currentImageIndex, setCurrentImageIndex] = useState(0);
+  const [zoomLevel, setZoomLevel] = useState(1);
+  
   const heroSlides = [
     {
       id: 1,
@@ -44,6 +49,71 @@ const HomePage = () => {
       badge: "Made in Bangladesh"
     }
   ];
+
+  // Product image galleries
+  const productImageGalleries = {
+    'sensitive-care': [
+      '/assets/medident-4.png',
+      '/assets/medident-sensetive-care.jpeg',
+      '/assets/medident-4.png'
+    ],
+    'gum-care': [
+      '/assets/medident-5.png',
+      '/assets/medident-g.jpeg',
+      '/assets/medident-5.png'
+    ]
+  };
+
+  // Image modal functions
+  const openImageModal = (productType, imageIndex = 0) => {
+    setCurrentImageIndex(imageIndex);
+    setZoomLevel(1);
+    setShowImageModal(true);
+    document.body.style.overflow = 'hidden'; // Prevent background scrolling
+  };
+
+  const closeImageModal = () => {
+    setShowImageModal(false);
+    setZoomLevel(1);
+    document.body.style.overflow = 'unset';
+  };
+
+  const zoomIn = () => {
+    setZoomLevel(prev => Math.min(prev + 0.25, 3)); // Max zoom 3x
+  };
+
+  const zoomOut = () => {
+    setZoomLevel(prev => Math.max(prev - 0.25, 0.5)); // Min zoom 0.5x
+  };
+
+  const resetZoom = () => {
+    setZoomLevel(1);
+  };
+
+  const getCurrentImages = () => {
+    const currentProduct = currentImageIndex < 3 ? 'sensitive-care' : 'gum-care';
+    return productImageGalleries[currentProduct] || [];
+  };
+
+  const getAdjustedIndex = () => {
+    return currentImageIndex < 3 ? currentImageIndex : currentImageIndex - 3;
+  };
+
+  const nextImage = () => {
+    const currentImages = getCurrentImages();
+    const adjustedIndex = getAdjustedIndex();
+    const newIndex = (adjustedIndex + 1) % currentImages.length;
+    const baseIndex = currentImageIndex < 3 ? 0 : 3;
+    setCurrentImageIndex(baseIndex + newIndex);
+  };
+
+  const prevImage = () => {
+    const currentImages = getCurrentImages();
+    const adjustedIndex = getAdjustedIndex();
+    const newIndex = adjustedIndex === 0 ? currentImages.length - 1 : adjustedIndex - 1;
+    const baseIndex = currentImageIndex < 3 ? 0 : 3;
+    setCurrentImageIndex(baseIndex + newIndex);
+  };
 
   // Auto-play slider
   React.useEffect(() => {
@@ -189,7 +259,7 @@ const HomePage = () => {
               <div className="product-badge">
                 <span className="badge featured">Most Popular</span>
               </div>
-              <div className="product-image">
+              <div className="product-image" onClick={() => openImageModal('sensitive-care', 0)}>
                 <img src="/assets/medident-4.png" alt="Medident Sensitive Care" />
               </div>
               <div className="product-info">
@@ -219,7 +289,7 @@ const HomePage = () => {
               <div className="product-badge">
                 <span className="badge new">New Formula</span>
               </div>
-              <div className="product-image">
+              <div className="product-image" onClick={() => openImageModal('gum-care', 3)}>
                 <img src="/assets/medident-5.png" alt="Medident-G Gum Care" />
               </div>
               <div className="product-info">
@@ -753,6 +823,52 @@ const HomePage = () => {
           </div>
         </div>
       </section>
+
+      {/* Image Modal */}
+      {showImageModal && (
+        <div className="image-modal-overlay" onClick={closeImageModal}>
+          <div className="image-modal" onClick={e => e.stopPropagation()}>
+            <button className="modal-close" onClick={closeImageModal}>
+              <i className="fas fa-times"></i>
+            </button>
+            
+            <div className="image-container">
+              <img 
+                src={getCurrentImages()[getAdjustedIndex()]} 
+                alt="Product Image" 
+                style={{ transform: `scale(${zoomLevel})` }}
+                className="modal-image"
+              />
+            </div>
+            
+            <div className="image-controls">
+              <div className="zoom-controls">
+                <button className="control-btn" onClick={zoomOut} disabled={zoomLevel <= 0.5}>
+                  <i className="fas fa-minus"></i>
+                </button>
+                <button className="control-btn reset-btn" onClick={resetZoom}>
+                  <i className="fas fa-expand-arrows-alt"></i>
+                </button>
+                <button className="control-btn" onClick={zoomIn} disabled={zoomLevel >= 3}>
+                  <i className="fas fa-plus"></i>
+                </button>
+              </div>
+              
+              <div className="navigation-controls">
+                <button className="nav-control prev" onClick={prevImage}>
+                  <i className="fas fa-chevron-left"></i>
+                </button>
+                <span className="image-counter">
+                  {getAdjustedIndex() + 1} / {getCurrentImages().length}
+                </span>
+                <button className="nav-control next" onClick={nextImage}>
+                  <i className="fas fa-chevron-right"></i>
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      )}
     </div>
   );
 };

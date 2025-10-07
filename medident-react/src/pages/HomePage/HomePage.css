@@ -1998,13 +1998,287 @@ p {
     }
 }
 
+/* Image Modal Styles */
+.image-modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.9);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 10000;
+    backdrop-filter: blur(5px);
+}
+
+.image-modal {
+    position: relative;
+    max-width: 90vw;
+    max-height: 90vh;
+    background: var(--white);
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+    display: flex;
+    flex-direction: column;
+}
+
+.modal-close {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    width: 40px;
+    height: 40px;
+    background: rgba(255, 255, 255, 0.9);
+    border: none;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    z-index: 10001;
+    transition: all 0.3s ease;
+    color: var(--text-dark);
+    font-size: 1.2rem;
+}
+
+.modal-close:hover {
+    background: var(--white);
+    transform: scale(1.1);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+.image-container {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    background: var(--light-gray);
+    min-height: 400px;
+    max-height: 70vh;
+}
+
+.modal-image {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+    transition: transform 0.3s ease;
+    cursor: grab;
+}
+
+.modal-image:active {
+    cursor: grabbing;
+}
+
+.image-controls {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.5rem;
+    background: var(--white);
+    border-top: 1px solid var(--border-color);
+}
+
+.zoom-controls {
+    display: flex;
+    gap: 0.5rem;
+    align-items: center;
+}
+
+.control-btn {
+    width: 40px;
+    height: 40px;
+    border: 2px solid var(--primary-color);
+    background: var(--white);
+    color: var(--primary-color);
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-size: 1rem;
+}
+
+.control-btn:hover:not(:disabled) {
+    background: var(--primary-color);
+    color: var(--white);
+    transform: translateY(-2px);
+}
+
+.control-btn:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+    border-color: var(--border-color);
+    color: var(--text-light);
+}
+
+.reset-btn {
+    background: var(--secondary-color);
+    border-color: var(--secondary-color);
+    color: var(--white);
+}
+
+.reset-btn:hover {
+    background: #2ECC71;
+    border-color: #2ECC71;
+}
+
+.navigation-controls {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.nav-control {
+    width: 50px;
+    height: 50px;
+    background: var(--primary-color);
+    border: none;
+    border-radius: 50%;
+    color: var(--white);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-size: 1.2rem;
+}
+
+.nav-control:hover {
+    background: #2980B9;
+    transform: scale(1.1);
+    box-shadow: 0 4px 15px rgba(46, 134, 193, 0.4);
+}
+
+.image-counter {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 600;
+    color: var(--text-dark);
+    font-size: 1rem;
+    min-width: 60px;
+    text-align: center;
+}
+
+/* Add cursor pointer to product images */
+.product-image {
+    cursor: pointer;
+    position: relative;
+}
+
+.product-image::after {
+    content: '\f002';
+    font-family: 'Font Awesome 5 Free';
+    font-weight: 900;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background: rgba(46, 134, 193, 0.9);
+    color: white;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.8rem;
+    opacity: 0;
+    transition: all 0.3s ease;
+    transform: scale(0.8);
+}
+
+.product-image:hover::after {
+    opacity: 1;
+    transform: scale(1);
+}
+
+/* Mobile responsive for modal */
+@media (max-width: 768px) {
+    .image-modal {
+        max-width: 95vw;
+        max-height: 95vh;
+        margin: 1rem;
+    }
+    
+    .image-controls {
+        flex-direction: column;
+        gap: 1rem;
+        padding: 1rem;
+    }
+    
+    .zoom-controls {
+        order: 2;
+    }
+    
+    .navigation-controls {
+        order: 1;
+    }
+    
+    .control-btn {
+        width: 45px;
+        height: 45px;
+    }
+    
+    .nav-control {
+        width: 55px;
+        height: 55px;
+    }
+    
+    .modal-close {
+        top: 0.5rem;
+        right: 0.5rem;
+        width: 35px;
+        height: 35px;
+    }
+}
+
+@media (max-width: 480px) {
+    .image-modal {
+        border-radius: 12px;
+    }
+    
+    .image-container {
+        min-height: 300px;
+        max-height: 60vh;
+    }
+    
+    .zoom-controls {
+        gap: 0.25rem;
+    }
+    
+    .navigation-controls {
+        gap: 0.75rem;
+    }
+    
+    .control-btn {
+        width: 40px;
+        height: 40px;
+        font-size: 0.9rem;
+    }
+    
+    .nav-control {
+        width: 50px;
+        height: 50px;
+        font-size: 1.1rem;
+    }
+    
+    .image-counter {
+        font-size: 0.9rem;
+        min-width: 50px;
+    }
+}
+
 /* Print styles */
 @media print {
     .header,
     .footer,
     .floating-elements,
     .slider-nav,
-    .slider-dots {
+    .slider-dots,
+    .image-modal-overlay {
         display: none;
     }
     
