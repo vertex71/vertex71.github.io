@@ -1,0 +1,198 @@
+@import '../../../styles/variables';
+@import '../../../styles/mixins';
+
+.heroSlider {
+  position: relative;
+  height: 100vh;
+  min-height: 600px;
+  overflow: hidden;
+}
+
+.sliderContainer {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+.slide {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  transition: opacity 0.8s ease-in-out;
+  
+  &.active {
+    opacity: 1;
+  }
+  
+  &.slideSensitivity {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  }
+  
+  &.slideGumCare {
+    background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+  }
+  
+  &.slideComplete {
+    background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+  }
+}
+
+.heroContainer {
+  @include container;
+  height: 100%;
+  display: flex;
+  align-items: center;
+}
+
+.heroContent {
+  @include flex-between;
+  width: 100%;
+  gap: $spacing-xxl;
+  
+  @include mobile {
+    @include flex-column;
+    text-align: center;
+    gap: $spacing-xl;
+  }
+}
+
+.heroText {
+  flex: 1;
+  max-width: 600px;
+  color: $white;
+}
+
+.slideBadge {
+  margin-bottom: $spacing-md;
+}
+
+.badge {
+  background: rgba($white, 0.2);
+  color: $white;
+  padding: $spacing-xs $spacing-md;
+  border-radius: $border-radius-lg;
+  font-size: $font-size-sm;
+  font-weight: $font-weight-medium;
+  border: 1px solid rgba($white, 0.3);
+}
+
+.heroTitle {
+  @include h1;
+  color: $white;
+  margin-bottom: $spacing-md;
+  
+  @include mobile {
+    font-size: $font-size-3xl;
+  }
+}
+
+.heroSubtitle {
+  font-size: $font-size-xl;
+  margin-bottom: $spacing-md;
+  font-weight: $font-weight-medium;
+  
+  @include mobile {
+    font-size: $font-size-lg;
+  }
+}
+
+.heroDescription {
+  font-size: $font-size-lg;
+  margin-bottom: $spacing-xl;
+  opacity: 0.9;
+  line-height: 1.6;
+  
+  @include mobile {
+    font-size: $font-size-base;
+  }
+}
+
+.heroButtons {
+  display: flex;
+  gap: $spacing-md;
+  
+  @include mobile {
+    flex-direction: column;
+    align-items: center;
+  }
+}
+
+.heroImage {
+  flex: 1;
+  max-width: 500px;
+  text-align: center;
+}
+
+.productImage {
+  width: 100%;
+  max-width: 400px;
+  height: auto;
+  filter: drop-shadow(0 20px 40px rgba(0, 0, 0, 0.3));
+  
+  @include mobile {
+    max-width: 300px;
+  }
+}
+
+.sliderNav {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  right: 0;
+  transform: translateY(-50%);
+  display: flex;
+  justify-content: space-between;
+  padding: 0 $spacing-xl;
+  pointer-events: none;
+}
+
+.navBtn {
+  @include button-base;
+  background: rgba($white, 0.2);
+  border: 1px solid rgba($white, 0.3);
+  color: $white;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  pointer-events: all;
+  backdrop-filter: blur(10px);
+  
+  &:hover {
+    background: rgba($white, 0.3);
+    transform: scale(1.1);
+  }
+  
+  @include mobile {
+    width: 40px;
+    height: 40px;
+    font-size: $font-size-sm;
+  }
+}
+
+.sliderDots {
+  position: absolute;
+  bottom: $spacing-xl;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: $spacing-sm;
+}
+
+.dot {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  border: 2px solid rgba($white, 0.5);
+  background: transparent;
+  cursor: pointer;
+  transition: $transition-fast;
+  
+  &.active,
+  &:hover {
+    background: $white;
+    border-color: $white;
+  }
+}
