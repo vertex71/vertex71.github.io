@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { ShippingAddress } from '../../types/cart.types';
-import './ShippingForm.styles.css';
+import './ShippingForm.styles.scss';
 
 interface ShippingFormProps {
   onAddressChange: (address: ShippingAddress) => void;

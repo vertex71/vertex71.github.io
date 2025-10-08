@@ -1,0 +1,188 @@
+// Hero Section Styles - SCSS Version
+@import '../../../../styles/variables';
+@import '../../../../styles/mixins';
+
+.hero {
+  padding: 120px 0 80px;
+  background: linear-gradient(135deg, #EBF3FD 0%, #F8FBFF 100%);
+  overflow: hidden;
+  min-height: 70vh;
+  @include flex-center;
+}
+
+.heroContainer {
+  @include container;
+}
+
+.heroContent {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
+  align-items: center;
+
+  @include tablet {
+    grid-template-columns: 1fr;
+    gap: 3rem;
+    text-align: center;
+  }
+
+  @include mobile {
+    gap: 2rem;
+  }
+}
+
+.heroText {
+  z-index: 2;
+}
+
+.heroTitle {
+  font-family: $font-primary;
+  font-size: $font-size-4xl;
+  font-weight: $font-weight-bold;
+  color: $text-dark;
+  margin-bottom: 1.5rem;
+  line-height: 1.2;
+
+  @include tablet {
+    font-size: $font-size-3xl;
+  }
+
+  @include mobile {
+    font-size: $font-size-2xl;
+  }
+}
+
+.heroSubtitle {
+  font-size: $font-size-xl;
+  color: $text-light;
+  margin-bottom: 2rem;
+  line-height: 1.6;
+
+  @include mobile {
+    font-size: $font-size-lg;
+  }
+}
+
+.heroBadges {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 2rem;
+  flex-wrap: wrap;
+
+  @include mobile {
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+  }
+}
+
+.badge {
+  @include flex-center;
+  gap: 0.5rem;
+  padding: 0.5rem 1rem;
+  background: $white;
+  border-radius: 25px;
+  box-shadow: $shadow-light;
+  font-size: $font-size-sm;
+  font-weight: $font-weight-medium;
+  white-space: nowrap;
+
+  &.localBadge {
+    color: $accent-color;
+    
+    i {
+      color: $accent-color;
+    }
+  }
+
+  &.qualityBadge {
+    color: $secondary-color;
+    
+    i {
+      color: $secondary-color;
+    }
+  }
+}
+
+.heroButtons {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+
+  @include mobile {
+    flex-direction: column;
+    align-items: center;
+  }
+}
+
+.heroImage {
+  position: relative;
+  text-align: center;
+  z-index: 1;
+}
+
+.productImage {
+  max-width: 100%;
+  height: auto;
+  filter: drop-shadow(0 10px 30px rgba(0, 0, 0, 0.2));
+  max-height: 500px;
+}
+
+.floatingElements {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  pointer-events: none;
+}
+
+.floatElement {
+  position: absolute;
+  font-size: 2rem;
+  color: $primary-color;
+  animation: float 3s ease-in-out infinite;
+  opacity: 0.8;
+
+  &.tooth {
+    top: 20%;
+    left: 10%;
+    animation-delay: 0s;
+  }
+
+  &.shield {
+    top: 60%;
+    right: 10%;
+    animation-delay: 1s;
+  }
+
+  &.sparkle {
+    bottom: 20%;
+    left: 20%;
+    animation-delay: 2s;
+  }
+
+  @include mobile {
+    font-size: 1.5rem;
+  }
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-20px);
+  }
+}
+
+// Responsive Design
+@include mobile {
+  .hero {
+    padding: 100px 0 60px;
+  }
+
+  .heroContainer {
+    padding: 0 15px;
+  }
+}

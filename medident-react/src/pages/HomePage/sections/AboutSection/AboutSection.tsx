@@ -1,5 +1,5 @@
 import React from 'react';
-import styles from './AboutSection.module.css';
+import styles from './AboutSection.module.scss';
 import Button from '../../../../components/ui/Button/Button';
 
 const AboutSection = () => {

@@ -1,16 +1,29 @@
+// SCSS imports
+@import '../../styles/variables';
+@import '../../styles/mixins';
+.homePage {
+    width: 100%;
+}
+
+.section {
+    padding: 80px 0;
+}
+
+.sectionAlt {
+    background: $light-gray;
+}
+
+/* Hero Section */
 .hero {
     padding: 120px 0 80px;
     background: linear-gradient(135deg, #EBF3FD 0%, #F8FBFF 100%);
     overflow: hidden;
-    min-height: 70vh;
-    display: flex;
-    align-items: center;
 }
 
 .heroContainer {
-    max-width: 1200px;
+    max-width: $container-max-width;
     margin: 0 auto;
-    padding: 0 20px;
+    padding: 0 $container-padding;
 }
 
 .heroContent {
@@ -20,31 +33,24 @@
     align-items: center;
 }
 
-.heroText {
-    z-index: 2;
-}
-
-.heroTitle {
-    font-family: 'Poppins', sans-serif;
+.heroText h1 {
     font-size: 3rem;
     font-weight: 700;
-    color: var(--text-dark);
+    color: $text-dark;
     margin-bottom: 1.5rem;
     line-height: 1.2;
 }
 
 .heroSubtitle {
     font-size: 1.2rem;
-    color: var(--text-light);
+    color: $text-light;
     margin-bottom: 2rem;
-    line-height: 1.6;
 }
 
 .heroBadges {
     display: flex;
     gap: 1rem;
     margin-bottom: 2rem;
-    flex-wrap: wrap;
 }
 
 .badge {
@@ -52,47 +58,35 @@
     align-items: center;
     gap: 0.5rem;
     padding: 0.5rem 1rem;
-    background: var(--white);
+    background: $white;
     border-radius: 25px;
-    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    box-shadow: $shadow-light;
     font-size: 0.9rem;
     font-weight: 500;
-    white-space: nowrap;
 }
 
 .localBadge {
-    color: var(--accent-color);
-}
-
-.localBadge i {
-    color: var(--accent-color);
+    color: $accent-color;
 }
 
 .qualityBadge {
-    color: var(--secondary-color);
-}
-
-.qualityBadge i {
-    color: var(--secondary-color);
+    color: $secondary-color;
 }
 
 .heroButtons {
     display: flex;
     gap: 1rem;
-    flex-wrap: wrap;
 }
 
 .heroImage {
     position: relative;
     text-align: center;
-    z-index: 1;
 }
 
 .productImage {
     max-width: 100%;
     height: auto;
     filter: drop-shadow(0 10px 30px rgba(0,0,0,0.2));
-    max-height: 500px;
 }
 
 .floatingElements {
@@ -101,15 +95,13 @@
     left: 0;
     right: 0;
     bottom: 0;
-    pointer-events: none;
 }
 
 .floatElement {
     position: absolute;
     font-size: 2rem;
-    color: var(--primary-color);
+    color: $primary-color;
     animation: float 3s ease-in-out infinite;
-    opacity: 0.8;
 }
 
 .tooth { 
@@ -139,61 +131,51 @@
     }
 }
 
-/* Responsive Design */
-@media (max-width: 1023px) {
-    .heroContent {
-        grid-template-columns: 1fr;
-        gap: 3rem;
-        text-align: center;
-    }
-    
-    .heroTitle {
-        font-size: 2.5rem;
-    }
+/* Coming Soon Message */
+.comingSoon {
+    text-align: center;
+    padding: 4rem 0;
+    background: $light-gray;
 }
 
+.comingSoonTitle {
+    font-size: 2rem;
+    color: $primary-color;
+    margin-bottom: 1rem;
+}
+
+.comingSoonText {
+    font-size: 1.1rem;
+    color: $text-light;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+/* Responsive Design */
 @media (max-width: 767px) {
-    .hero {
-        padding: 100px 0 60px;
+    .heroContent {
+        grid-template-columns: 1fr;
+        gap: 2rem;
     }
 
-    .heroTitle {
+    .heroText h1 {
         font-size: 2rem;
-    }
-    
-    .heroSubtitle {
-        font-size: 1.1rem;
     }
 
     .heroButtons {
         flex-direction: column;
-        align-items: center;
     }
 
-    .heroBadges {
-        justify-content: center;
-    }
-    
-    .heroContent {
-        gap: 2rem;
-    }
-    
-    .floatElement {
-        font-size: 1.5rem;
-    }
-}
-
-@media (max-width: 480px) {
-    .heroContainer {
-        padding: 0 15px;
-    }
-    
-    .heroTitle {
-        font-size: 1.75rem;
-    }
-    
     .heroBadges {
         flex-direction: column;
         align-items: center;
+    }
+
+    .section {
+        padding: 60px 0;
+    }
+
+    .hero {
+        padding: 100px 0 60px;
     }
 }

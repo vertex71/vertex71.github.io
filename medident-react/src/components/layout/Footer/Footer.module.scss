@@ -1,6 +1,9 @@
+// SCSS imports
+@import '../../../styles/variables';
+@import '../../../styles/mixins';
 .footer {
-    background: var(--text-dark);
-    color: var(--white);
+    background: $text-dark;
+    color: $white;
     padding: 60px 0 20px;
     margin-top: auto;
 }
@@ -10,14 +13,14 @@
     grid-template-columns: 2fr 1fr 1fr 1fr;
     gap: 3rem;
     margin-bottom: 3rem;
-    max-width: var(--container-max-width);
+    max-width: $container-max-width;
     margin-left: auto;
     margin-right: auto;
-    padding: 0 var(--container-padding);
+    padding: 0 $container-padding;
 }
 
 .footerSection h4 {
-    color: var(--white);
+    color: $white;
     margin-bottom: 1rem;
     font-size: 1.1rem;
 }
@@ -35,8 +38,8 @@
 }
 
 .brandName {
-    color: var(--white);
-    font-family: var(--font-primary);
+    color: $white;
+    font-family: $font-primary;
     font-weight: 700;
     font-size: 1.5rem;
 }
@@ -55,18 +58,18 @@
 .socialLink {
     width: 40px;
     height: 40px;
-    background: var(--primary-color);
+    background: $primary-color;
     border-radius: 50%;
     display: flex;
     align-items: center;
     justify-content: center;
-    color: var(--white);
+    color: $white;
     text-decoration: none;
-    transition: var(--transition);
+    transition: $transition;
 }
 
 .socialLink:hover {
-    background: var(--secondary-color);
+    background: $secondary-color;
     transform: translateY(-2px);
 }
 
@@ -83,22 +86,22 @@
 .footerLinks a {
     color: #BDC3C7;
     text-decoration: none;
-    transition: var(--transition);
+    transition: $transition;
     padding: 0.25rem 0;
     display: block;
 }
 
 .footerLinks a:hover {
-    color: var(--primary-color);
+    color: $primary-color;
 }
 
 .footerBottom {
     border-top: 1px solid #34495E;
     padding-top: 2rem;
-    max-width: var(--container-max-width);
+    max-width: $container-max-width;
     margin: 0 auto;
-    padding-left: var(--container-padding);
-    padding-right: var(--container-padding);
+    padding-left: $container-padding;
+    padding-right: $container-padding;
 }
 
 .footerBottomContent {
@@ -115,11 +118,11 @@
 .footerBottomLinks a {
     color: #BDC3C7;
     text-decoration: none;
-    transition: var(--transition);
+    transition: $transition;
 }
 
 .footerBottomLinks a:hover {
-    color: var(--primary-color);
+    color: $primary-color;
 }
 
 /* Mobile Responsive */

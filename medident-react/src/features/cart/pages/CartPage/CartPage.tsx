@@ -3,7 +3,7 @@ import { useNavigate } from 'react-router-dom';
 import { useCart } from '../../../../contexts/CartContext';
 import { CartItem, CartSummary, ShippingForm } from '../../components/cart-components.exports';
 import { ShippingAddress } from '../../types/cart.types';
-import './CartPage.styles.css';
+import './CartPage.styles.scss';
 
 export const CartPage: React.FC = () => {
   const navigate = useNavigate();

@@ -1,3 +1,6 @@
+// SCSS imports
+@import '../../../../styles/variables';
+@import '../../../../styles/mixins';
 /* Button Base Styles */
 .btn {
     display: inline-flex;
@@ -42,7 +45,7 @@
 
 /* Button Variants */
 .btn--primary {
-    background: linear-gradient(135deg, var(--primary-color), #3498DB);
+    background: linear-gradient(135deg, $primary-color, #3498DB);
     color: white;
 }
 
@@ -52,7 +55,7 @@
 }
 
 .btn--secondary {
-    background: var(--secondary-color);
+    background: $secondary-color;
     color: white;
 }
 
@@ -64,22 +67,22 @@
 
 .btn--outline {
     background: transparent;
-    border: 2px solid var(--primary-color);
-    color: var(--primary-color);
+    border: 2px solid $primary-color;
+    color: $primary-color;
 }
 
 .btn--outline:hover:not(:disabled) {
-    background: var(--primary-color);
+    background: $primary-color;
     color: white;
 }
 
 .btn--ghost {
     background: transparent;
-    color: var(--text-dark);
+    color: $text-dark;
 }
 
 .btn--ghost:hover:not(:disabled) {
-    background: var(--light-gray);
+    background: $light-gray;
 }
 
 /* Button Sizes */
