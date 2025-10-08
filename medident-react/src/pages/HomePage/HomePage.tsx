@@ -885,7 +885,7 @@ const HomePage = () => {
                   <input type="tel" className="form-input" placeholder="Phone Number" />
                 </div>
                 <div className="form-group">
-                  <textarea className="form-input" rows="5" placeholder="Your Message" required></textarea>
+                  <textarea className="form-input" rows={5} placeholder="Your Message" required></textarea>
                 </div>
                 <button type="submit" className="btn btn-primary btn-full">Send Message</button>
               </form>

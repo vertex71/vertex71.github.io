@@ -222,7 +222,7 @@ const Cart = () => {
                     value={shippingAddress.address}
                     onChange={(e) => handleShippingAddressChange('address', e.target.value)}
                     placeholder="House/Flat number, Street name"
-                    rows="3"
+                    rows={3}
                     required
                   ></textarea>
                 </div>

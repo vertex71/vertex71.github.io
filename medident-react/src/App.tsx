@@ -8,7 +8,7 @@ import ProductDetails from './pages/ProductDetails/ProductDetails';
 import Cart from './pages/Cart/Cart';
 import './App.css';
 
-function App() {
+const App: React.FC = () => {
   return (
     <CartProvider>
       <Router>
@@ -26,6 +26,6 @@ function App() {
       </Router>
     </CartProvider>
   );
-}
+};
 
 export default App;

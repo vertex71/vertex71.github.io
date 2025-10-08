@@ -1,4 +1,27 @@
-export const quizQuestions = [
+// Quiz type definitions
+export interface QuizOption {
+  value: string;
+  text: string;
+}
+
+export interface QuizQuestion {
+  id: number;
+  question: string;
+  options: QuizOption[];
+}
+
+export interface QuizResult {
+  level: string;
+  title: string;
+  message: string;
+  color: string;
+  recommendation: {
+    message: string;
+    product?: string;
+  };
+}
+
+export const quizQuestions: QuizQuestion[] = [
   {
     id: 1,
     question: 'Do you experience sharp pain when eating ice cream or drinking hot beverages?',
@@ -28,7 +51,7 @@ export const quizQuestions = [
   }
 ];
 
-export const quizResults = {
+export const quizResults: Record<string, QuizResult> = {
   high: {
     level: 'high',
     title: 'High Sensitivity Detected',
@@ -61,7 +84,7 @@ export const quizResults = {
   }
 };
 
-export const calculateSensitivityLevel = (answers) => {
+export const calculateSensitivityLevel = (answers: Record<number, string>): string => {
   const yesCount = Object.values(answers).filter(answer => answer === 'yes').length;
   const sometimesCount = Object.values(answers).filter(answer => answer === 'sometimes').length;
   

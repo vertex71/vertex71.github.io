@@ -1,13 +1,13 @@
 import { CURRENCY, VALIDATION_RULES } from './constants';
 
 // Format currency
-export const formatCurrency = (amount, currency = CURRENCY) => {
+export const formatCurrency = (amount: number, currency: string = CURRENCY): string => {
   return `${currency}${amount}`;
 };
 
 // Format date
-export const formatDate = (date, options = {}) => {
-  const defaultOptions = {
+export const formatDate = (date: string | Date, options: Intl.DateTimeFormatOptions = {}): string => {
+  const defaultOptions: Intl.DateTimeFormatOptions = {
     year: 'numeric',
     month: 'long',
     day: 'numeric',
@@ -18,9 +18,9 @@ export const formatDate = (date, options = {}) => {
 };
 
 // Format relative time (e.g., "2 weeks ago")
-export const formatRelativeTime = (date) => {
+export const formatRelativeTime = (date: string | Date): string => {
   const now = new Date();
-  const diffTime = Math.abs(now - new Date(date));
+  const diffTime = Math.abs(now.getTime() - new Date(date).getTime());
   const diffDays = Math.ceil(diffTime / (1000 * 60 * 60 * 24));
   
   if (diffDays === 0) return 'Today';
@@ -32,14 +32,14 @@ export const formatRelativeTime = (date) => {
 };
 
 // Generate unique ID
-export const generateId = () => {
+export const generateId = (): string => {
   return Math.random().toString(36).substr(2, 9);
 };
 
 // Debounce function
-export const debounce = (func, wait) => {
-  let timeout;
-  return function executedFunction(...args) {
+export const debounce = (func: Function, wait: number) => {
+  let timeout: NodeJS.Timeout;
+  return function executedFunction(...args: any[]) {
     const later = () => {
       clearTimeout(timeout);
       func(...args);
@@ -50,9 +50,9 @@ export const debounce = (func, wait) => {
 };
 
 // Throttle function
-export const throttle = (func, limit) => {
-  let inThrottle;
-  return function(...args) {
+export const throttle = (func: Function, limit: number) => {
+  let inThrottle: boolean;
+  return function(...args: any[]) {
     if (!inThrottle) {
       func.apply(this, args);
       inThrottle = true;
@@ -62,7 +62,7 @@ export const throttle = (func, limit) => {
 };
 
 // Smooth scroll to element
-export const scrollToElement = (elementId, offset = 0) => {
+export const scrollToElement = (elementId: string, offset: number = 0): void => {
   const element = document.getElementById(elementId.replace('#', ''));
   if (element) {
     const top = element.offsetTop - offset;
@@ -74,27 +74,27 @@ export const scrollToElement = (elementId, offset = 0) => {
 };
 
 // Validate email
-export const validateEmail = (email) => {
+export const validateEmail = (email: string): boolean => {
   return VALIDATION_RULES.EMAIL_REGEX.test(email);
 };
 
 // Validate phone (Bangladesh format)
-export const validatePhone = (phone) => {
+export const validatePhone = (phone: string): boolean => {
   return VALIDATION_RULES.PHONE_REGEX.test(phone);
 };
 
 // Validate required field
-export const validateRequired = (value, minLength = 1) => {
+export const validateRequired = (value: string, minLength: number = 1): boolean => {
   return value && value.trim().length >= minLength;
 };
 
 // Calculate discount percentage
-export const calculateDiscount = (originalPrice, salePrice) => {
+export const calculateDiscount = (originalPrice: number, salePrice: number): number => {
   return Math.round(((originalPrice - salePrice) / originalPrice) * 100);
 };
 
 // Format file size
-export const formatFileSize = (bytes) => {
+export const formatFileSize = (bytes: number): string => {
   if (bytes === 0) return '0 Bytes';
   
   const k = 1024;
@@ -105,13 +105,13 @@ export const formatFileSize = (bytes) => {
 };
 
 // Truncate text
-export const truncateText = (text, maxLength) => {
+export const truncateText = (text: string, maxLength: number): string => {
   if (text.length <= maxLength) return text;
   return text.substr(0, maxLength) + '...';
 };
 
 // Convert to slug
-export const toSlug = (text) => {
+export const toSlug = (text: string): string => {
   return text
     .toLowerCase()
     .replace(/[^\w ]+/g, '')
@@ -119,27 +119,27 @@ export const toSlug = (text) => {
 };
 
 // Capitalize first letter
-export const capitalize = (text) => {
+export const capitalize = (text: string): string => {
   return text.charAt(0).toUpperCase() + text.slice(1);
 };
 
 // Deep clone object
-export const deepClone = (obj) => {
+export const deepClone = <T>(obj: T): T => {
   return JSON.parse(JSON.stringify(obj));
 };
 
 // Check if object is empty
-export const isEmpty = (obj) => {
+export const isEmpty = (obj: object): boolean => {
   return Object.keys(obj).length === 0;
 };
 
 // Get random item from array
-export const getRandomItem = (array) => {
+export const getRandomItem = <T>(array: T[]): T => {
   return array[Math.floor(Math.random() * array.length)];
 };
 
 // Shuffle array
-export const shuffleArray = (array) => {
+export const shuffleArray = <T>(array: T[]): T[] => {
   const shuffled = [...array];
   for (let i = shuffled.length - 1; i > 0; i--) {
     const j = Math.floor(Math.random() * (i + 1));
@@ -149,29 +149,29 @@ export const shuffleArray = (array) => {
 };
 
 // Check if user is on mobile device
-export const isMobile = () => {
+export const isMobile = (): boolean => {
   return window.innerWidth < 768;
 };
 
 // Check if user is on tablet device
-export const isTablet = () => {
+export const isTablet = (): boolean => {
   return window.innerWidth >= 768 && window.innerWidth < 1024;
 };
 
 // Check if user is on desktop device
-export const isDesktop = () => {
+export const isDesktop = (): boolean => {
   return window.innerWidth >= 1024;
 };
 
 // Get device type
-export const getDeviceType = () => {
+export const getDeviceType = (): string => {
   if (isMobile()) return 'mobile';
   if (isTablet()) return 'tablet';
   return 'desktop';
 };
 
 // Format rating to stars
-export const formatRating = (rating, maxRating = 5) => {
+export const formatRating = (rating: number, maxRating: number = 5) => {
   const fullStars = Math.floor(rating);
   const hasHalfStar = rating % 1 !== 0;
   const emptyStars = maxRating - fullStars - (hasHalfStar ? 1 : 0);
@@ -185,14 +185,14 @@ export const formatRating = (rating, maxRating = 5) => {
 };
 
 // Calculate total cart value
-export const calculateCartTotal = (items) => {
+export const calculateCartTotal = (items: any[]): number => {
   return items.reduce((total, item) => {
     return total + (item.price * item.quantity);
   }, 0);
 };
 
 // Calculate total cart items
-export const calculateCartItemCount = (items) => {
+export const calculateCartItemCount = (items: any[]): number => {
   return items.reduce((total, item) => {
     return total + item.quantity;
   }, 0);

@@ -3,8 +3,8 @@ import { useNavigate } from 'react-router-dom';
 import { useCart } from '../../../contexts/CartContext';
 import './Header.css';
 
-const Header = () => {
-  const [isMenuOpen, setIsMenuOpen] = useState(false);
+const Header: React.FC = () => {
+  const [isMenuOpen, setIsMenuOpen] = useState<boolean>(false);
   const navigate = useNavigate();
   const { getTotalItems } = useCart();
 
@@ -16,7 +16,7 @@ const Header = () => {
     navigate('/cart');
   };
 
-  const handleNavClick = (sectionId) => {
+  const handleNavClick = (sectionId: string) => {
     if (window.location.pathname !== '/') {
       navigate('/', { replace: true });
       setTimeout(() => {

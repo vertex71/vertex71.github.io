@@ -1,8 +1,27 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 import styles from './Button.module.css';
 
-const Button = ({
+interface ButtonProps {
+  children: React.ReactNode;
+  variant?: 'primary' | 'secondary' | 'outline' | 'ghost' | 'success' | 'warning' | 'danger';
+  size?: 'small' | 'medium' | 'large' | 'xlarge';
+  fullWidth?: boolean;
+  loading?: boolean;
+  disabled?: boolean;
+  rounded?: boolean;
+  iconOnly?: boolean;
+  leftIcon?: string;
+  rightIcon?: string;
+  onClick?: (e: React.MouseEvent<HTMLButtonElement | HTMLAnchorElement>) => void;
+  type?: 'button' | 'submit' | 'reset';
+  className?: string;
+  href?: string;
+  target?: string;
+  rel?: string;
+  [key: string]: any;
+}
+
+const Button: React.FC<ButtonProps> = ({
   children,
   variant = 'primary',
   size = 'medium',
@@ -11,8 +30,8 @@ const Button = ({
   disabled = false,
   rounded = false,
   iconOnly = false,
-  leftIcon = null,
-  rightIcon = null,
+  leftIcon,
+  rightIcon,
   onClick,
   type = 'button',
   className = '',
@@ -32,7 +51,7 @@ const Button = ({
     className
   ].filter(Boolean).join(' ');
 
-  const handleClick = (e) => {
+  const handleClick = (e: React.MouseEvent<HTMLButtonElement | HTMLAnchorElement>) => {
     if (loading || disabled) {
       e.preventDefault();
       return;
@@ -78,7 +97,7 @@ const Button = ({
       className={baseClasses}
       onClick={handleClick}
       disabled={disabled || loading}
-      aria-label={iconOnly ? children : undefined}
+      aria-label={iconOnly ? String(children) : undefined}
       {...props}
     >
       {buttonContent}
@@ -86,31 +105,5 @@ const Button = ({
   );
 };
 
-Button.propTypes = {
-  children: PropTypes.node.isRequired,
-  variant: PropTypes.oneOf([
-    'primary',
-    'secondary',
-    'outline',
-    'ghost',
-    'success',
-    'warning',
-    'danger'
-  ]),
-  size: PropTypes.oneOf(['small', 'medium', 'large', 'xlarge']),
-  fullWidth: PropTypes.bool,
-  loading: PropTypes.bool,
-  disabled: PropTypes.bool,
-  rounded: PropTypes.bool,
-  iconOnly: PropTypes.bool,
-  leftIcon: PropTypes.string,
-  rightIcon: PropTypes.string,
-  onClick: PropTypes.func,
-  type: PropTypes.oneOf(['button', 'submit', 'reset']),
-  className: PropTypes.string,
-  href: PropTypes.string,
-  target: PropTypes.string,
-  rel: PropTypes.string
-};
 
 export default Button;

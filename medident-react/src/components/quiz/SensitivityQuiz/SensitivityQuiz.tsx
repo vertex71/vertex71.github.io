@@ -1,19 +1,19 @@
 import React, { useState } from 'react';
 import styles from './SensitivityQuiz.module.css';
-import Button from '../../ui/Button';
+import Button from '../../ui/Button/Button';
 import { quizQuestions, quizResults, calculateSensitivityLevel } from '../../../data/quizQuestions';
 import { products } from '../../../data/products';
-import { useCart } from '../../../context/CartContext';
+import { useCart } from '../../../contexts/CartContext';
 
-const SensitivityQuiz = () => {
-  const [currentQuestion, setCurrentQuestion] = useState(0);
-  const [answers, setAnswers] = useState({});
-  const [selectedOption, setSelectedOption] = useState('');
-  const [showResult, setShowResult] = useState(false);
-  const [result, setResult] = useState(null);
-  const { addItem } = useCart();
+const SensitivityQuiz: React.FC = () => {
+  const [currentQuestion, setCurrentQuestion] = useState<number>(0);
+  const [answers, setAnswers] = useState<Record<number, string>>({});
+  const [selectedOption, setSelectedOption] = useState<string>('');
+  const [showResult, setShowResult] = useState<boolean>(false);
+  const [result, setResult] = useState<any>(null);
+  const { addToCart } = useCart();
 
-  const handleOptionSelect = (value) => {
+  const handleOptionSelect = (value: string) => {
     setSelectedOption(value);
   };
 
@@ -53,14 +53,20 @@ const SensitivityQuiz = () => {
 
   const handleAddToCart = () => {
     const mainProduct = products[0];
-    if (mainProduct) {
-      addItem({
+    if (mainProduct && mainProduct.variants && mainProduct.variants[0]) {
+      const product = {
         id: mainProduct.id,
         name: mainProduct.name,
-        price: mainProduct.price,
-        image: mainProduct.images.main,
-        quantity: 1
-      });
+        category: mainProduct.category,
+        image: mainProduct.images.main
+      };
+      const variant = {
+        size: mainProduct.variants[0].size,
+        price: mainProduct.variants[0].price,
+        originalPrice: mainProduct.originalPrice,
+        discount: mainProduct.discount ? `${mainProduct.discount}%` : undefined
+      };
+      addToCart(product, variant, 1);
     }
   };
 

@@ -1,4 +1,33 @@
-export const navigationItems = [
+// Navigation type definitions
+export interface NavigationChild {
+  id: string;
+  label: string;
+  path: string;
+}
+
+export interface NavigationItem {
+  id: string;
+  label: string;
+  path: string;
+  type: 'link' | 'dropdown' | 'cta';
+  icon?: string;
+  className?: string;
+  children?: NavigationChild[];
+}
+
+export interface FooterLink {
+  label: string;
+  path: string;
+}
+
+export interface SocialLink {
+  id: string;
+  label: string;
+  url: string;
+  icon: string;
+}
+
+export const navigationItems: NavigationItem[] = [
   {
     id: 'home',
     label: 'Home',
@@ -74,7 +103,7 @@ export const navigationItems = [
   }
 ];
 
-export const footerLinks = {
+export const footerLinks: Record<string, FooterLink[]> = {
   products: [
     { label: 'Medident Sensitive Care', path: '/products/medident-sensitive-care' },
     { label: 'Product Benefits', path: '/#benefits' },
@@ -100,7 +129,7 @@ export const footerLinks = {
   ]
 };
 
-export const socialLinks = [
+export const socialLinks: SocialLink[] = [
   {
     id: 'facebook',
     label: 'Facebook',

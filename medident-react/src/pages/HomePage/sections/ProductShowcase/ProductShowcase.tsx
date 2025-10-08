@@ -1,24 +1,30 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import styles from './ProductShowcase.module.css';
-import Button from '../../../../components/ui/Button';
+import Button from '../../../../components/ui/Button/Button';
 import { products, relatedProducts } from '../../../../data/products';
-import { useCart } from '../../../../context/CartContext';
+import { useCart } from '../../../../contexts/CartContext';
 import { CURRENCY } from '../../../../utils/constants';
 
 const ProductShowcase = () => {
-  const { addItem } = useCart();
+  const { addToCart } = useCart();
   const mainProduct = products[0]; // Medident Sensitive Care
 
   const handleAddToCart = () => {
-    if (mainProduct) {
-      addItem({
+    if (mainProduct && mainProduct.variants && mainProduct.variants[0]) {
+      const product = {
         id: mainProduct.id,
         name: mainProduct.name,
-        price: mainProduct.price,
-        image: mainProduct.images.main,
-        quantity: 1
-      });
+        category: mainProduct.category,
+        image: mainProduct.images.main
+      };
+      const variant = {
+        size: mainProduct.variants[0].size,
+        price: mainProduct.variants[0].price,
+        originalPrice: mainProduct.originalPrice,
+        discount: mainProduct.discount ? `${mainProduct.discount}%` : undefined
+      };
+      addToCart(product, variant, 1);
     }
   };
 

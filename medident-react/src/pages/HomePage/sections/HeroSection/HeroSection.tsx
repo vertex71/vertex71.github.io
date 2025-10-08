@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import styles from './HeroSection.module.css';
-import Button from '../../../../components/ui/Button';
+import Button from '../../../../components/ui/Button/Button';
 import { IMAGE_PATHS } from '../../../../utils/constants';
 
 const HeroSection = () => {

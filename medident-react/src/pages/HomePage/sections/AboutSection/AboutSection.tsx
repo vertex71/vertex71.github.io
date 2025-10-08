@@ -1,6 +1,6 @@
 import React from 'react';
 import styles from './AboutSection.module.css';
-import Button from '../../../../components/ui/Button';
+import Button from '../../../../components/ui/Button/Button';
 
 const AboutSection = () => {
   const features = [
