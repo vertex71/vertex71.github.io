@@ -276,11 +276,14 @@
     flex-direction: column;
     background-color: $white;
     width: 100%;
+    height: calc(100vh - #{$header-height});
     text-align: center;
     transition: 0.3s;
     box-shadow: 0 10px 27px rgba(0, 0, 0, 0.05);
     gap: 0;
     padding: 2rem 0;
+    overflow-y: auto;
+    z-index: 999;
 
     &.active {
       left: 0;
@@ -297,12 +300,30 @@
 
   .dropdown-content {
     position: static;
-    opacity: 1;
-    visibility: visible;
+    opacity: 0;
+    visibility: hidden;
     transform: none;
     box-shadow: none;
     background: $light-gray;
-    margin-top: 1rem;
+    margin-top: 0;
+    max-height: 0;
+    overflow: hidden;
+    transition: all 0.3s ease;
+    
+    &.active {
+      opacity: 1;
+      visibility: visible;
+      max-height: 300px;
+      margin-top: 1rem;
+    }
+  }
+  
+  .fa-chevron-down {
+    transition: transform 0.3s ease;
+    
+    &.open {
+      transform: rotate(180deg);
+    }
   }
 
   .nav-container {
