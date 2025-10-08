@@ -1,5 +1,5 @@
 import React from 'react';
-import styles from './EducationSection.module.css';
+import styles from './EducationSection.module.scss';
 
 const EducationSection = () => {
   const educationCards = [

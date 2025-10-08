@@ -1,3 +1,6 @@
+// SCSS imports
+@import 'styles/variables';
+@import 'styles/mixins';
 .app {
     display: flex;
     flex-direction: column;
@@ -20,8 +23,8 @@
 .loadingSpinner {
     width: 40px;
     height: 40px;
-    border: 4px solid var(--border-color);
-    border-top: 4px solid var(--primary-color);
+    border: 4px solid $border-color;
+    border-top: 4px solid $primary-color;
     border-radius: 50%;
     animation: spin 1s linear infinite;
 }
@@ -44,18 +47,18 @@
 
 .errorIcon {
     font-size: 4rem;
-    color: var(--accent-color);
+    color: $accent-color;
     margin-bottom: 1rem;
 }
 
 .errorTitle {
     font-size: 1.5rem;
-    color: var(--text-dark);
+    color: $text-dark;
     margin-bottom: 0.5rem;
 }
 
 .errorMessage {
-    color: var(--text-light);
+    color: $text-light;
     margin-bottom: 2rem;
 }
 

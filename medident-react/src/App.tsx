@@ -6,7 +6,7 @@ import Footer from './components/layout/Footer/footer-component.exports';
 import HomePage from './pages/HomePage/home-page.exports';
 import ProductDetails from './pages/ProductDetails/ProductDetails';
 import Cart from './pages/Cart/Cart';
-import './App.css';
+import './App.scss';
 
 const App: React.FC = () => {
   return (

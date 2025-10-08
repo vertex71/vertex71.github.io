@@ -1,3 +1,6 @@
+// SCSS imports
+@import '../../styles/variables';
+@import '../../styles/mixins';
 /* Reset and Base Styles */
 * {
     margin: 0;
@@ -45,7 +48,7 @@ body {
 h1, h2, h3, h4, h5, h6 {
     font-family: 'Poppins', sans-serif;
     font-weight: 600;
-    color: var(--text-dark);
+    color: $text-dark;
     margin-bottom: 1rem;
 }
 
@@ -56,7 +59,7 @@ h4 { font-size: 1.25rem; }
 
 p {
     margin-bottom: 1rem;
-    color: var(--text-light);
+    color: $text-light;
 }
 
 /* Buttons */
@@ -64,34 +67,34 @@ p {
     display: inline-block;
     padding: 12px 24px;
     border: none;
-    border-radius: var(--border-radius);
+    border-radius: $border-radius;
     font-weight: 500;
     text-decoration: none;
     text-align: center;
     cursor: pointer;
-    transition: var(--transition);
+    transition: $transition;
     font-size: 1rem;
 }
 
 .btn-primary {
-    background: linear-gradient(135deg, var(--primary-color), #3498DB);
-    color: var(--white);
+    background: linear-gradient(135deg, $primary-color, #3498DB);
+    color: $white;
 }
 
 .btn-primary:hover {
     transform: translateY(-2px);
-    box-shadow: var(--shadow-medium);
+    box-shadow: $shadow-medium;
 }
 
 .btn-secondary {
     background: transparent;
-    color: var(--primary-color);
-    border: 2px solid var(--primary-color);
+    color: $primary-color;
+    border: 2px solid $primary-color;
 }
 
 .btn-secondary:hover {
-    background: var(--primary-color);
-    color: var(--white);
+    background: $primary-color;
+    color: $white;
 }
 
 .btn-large {
@@ -105,8 +108,8 @@ p {
 
 /* Header */
 .header {
-    background: var(--white);
-    box-shadow: var(--shadow-light);
+    background: $white;
+    box-shadow: $shadow-light;
     position: fixed;
     top: 0;
     left: 0;
@@ -142,7 +145,7 @@ p {
     font-family: 'Poppins', sans-serif;
     font-weight: 700;
     font-size: 1.5rem;
-    color: var(--primary-color);
+    color: $primary-color;
 }
 
 .nav-menu {
@@ -154,23 +157,23 @@ p {
 
 .nav-link {
     text-decoration: none;
-    color: var(--text-dark);
+    color: $text-dark;
     font-weight: 500;
-    transition: var(--transition);
+    transition: $transition;
     display: flex;
     align-items: center;
     gap: 5px;
 }
 
 .nav-link:hover {
-    color: var(--primary-color);
+    color: $primary-color;
 }
 
 .cta-btn {
-    background: linear-gradient(135deg, var(--primary-color), #3498DB);
-    color: var(--white) !important;
+    background: linear-gradient(135deg, $primary-color, #3498DB);
+    color: $white !important;
     padding: 10px 20px;
-    border-radius: var(--border-radius);
+    border-radius: $border-radius;
 }
 
 /* Dropdown */
@@ -182,15 +185,15 @@ p {
     position: absolute;
     top: 100%;
     left: 0;
-    background: var(--white);
+    background: $white;
     min-width: 200px;
-    box-shadow: var(--shadow-medium);
-    border-radius: var(--border-radius);
+    box-shadow: $shadow-medium;
+    border-radius: $border-radius;
     padding: 1rem 0;
     opacity: 0;
     visibility: hidden;
     transform: translateY(-10px);
-    transition: var(--transition);
+    transition: $transition;
 }
 
 .dropdown:hover .dropdown-content {
@@ -202,14 +205,14 @@ p {
 .dropdown-content a {
     display: block;
     padding: 0.5rem 1rem;
-    color: var(--text-dark);
+    color: $text-dark;
     text-decoration: none;
-    transition: var(--transition);
+    transition: $transition;
 }
 
 .dropdown-content a:hover {
-    background: var(--light-gray);
-    color: var(--primary-color);
+    background: $light-gray;
+    color: $primary-color;
 }
 
 /* Mobile Menu */
@@ -222,9 +225,9 @@ p {
 .bar {
     width: 25px;
     height: 3px;
-    background: var(--text-dark);
+    background: $text-dark;
     margin: 3px 0;
-    transition: var(--transition);
+    transition: $transition;
 }
 
 /* Hero Section */
@@ -250,14 +253,14 @@ p {
 .hero-title {
     font-size: 3rem;
     font-weight: 700;
-    color: var(--text-dark);
+    color: $text-dark;
     margin-bottom: 1.5rem;
     line-height: 1.2;
 }
 
 .hero-subtitle {
     font-size: 1.2rem;
-    color: var(--text-light);
+    color: $text-light;
     margin-bottom: 2rem;
 }
 
@@ -272,19 +275,19 @@ p {
     align-items: center;
     gap: 0.5rem;
     padding: 0.5rem 1rem;
-    background: var(--white);
+    background: $white;
     border-radius: 25px;
-    box-shadow: var(--shadow-light);
+    box-shadow: $shadow-light;
     font-size: 0.9rem;
     font-weight: 500;
 }
 
 .local-badge {
-    color: var(--accent-color);
+    color: $accent-color;
 }
 
 .quality-badge {
-    color: var(--secondary-color);
+    color: $secondary-color;
 }
 
 .hero-buttons {
@@ -314,7 +317,7 @@ p {
 .float-element {
     position: absolute;
     font-size: 2rem;
-    color: var(--primary-color);
+    color: $primary-color;
     animation: float 3s ease-in-out infinite;
 }
 
@@ -335,19 +338,19 @@ p {
 
 .section-title {
     font-size: 2.5rem;
-    color: var(--text-dark);
+    color: $text-dark;
     margin-bottom: 1rem;
 }
 
 .section-subtitle {
     font-size: 1.2rem;
-    color: var(--text-light);
+    color: $text-light;
 }
 
 /* Product Showcase */
 .product-showcase {
     padding: 80px 0;
-    background: var(--white);
+    background: $white;
 }
 
 .product-card {
@@ -355,10 +358,10 @@ p {
     grid-template-columns: 1fr 1fr;
     gap: 3rem;
     align-items: center;
-    background: var(--white);
+    background: $white;
     border-radius: 16px;
     padding: 3rem;
-    box-shadow: var(--shadow-medium);
+    box-shadow: $shadow-medium;
 }
 
 .product-image img {
@@ -368,13 +371,13 @@ p {
 
 .product-name {
     font-size: 2rem;
-    color: var(--text-dark);
+    color: $text-dark;
     margin-bottom: 1rem;
 }
 
 .product-description {
     font-size: 1.1rem;
-    color: var(--text-light);
+    color: $text-light;
     margin-bottom: 2rem;
 }
 
@@ -388,23 +391,23 @@ p {
     align-items: center;
     gap: 0.5rem;
     margin-bottom: 0.5rem;
-    color: var(--text-dark);
+    color: $text-dark;
 }
 
 .product-benefits i {
-    color: var(--secondary-color);
+    color: $secondary-color;
 }
 
 .product-price {
     font-size: 1.5rem;
     font-weight: 600;
-    color: var(--primary-color);
+    color: $primary-color;
     margin-bottom: 1.5rem;
 }
 
 .original-price {
     text-decoration: line-through;
-    color: var(--text-light);
+    color: $text-light;
     font-size: 1rem;
     margin-left: 0.5rem;
 }
@@ -412,16 +415,16 @@ p {
 /* Sensitivity Quiz */
 .sensitivity-quiz {
     padding: 80px 0;
-    background: linear-gradient(135deg, var(--light-gray), #FFFFFF);
+    background: linear-gradient(135deg, $light-gray, #FFFFFF);
 }
 
 .quiz-container {
     max-width: 800px;
     margin: 0 auto;
-    background: var(--white);
+    background: $white;
     border-radius: 16px;
     padding: 3rem;
-    box-shadow: var(--shadow-medium);
+    box-shadow: $shadow-medium;
 }
 
 .quiz-header {
@@ -430,7 +433,7 @@ p {
 }
 
 .quiz-header h2 {
-    color: var(--primary-color);
+    color: $primary-color;
     margin-bottom: 1rem;
 }
 
@@ -446,7 +449,7 @@ p {
 .quiz-question h3 {
     font-size: 1.3rem;
     margin-bottom: 2rem;
-    color: var(--text-dark);
+    color: $text-dark;
 }
 
 .quiz-options {
@@ -458,23 +461,23 @@ p {
 
 .quiz-option {
     padding: 1rem;
-    border: 2px solid var(--border-color);
-    border-radius: var(--border-radius);
-    background: var(--white);
+    border: 2px solid $border-color;
+    border-radius: $border-radius;
+    background: $white;
     cursor: pointer;
-    transition: var(--transition);
+    transition: $transition;
     font-size: 1rem;
 }
 
 .quiz-option:hover {
-    border-color: var(--primary-color);
+    border-color: $primary-color;
     background: #EBF3FD;
 }
 
 .quiz-option.selected {
-    border-color: var(--primary-color);
-    background: var(--primary-color);
-    color: var(--white);
+    border-color: $primary-color;
+    background: $primary-color;
+    color: $white;
 }
 
 .quiz-navigation {
@@ -495,9 +498,9 @@ p {
     display: flex;
     align-items: center;
     gap: 2rem;
-    background: var(--light-gray);
+    background: $light-gray;
     padding: 2rem;
-    border-radius: var(--border-radius);
+    border-radius: $border-radius;
     margin-top: 2rem;
 }
 
@@ -513,7 +516,7 @@ p {
 /* Education Section */
 .education {
     padding: 80px 0;
-    background: var(--white);
+    background: $white;
 }
 
 .education-grid {
@@ -523,35 +526,35 @@ p {
 }
 
 .education-card {
-    background: var(--white);
+    background: $white;
     padding: 2.5rem;
     border-radius: 16px;
-    box-shadow: var(--shadow-light);
+    box-shadow: $shadow-light;
     text-align: center;
-    transition: var(--transition);
+    transition: $transition;
 }
 
 .education-card:hover {
     transform: translateY(-5px);
-    box-shadow: var(--shadow-medium);
+    box-shadow: $shadow-medium;
 }
 
 .card-icon {
     width: 80px;
     height: 80px;
-    background: linear-gradient(135deg, var(--primary-color), #3498DB);
+    background: linear-gradient(135deg, $primary-color, #3498DB);
     border-radius: 50%;
     display: flex;
     align-items: center;
     justify-content: center;
     margin: 0 auto 1.5rem;
-    color: var(--white);
+    color: $white;
     font-size: 2rem;
 }
 
 .education-card h3 {
     margin-bottom: 1rem;
-    color: var(--text-dark);
+    color: $text-dark;
 }
 
 .education-card p {
@@ -559,13 +562,13 @@ p {
 }
 
 .learn-more {
-    color: var(--primary-color);
+    color: $primary-color;
     text-decoration: none;
     font-weight: 500;
     display: inline-flex;
     align-items: center;
     gap: 0.5rem;
-    transition: var(--transition);
+    transition: $transition;
 }
 
 .learn-more:hover {
@@ -575,7 +578,7 @@ p {
 /* Testimonials */
 .testimonials {
     padding: 80px 0;
-    background: linear-gradient(135deg, var(--light-gray), #FFFFFF);
+    background: linear-gradient(135deg, $light-gray, #FFFFFF);
 }
 
 .testimonials-grid {
@@ -585,29 +588,29 @@ p {
 }
 
 .testimonial-card {
-    background: var(--white);
+    background: $white;
     padding: 2rem;
     border-radius: 16px;
-    box-shadow: var(--shadow-light);
-    transition: var(--transition);
+    box-shadow: $shadow-light;
+    transition: $transition;
 }
 
 .testimonial-card:hover {
     transform: translateY(-5px);
-    box-shadow: var(--shadow-medium);
+    box-shadow: $shadow-medium;
 }
 
 .stars {
     display: flex;
     gap: 0.25rem;
     margin-bottom: 1rem;
-    color: var(--accent-color);
+    color: $accent-color;
 }
 
 .testimonial-content p {
     font-style: italic;
     margin-bottom: 1.5rem;
-    color: var(--text-dark);
+    color: $text-dark;
 }
 
 .testimonial-author {
@@ -625,18 +628,18 @@ p {
 
 .author-info h4 {
     margin-bottom: 0.25rem;
-    color: var(--text-dark);
+    color: $text-dark;
 }
 
 .author-info span {
-    color: var(--text-light);
+    color: $text-light;
     font-size: 0.9rem;
 }
 
 /* About Section */
 .about {
     padding: 80px 0;
-    background: var(--white);
+    background: $white;
 }
 
 .about-content {
@@ -663,7 +666,7 @@ p {
 
 .feature i {
     font-size: 1.5rem;
-    color: var(--primary-color);
+    color: $primary-color;
     margin-top: 0.25rem;
 }
 
@@ -672,9 +675,9 @@ p {
 }
 
 .cta-section {
-    background: linear-gradient(135deg, var(--light-gray), #FFFFFF);
+    background: linear-gradient(135deg, $light-gray, #FFFFFF);
     padding: 2rem;
-    border-radius: var(--border-radius);
+    border-radius: $border-radius;
     text-align: center;
 }
 
@@ -682,7 +685,7 @@ p {
     position: relative;
     border-radius: 16px;
     overflow: hidden;
-    box-shadow: var(--shadow-medium);
+    box-shadow: $shadow-medium;
 }
 
 .about-image img {
@@ -697,14 +700,14 @@ p {
     left: 0;
     right: 0;
     background: linear-gradient(transparent, rgba(0,0,0,0.7));
-    color: var(--white);
+    color: $white;
     padding: 2rem;
 }
 
 /* Contact Section */
 .contact {
     padding: 80px 0;
-    background: linear-gradient(135deg, var(--light-gray), #FFFFFF);
+    background: linear-gradient(135deg, $light-gray, #FFFFFF);
 }
 
 .contact-content {
@@ -725,20 +728,20 @@ p {
 
 .contact-item i {
     font-size: 1.5rem;
-    color: var(--primary-color);
+    color: $primary-color;
     margin-top: 0.25rem;
 }
 
 .contact-item h4 {
     margin-bottom: 0.5rem;
-    color: var(--text-dark);
+    color: $text-dark;
 }
 
 .contact-form {
-    background: var(--white);
+    background: $white;
     padding: 2rem;
     border-radius: 16px;
-    box-shadow: var(--shadow-light);
+    box-shadow: $shadow-light;
 }
 
 .form-group {
@@ -748,22 +751,22 @@ p {
 .form-input {
     width: 100%;
     padding: 1rem;
-    border: 2px solid var(--border-color);
-    border-radius: var(--border-radius);
+    border: 2px solid $border-color;
+    border-radius: $border-radius;
     font-size: 1rem;
-    transition: var(--transition);
+    transition: $transition;
     font-family: inherit;
 }
 
 .form-input:focus {
     outline: none;
-    border-color: var(--primary-color);
+    border-color: $primary-color;
 }
 
 /* Footer */
 .footer {
-    background: var(--text-dark);
-    color: var(--white);
+    background: $text-dark;
+    color: $white;
     padding: 60px 0 20px;
 }
 
@@ -782,7 +785,7 @@ p {
 }
 
 .footer-logo .brand-name {
-    color: var(--white);
+    color: $white;
 }
 
 .footer-section p {
@@ -798,23 +801,23 @@ p {
 .social-link {
     width: 40px;
     height: 40px;
-    background: var(--primary-color);
+    background: $primary-color;
     border-radius: 50%;
     display: flex;
     align-items: center;
     justify-content: center;
-    color: var(--white);
+    color: $white;
     text-decoration: none;
-    transition: var(--transition);
+    transition: $transition;
 }
 
 .social-link:hover {
-    background: var(--secondary-color);
+    background: $secondary-color;
     transform: translateY(-2px);
 }
 
 .footer-section h4 {
-    color: var(--white);
+    color: $white;
     margin-bottom: 1rem;
 }
 
@@ -825,13 +828,13 @@ p {
 .footer-links a {
     color: #BDC3C7;
     text-decoration: none;
-    transition: var(--transition);
+    transition: $transition;
     display: block;
     padding: 0.25rem 0;
 }
 
 .footer-links a:hover {
-    color: var(--primary-color);
+    color: $primary-color;
 }
 
 .footer-bottom {
@@ -853,11 +856,11 @@ p {
 .footer-bottom-links a {
     color: #BDC3C7;
     text-decoration: none;
-    transition: var(--transition);
+    transition: $transition;
 }
 
 .footer-bottom-links a:hover {
-    color: var(--primary-color);
+    color: $primary-color;
 }
 
 /* Responsive Design */
@@ -867,11 +870,11 @@ p {
         left: -100%;
         top: 70px;
         flex-direction: column;
-        background: var(--white);
+        background: $white;
         width: 100%;
         text-align: center;
         transition: 0.3s;
-        box-shadow: var(--shadow-medium);
+        box-shadow: $shadow-medium;
         padding: 2rem 0;
     }
 
@@ -972,7 +975,7 @@ p {
 .btn:focus,
 .form-input:focus,
 .quiz-option:focus {
-    outline: 2px solid var(--primary-color);
+    outline: 2px solid $primary-color;
     outline-offset: 2px;
 }
 
@@ -985,7 +988,7 @@ p {
 }
 
 .product-card {
-    background: var(--white);
+    background: $white;
     border-radius: 20px;
     padding: 2rem;
     box-shadow: 0 4px 25px rgba(0,0,0,0.1);
@@ -998,7 +1001,7 @@ p {
 .product-card:hover {
     transform: translateY(-8px);
     box-shadow: 0 15px 40px rgba(0,0,0,0.15);
-    border-color: var(--primary-color);
+    border-color: $primary-color;
 }
 
 .product-badge {
@@ -1020,12 +1023,12 @@ p {
 
 .badge.featured {
     background: linear-gradient(135deg, #FF6B6B, #FF8E53);
-    color: var(--white);
+    color: $white;
 }
 
 .badge.new {
-    background: linear-gradient(135deg, var(--secondary-color), #2ECC71);
-    color: var(--white);
+    background: linear-gradient(135deg, $secondary-color, #2ECC71);
+    color: $white;
 }
 
 .product-image {
@@ -1083,7 +1086,7 @@ p {
 }
 
 .product-category {
-    color: var(--primary-color);
+    color: $primary-color;
     font-weight: 600;
     font-size: 0.9rem;
     text-transform: uppercase;
@@ -1094,13 +1097,13 @@ p {
 .product-name {
     font-family: 'Poppins', sans-serif;
     font-size: 1.4rem;
-    color: var(--text-dark);
+    color: $text-dark;
     margin-bottom: 0.75rem;
     font-weight: 600;
 }
 
 .product-description {
-    color: var(--text-light);
+    color: $text-light;
     line-height: 1.5;
     margin-bottom: 1rem;
     font-size: 0.95rem;
@@ -1117,12 +1120,12 @@ p {
     align-items: center;
     gap: 0.6rem;
     margin-bottom: 0.6rem;
-    color: var(--text-dark);
+    color: $text-dark;
     font-size: 0.9rem;
 }
 
 .product-benefits i {
-    color: var(--primary-color);
+    color: $primary-color;
     font-size: 1rem;
     width: 16px;
 }
@@ -1135,19 +1138,19 @@ p {
     font-family: 'Poppins', sans-serif;
     font-size: 2rem;
     font-weight: 700;
-    color: var(--primary-color);
+    color: $primary-color;
 }
 
 .product-price .original-price {
     font-size: 1.2rem;
-    color: var(--text-light);
+    color: $text-light;
     text-decoration: line-through;
     margin-left: 0.5rem;
 }
 
 .product-price .discount {
-    background: var(--secondary-color);
-    color: var(--white);
+    background: $secondary-color;
+    color: $white;
     padding: 0.25rem 0.75rem;
     border-radius: 12px;
     font-size: 0.8rem;
@@ -1168,27 +1171,27 @@ p {
 
 .btn-outline {
     background: transparent;
-    border: 2px solid var(--primary-color);
-    color: var(--primary-color);
+    border: 2px solid $primary-color;
+    color: $primary-color;
 }
 
 .btn-outline:hover {
-    background: var(--primary-color);
-    color: var(--white);
+    background: $primary-color;
+    color: $white;
 }
 
 /* Product Comparison Section */
 .product-comparison {
     text-align: center;
     padding: 3rem;
-    background: linear-gradient(135deg, var(--light-gray), #F0F8FF);
+    background: linear-gradient(135deg, $light-gray, #F0F8FF);
     border-radius: 16px;
     margin-top: 3rem;
 }
 
 .product-comparison h3 {
     font-family: 'Poppins', sans-serif;
-    color: var(--text-dark);
+    color: $text-dark;
     margin-bottom: 2rem;
     font-size: 1.5rem;
 }
@@ -1348,7 +1351,7 @@ p {
 }
 
 .slide-complete {
-    background: linear-gradient(135deg, var(--light-gray) 0%, #E3F2FD 50%, #F3E5F5 100%);
+    background: linear-gradient(135deg, $light-gray 0%, #E3F2FD 50%, #F3E5F5 100%);
 }
 
 /* Slide Badge */
@@ -1360,7 +1363,7 @@ p {
     display: inline-block;
     padding: 0.5rem 1.5rem;
     background: rgba(255, 255, 255, 0.9);
-    color: var(--primary-color);
+    color: $primary-color;
     border-radius: 25px;
     font-weight: 600;
     font-size: 0.9rem;
@@ -1373,7 +1376,7 @@ p {
 /* Hero Description for Slider */
 .hero-description {
     font-size: 1.1rem;
-    color: var(--text-light);
+    color: $text-light;
     margin-bottom: 2rem;
     line-height: 1.6;
     max-width: 500px;
@@ -1405,12 +1408,12 @@ p {
     transition: all 0.3s ease;
     pointer-events: all;
     backdrop-filter: blur(10px);
-    color: var(--primary-color);
+    color: $primary-color;
     font-size: 1.2rem;
 }
 
 .nav-btn:hover {
-    background: var(--primary-color);
+    background: $primary-color;
     color: white;
     transform: scale(1.1);
     box-shadow: 0 8px 25px rgba(46, 134, 193, 0.3);
@@ -1439,14 +1442,14 @@ p {
 }
 
 .dot.active {
-    background: var(--primary-color);
-    border-color: var(--primary-color);
+    background: $primary-color;
+    border-color: $primary-color;
     transform: scale(1.2);
 }
 
 .dot:hover {
-    background: var(--secondary-color);
-    border-color: var(--secondary-color);
+    background: $secondary-color;
+    border-color: $secondary-color;
 }
 
 /* Animations for slide content */
@@ -1557,14 +1560,14 @@ p {
 /* Enhanced About Section Styles */
 .about {
     padding: 80px 0;
-    background: var(--white);
+    background: $white;
 }
 
 /* Company Statistics */
 .company-stats {
     margin: 5rem 0;
     padding: 3rem;
-    background: linear-gradient(135deg, var(--primary-color), #3498DB);
+    background: linear-gradient(135deg, $primary-color, #3498DB);
     border-radius: 20px;
     color: white;
 }
@@ -1608,7 +1611,7 @@ p {
 .values-title {
     font-family: 'Poppins', sans-serif;
     font-size: 2.2rem;
-    color: var(--text-dark);
+    color: $text-dark;
     margin-bottom: 3rem;
     font-weight: 600;
 }
@@ -1620,7 +1623,7 @@ p {
 }
 
 .value-card {
-    background: var(--white);
+    background: $white;
     padding: 2.5rem 2rem;
     border-radius: 16px;
     box-shadow: 0 4px 25px rgba(0,0,0,0.1);
@@ -1631,13 +1634,13 @@ p {
 .value-card:hover {
     transform: translateY(-8px);
     box-shadow: 0 15px 40px rgba(0,0,0,0.15);
-    border-color: var(--primary-color);
+    border-color: $primary-color;
 }
 
 .value-icon {
     width: 80px;
     height: 80px;
-    background: linear-gradient(135deg, var(--primary-color), #3498DB);
+    background: linear-gradient(135deg, $primary-color, #3498DB);
     border-radius: 50%;
     display: flex;
     align-items: center;
@@ -1650,19 +1653,19 @@ p {
 
 .value-card:hover .value-icon {
     transform: scale(1.1);
-    background: linear-gradient(135deg, var(--secondary-color), #2ECC71);
+    background: linear-gradient(135deg, $secondary-color, #2ECC71);
 }
 
 .value-card h4 {
     font-family: 'Poppins', sans-serif;
-    color: var(--text-dark);
+    color: $text-dark;
     margin-bottom: 1rem;
     font-size: 1.3rem;
     font-weight: 600;
 }
 
 .value-card p {
-    color: var(--text-light);
+    color: $text-light;
     line-height: 1.6;
 }
 
@@ -1678,15 +1681,15 @@ p {
 }
 
 .mission-card, .vision-card {
-    background: linear-gradient(135deg, var(--light-gray), #F0F8FF);
+    background: linear-gradient(135deg, $light-gray, #F0F8FF);
     padding: 3rem;
     border-radius: 20px;
-    border-left: 5px solid var(--primary-color);
+    border-left: 5px solid $primary-color;
     transition: all 0.3s ease;
 }
 
 .vision-card {
-    border-left-color: var(--secondary-color);
+    border-left-color: $secondary-color;
 }
 
 .mission-card:hover, .vision-card:hover {
@@ -1703,23 +1706,23 @@ p {
 
 .card-header i {
     font-size: 2rem;
-    color: var(--primary-color);
+    color: $primary-color;
 }
 
 .vision-card .card-header i {
-    color: var(--secondary-color);
+    color: $secondary-color;
 }
 
 .card-header h3 {
     font-family: 'Poppins', sans-serif;
-    color: var(--text-dark);
+    color: $text-dark;
     margin: 0;
     font-size: 1.5rem;
     font-weight: 600;
 }
 
 .mission-card p, .vision-card p {
-    color: var(--text-light);
+    color: $text-light;
     line-height: 1.7;
     font-size: 1.1rem;
     margin: 0;
@@ -1734,7 +1737,7 @@ p {
 .certifications-title {
     font-family: 'Poppins', sans-serif;
     font-size: 2.2rem;
-    color: var(--text-dark);
+    color: $text-dark;
     margin-bottom: 3rem;
     font-weight: 600;
 }
@@ -1749,7 +1752,7 @@ p {
     display: flex;
     align-items: center;
     gap: 1.5rem;
-    background: var(--white);
+    background: $white;
     padding: 2rem;
     border-radius: 16px;
     box-shadow: 0 4px 20px rgba(0,0,0,0.1);
@@ -1760,24 +1763,24 @@ p {
 .cert-item:hover {
     transform: translateY(-5px);
     box-shadow: 0 10px 30px rgba(0,0,0,0.15);
-    border-color: var(--primary-color);
+    border-color: $primary-color;
 }
 
 .cert-item i {
     font-size: 2.5rem;
-    color: var(--primary-color);
+    color: $primary-color;
     flex-shrink: 0;
 }
 
 .cert-info h4 {
     font-family: 'Poppins', sans-serif;
-    color: var(--text-dark);
+    color: $text-dark;
     margin-bottom: 0.5rem;
     font-weight: 600;
 }
 
 .cert-info p {
-    color: var(--text-light);
+    color: $text-light;
     margin: 0;
     font-size: 0.95rem;
 }
@@ -1786,7 +1789,7 @@ p {
 .social-responsibility {
     margin: 5rem 0;
     padding: 4rem;
-    background: linear-gradient(135deg, var(--light-gray), #F8FBFF);
+    background: linear-gradient(135deg, $light-gray, #F8FBFF);
     border-radius: 20px;
 }
 
@@ -1799,14 +1802,14 @@ p {
 
 .social-text h3 {
     font-family: 'Poppins', sans-serif;
-    color: var(--primary-color);
+    color: $primary-color;
     margin-bottom: 1.5rem;
     font-size: 2rem;
     font-weight: 600;
 }
 
 .social-text p {
-    color: var(--text-light);
+    color: $text-light;
     line-height: 1.7;
     margin-bottom: 2rem;
     font-size: 1.1rem;
@@ -1834,14 +1837,14 @@ p {
 }
 
 .responsibility-list i {
-    color: var(--primary-color);
+    color: $primary-color;
     font-size: 1.2rem;
     margin-top: 0.2rem;
     flex-shrink: 0;
 }
 
 .responsibility-list span {
-    color: var(--text-dark);
+    color: $text-dark;
     line-height: 1.6;
 }
 
@@ -1855,7 +1858,7 @@ p {
 
 .social-card h4 {
     font-family: 'Poppins', sans-serif;
-    color: var(--primary-color);
+    color: $primary-color;
     margin-bottom: 2rem;
     font-size: 1.4rem;
     font-weight: 600;
@@ -1877,11 +1880,11 @@ p {
     font-family: 'Poppins', sans-serif;
     font-size: 2rem;
     font-weight: 700;
-    color: var(--primary-color);
+    color: $primary-color;
 }
 
 .impact-label {
-    color: var(--text-light);
+    color: $text-light;
     font-size: 0.9rem;
     font-weight: 500;
 }
@@ -1891,7 +1894,7 @@ p {
     margin: 5rem 0 0;
     text-align: center;
     padding: 4rem;
-    background: linear-gradient(135deg, var(--primary-color), #3498DB);
+    background: linear-gradient(135deg, $primary-color, #3498DB);
     border-radius: 20px;
     color: white;
 }
@@ -1936,7 +1939,7 @@ p {
 
 .cta-buttons .btn-secondary:hover {
     background: white;
-    color: var(--primary-color);
+    color: $primary-color;
 }
 
 /* Responsive Design for About Section */
@@ -2062,7 +2065,7 @@ p {
     position: relative;
     max-width: 90vw;
     max-height: 90vh;
-    background: var(--white);
+    background: $white;
     border-radius: 16px;
     overflow: hidden;
     box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
@@ -2085,12 +2088,12 @@ p {
     cursor: pointer;
     z-index: 10001;
     transition: all 0.3s ease;
-    color: var(--text-dark);
+    color: $text-dark;
     font-size: 1.2rem;
 }
 
 .modal-close:hover {
-    background: var(--white);
+    background: $white;
     transform: scale(1.1);
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
 }
@@ -2101,7 +2104,7 @@ p {
     align-items: center;
     justify-content: center;
     overflow: hidden;
-    background: var(--light-gray);
+    background: $light-gray;
     min-height: 400px;
     max-height: 70vh;
 }
@@ -2123,8 +2126,8 @@ p {
     justify-content: space-between;
     align-items: center;
     padding: 1.5rem;
-    background: var(--white);
-    border-top: 1px solid var(--border-color);
+    background: $white;
+    border-top: 1px solid $border-color;
 }
 
 .zoom-controls {
@@ -2136,9 +2139,9 @@ p {
 .control-btn {
     width: 40px;
     height: 40px;
-    border: 2px solid var(--primary-color);
-    background: var(--white);
-    color: var(--primary-color);
+    border: 2px solid $primary-color;
+    background: $white;
+    color: $primary-color;
     border-radius: 8px;
     display: flex;
     align-items: center;
@@ -2149,22 +2152,22 @@ p {
 }
 
 .control-btn:hover:not(:disabled) {
-    background: var(--primary-color);
-    color: var(--white);
+    background: $primary-color;
+    color: $white;
     transform: translateY(-2px);
 }
 
 .control-btn:disabled {
     opacity: 0.5;
     cursor: not-allowed;
-    border-color: var(--border-color);
-    color: var(--text-light);
+    border-color: $border-color;
+    color: $text-light;
 }
 
 .reset-btn {
-    background: var(--secondary-color);
-    border-color: var(--secondary-color);
-    color: var(--white);
+    background: $secondary-color;
+    border-color: $secondary-color;
+    color: $white;
 }
 
 .reset-btn:hover {
@@ -2181,10 +2184,10 @@ p {
 .nav-control {
     width: 50px;
     height: 50px;
-    background: var(--primary-color);
+    background: $primary-color;
     border: none;
     border-radius: 50%;
-    color: var(--white);
+    color: $white;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -2202,7 +2205,7 @@ p {
 .image-counter {
     font-family: 'Poppins', sans-serif;
     font-weight: 600;
-    color: var(--text-dark);
+    color: $text-dark;
     font-size: 1rem;
     min-width: 60px;
     text-align: center;
@@ -2324,7 +2327,7 @@ p {
 .size-title {
     font-family: 'Poppins', sans-serif;
     font-size: 1.1rem;
-    color: var(--text-dark);
+    color: $text-dark;
     margin-bottom: 1rem;
     font-weight: 600;
 }
@@ -2337,15 +2340,15 @@ p {
 
 .size-option {
     padding: 0.75rem 1.5rem;
-    background: var(--white);
-    border: 2px solid var(--border-color);
+    background: $white;
+    border: 2px solid $border-color;
     border-radius: 8px;
     cursor: pointer;
     transition: all 0.3s ease;
     font-family: 'Poppins', sans-serif;
     font-weight: 600;
     font-size: 1rem;
-    color: var(--text-dark);
+    color: $text-dark;
     min-width: 60px;
     text-align: center;
     position: relative;
@@ -2368,16 +2371,16 @@ p {
 }
 
 .size-option:hover {
-    border-color: var(--primary-color);
+    border-color: $primary-color;
     transform: translateY(-2px);
     box-shadow: 0 4px 15px rgba(46, 134, 193, 0.15);
-    color: var(--primary-color);
+    color: $primary-color;
 }
 
 .size-option.selected {
-    border-color: var(--primary-color);
-    background: var(--primary-color);
-    color: var(--white);
+    border-color: $primary-color;
+    background: $primary-color;
+    color: $white;
     box-shadow: 0 4px 15px rgba(46, 134, 193, 0.3);
     transform: translateY(-1px);
 }
@@ -2385,7 +2388,7 @@ p {
 .size-option.selected:hover {
     background: #2980B9;
     border-color: #2980B9;
-    color: var(--white);
+    color: $white;
 }
 
 /* Compact Product Price Summary */
@@ -2406,7 +2409,7 @@ p {
     left: 0;
     right: 0;
     height: 3px;
-    background: linear-gradient(90deg, var(--primary-color), var(--secondary-color));
+    background: linear-gradient(90deg, $primary-color, $secondary-color);
     border-radius: 12px 12px 0 0;
 }
 
@@ -2414,7 +2417,7 @@ p {
     font-family: 'Poppins', sans-serif;
     font-size: 1.8rem;
     font-weight: 700;
-    color: var(--primary-color);
+    color: $primary-color;
     margin-bottom: 0.4rem;
     line-height: 1;
 }
@@ -2430,14 +2433,14 @@ p {
 
 .price-info .original-price {
     font-size: 0.95rem;
-    color: var(--text-light);
+    color: $text-light;
     text-decoration: line-through;
     font-weight: 500;
 }
 
 .price-info .savings {
-    background: var(--secondary-color);
-    color: var(--white);
+    background: $secondary-color;
+    color: $white;
     padding: 0.25rem 0.6rem;
     border-radius: 15px;
     font-size: 0.8rem;
@@ -2448,7 +2451,7 @@ p {
 
 .size-info {
     font-size: 0.9rem;
-    color: var(--text-light);
+    color: $text-light;
     font-weight: 500;
 }
 

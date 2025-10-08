@@ -1,0 +1,12 @@
+// App Component Styles
+@import './styles/variables';
+@import './styles/mixins';
+
+.App {
+  min-height: 100vh;
+  @include flex-column;
+}
+
+main {
+  flex: 1;
+}

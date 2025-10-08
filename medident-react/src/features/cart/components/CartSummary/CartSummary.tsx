@@ -1,5 +1,5 @@
 import React from 'react';
-import './CartSummary.styles.css';
+import './CartSummary.styles.scss';
 
 interface CartSummaryProps {
   totalItems: number;

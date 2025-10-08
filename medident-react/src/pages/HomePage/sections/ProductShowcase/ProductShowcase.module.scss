@@ -1,6 +1,9 @@
+// SCSS imports
+@import '../../../../styles/variables';
+@import '../../../../styles/mixins';
 .productShowcase {
     padding: 80px 0;
-    background: var(--white);
+    background: $white;
 }
 
 .container {
@@ -17,14 +20,14 @@
 .sectionTitle {
     font-family: 'Poppins', sans-serif;
     font-size: 2.5rem;
-    color: var(--text-dark);
+    color: $text-dark;
     margin-bottom: 1rem;
     font-weight: 600;
 }
 
 .sectionSubtitle {
     font-size: 1.2rem;
-    color: var(--text-light);
+    color: $text-light;
     max-width: 600px;
     margin: 0 auto;
 }
@@ -34,7 +37,7 @@
     grid-template-columns: 1fr 1fr;
     gap: 3rem;
     align-items: center;
-    background: var(--white);
+    background: $white;
     border-radius: 16px;
     padding: 3rem;
     box-shadow: 0 4px 20px rgba(0,0,0,0.15);
@@ -55,14 +58,14 @@
 .productInfo h3 {
     font-family: 'Poppins', sans-serif;
     font-size: 2rem;
-    color: var(--text-dark);
+    color: $text-dark;
     margin-bottom: 1rem;
     font-weight: 600;
 }
 
 .productDescription {
     font-size: 1.1rem;
-    color: var(--text-light);
+    color: $text-light;
     margin-bottom: 2rem;
     line-height: 1.6;
 }
@@ -78,12 +81,12 @@
     align-items: center;
     gap: 0.5rem;
     margin-bottom: 0.75rem;
-    color: var(--text-dark);
+    color: $text-dark;
     font-weight: 500;
 }
 
 .productBenefits i {
-    color: var(--secondary-color);
+    color: $secondary-color;
     font-size: 1.1rem;
 }
 
@@ -97,18 +100,18 @@
 .currentPrice {
     font-size: 1.8rem;
     font-weight: 700;
-    color: var(--primary-color);
+    color: $primary-color;
 }
 
 .originalPrice {
     text-decoration: line-through;
-    color: var(--text-light);
+    color: $text-light;
     font-size: 1.2rem;
 }
 
 .discount {
-    background: var(--accent-color);
-    color: var(--white);
+    background: $accent-color;
+    color: $white;
     padding: 0.25rem 0.5rem;
     border-radius: 4px;
     font-size: 0.875rem;
@@ -133,7 +136,7 @@
 }
 
 .additionalProduct {
-    background: var(--white);
+    background: $white;
     border-radius: 12px;
     padding: 2rem;
     text-align: center;
@@ -155,13 +158,13 @@
 
 .additionalProduct h4 {
     font-family: 'Poppins', sans-serif;
-    color: var(--text-dark);
+    color: $text-dark;
     margin-bottom: 0.5rem;
     font-size: 1.1rem;
 }
 
 .additionalProduct p {
-    color: var(--text-light);
+    color: $text-light;
     font-size: 0.9rem;
     margin-bottom: 1rem;
 }
@@ -169,7 +172,7 @@
 .additionalProduct .price {
     font-size: 1.2rem;
     font-weight: 600;
-    color: var(--primary-color);
+    color: $primary-color;
     margin-bottom: 1rem;
 }
 

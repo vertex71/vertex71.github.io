@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import styles from './SensitivityQuiz.module.css';
+import styles from './SensitivityQuiz.module.scss';
 import Button from '../../ui/Button/Button';
 import { quizQuestions, quizResults, calculateSensitivityLevel } from '../../../data/quizQuestions';
 import { products } from '../../../data/products';

@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import styles from './ProductShowcase.module.css';
+import styles from './ProductShowcase.module.scss';
 import Button from '../../../../components/ui/Button/Button';
 import { products, relatedProducts } from '../../../../data/products';
 import { useCart } from '../../../../contexts/CartContext';

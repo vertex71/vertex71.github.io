@@ -1,6 +1,9 @@
+// SCSS imports
+@import '../../../styles/variables';
+@import '../../../styles/mixins';
 .header {
-    background: var(--white);
-    box-shadow: var(--shadow-light);
+    background: $white;
+    box-shadow: $shadow-light;
     position: fixed;
     top: 0;
     left: 0;
@@ -16,9 +19,9 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    max-width: var(--container-max-width);
+    max-width: $container-max-width;
     margin: 0 auto;
-    padding: 0 var(--container-padding);
+    padding: 0 $container-padding;
 }
 
 .navLogo {
@@ -34,10 +37,10 @@
 }
 
 .brandName {
-    font-family: var(--font-primary);
+    font-family: $font-primary;
     font-weight: 700;
     font-size: 1.5rem;
-    color: var(--primary-color);
+    color: $primary-color;
 }
 
 .navMenu {
@@ -55,9 +58,9 @@
 
 .navLink {
     text-decoration: none;
-    color: var(--text-dark);
+    color: $text-dark;
     font-weight: 500;
-    transition: var(--transition);
+    transition: $transition;
     display: flex;
     align-items: center;
     gap: 5px;
@@ -65,46 +68,46 @@
 }
 
 .navLink:hover {
-    color: var(--primary-color);
+    color: $primary-color;
 }
 
 .navLink.active {
-    color: var(--primary-color);
+    color: $primary-color;
 }
 
 .ctaBtn {
-    background: linear-gradient(135deg, var(--primary-color), #3498DB);
-    color: var(--white) !important;
+    background: linear-gradient(135deg, $primary-color, #3498DB);
+    color: $white !important;
     padding: 10px 20px;
-    border-radius: var(--border-radius);
+    border-radius: $border-radius;
     text-decoration: none;
-    transition: var(--transition);
+    transition: $transition;
 }
 
 .ctaBtn:hover {
     transform: translateY(-2px);
-    box-shadow: var(--shadow-medium);
+    box-shadow: $shadow-medium;
 }
 
 /* Cart Icon */
 .cartIcon {
     position: relative;
     padding: 0.5rem;
-    color: var(--text-dark);
+    color: $text-dark;
     font-size: 1.2rem;
-    transition: var(--transition);
+    transition: $transition;
 }
 
 .cartIcon:hover {
-    color: var(--primary-color);
+    color: $primary-color;
 }
 
 .cartBadge {
     position: absolute;
     top: 0;
     right: 0;
-    background: var(--accent-color);
-    color: var(--white);
+    background: $accent-color;
+    color: $white;
     border-radius: 50%;
     width: 20px;
     height: 20px;
@@ -124,15 +127,15 @@
     position: absolute;
     top: 100%;
     left: 0;
-    background: var(--white);
+    background: $white;
     min-width: 200px;
-    box-shadow: var(--shadow-medium);
-    border-radius: var(--border-radius);
+    box-shadow: $shadow-medium;
+    border-radius: $border-radius;
     padding: 1rem 0;
     opacity: 0;
     visibility: hidden;
     transform: translateY(-10px);
-    transition: var(--transition);
+    transition: $transition;
     z-index: 1001;
 }
 
@@ -145,15 +148,15 @@
 .dropdownLink {
     display: block;
     padding: 0.5rem 1rem;
-    color: var(--text-dark);
+    color: $text-dark;
     text-decoration: none;
-    transition: var(--transition);
+    transition: $transition;
     white-space: nowrap;
 }
 
 .dropdownLink:hover {
-    background: var(--light-gray);
-    color: var(--primary-color);
+    background: $light-gray;
+    color: $primary-color;
 }
 
 /* Mobile Menu Toggle */
@@ -168,8 +171,8 @@
 .bar {
     width: 25px;
     height: 3px;
-    background: var(--text-dark);
-    transition: var(--transition);
+    background: $text-dark;
+    transition: $transition;
     border-radius: 2px;
 }
 
@@ -196,11 +199,11 @@
         left: -100%;
         top: 100%;
         flex-direction: column;
-        background: var(--white);
+        background: $white;
         width: 100%;
         text-align: center;
         transition: 0.3s;
-        box-shadow: var(--shadow-medium);
+        box-shadow: $shadow-medium;
         padding: 2rem 0;
         gap: 0;
     }
@@ -216,7 +219,7 @@
     .navLink {
         padding: 1rem;
         justify-content: center;
-        border-bottom: 1px solid var(--border-color);
+        border-bottom: 1px solid $border-color;
     }
 
     .navLink:last-child {
@@ -229,7 +232,7 @@
         visibility: visible;
         transform: none;
         box-shadow: none;
-        background: var(--light-gray);
+        background: $light-gray;
         margin-top: 0;
     }
 
