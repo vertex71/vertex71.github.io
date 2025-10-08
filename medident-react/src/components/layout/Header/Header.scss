@@ -241,30 +241,49 @@
 .hamburger {
   display: none;
   flex-direction: column;
+  justify-content: center;
+  align-items: center;
   cursor: pointer;
-  gap: 4px;
+  width: 30px;
+  height: 30px;
+  padding: 3px;
+  position: relative;
 
   &.active {
     .bar {
       &:nth-child(1) {
-        transform: translateY(7px) rotate(45deg);
+        transform: translateY(6px) rotate(45deg);
       }
       &:nth-child(2) {
         opacity: 0;
+        transform: scaleX(0);
       }
       &:nth-child(3) {
-        transform: translateY(-7px) rotate(-45deg);
+        transform: translateY(-8px) rotate(-45deg);
       }
     }
   }
 }
 
 .bar {
-  width: 25px;
+  width: 22px;
   height: 3px;
   background-color: $text-dark;
   transition: $transition;
   border-radius: 2px;
+  margin: 2px 0;
+  
+  .hamburger:not(.active) & {
+    &:nth-child(1) {
+      transform: translateY(0);
+    }
+    &:nth-child(2) {
+      opacity: 1;
+    }
+    &:nth-child(3) {
+      transform: translateY(0);
+    }
+  }
 }
 
 // Responsive Design
@@ -296,6 +315,8 @@
 
   .hamburger {
     display: flex;
+    margin-right: 5px;
+    z-index: 1000;
   }
 
   .dropdown-content {
@@ -327,7 +348,7 @@
   }
 
   .nav-container {
-    padding: 0 15px;
+    padding: 0 20px;
   }
   
   .brand-name {
