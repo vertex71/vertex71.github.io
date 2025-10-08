@@ -88,14 +88,35 @@ const Header: React.FC = () => {
     }
   };
 
+  const handleLogoClick = () => {
+    console.log('Logo clicked - navigating to home');
+    console.log('Current pathname:', window.location.pathname);
+    setIsMenuOpen(false);
+    
+    // If already on home page, scroll to top
+    if (window.location.pathname === '/') {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+      console.log('Already on homepage, scrolled to top');
+    } else {
+      // Navigate to home
+      try {
+        navigate('/');
+        console.log('Navigate called with React Router');
+      } catch (error) {
+        console.log('React Router navigation failed, using window.location');
+        window.location.href = '/';
+      }
+    }
+  };
+
   return (
     <header className="header" ref={headerRef}>
       <nav className="navbar">
         <div className="nav-container">
-          <div className="nav-logo">
+          <button type="button" className="nav-logo" onClick={handleLogoClick}>
             <img src="/assets/vi-logo.jpeg" alt="VERTEX International Logo" className="logo" />
             <span className="brand-name">VERTEX International</span>
-          </div>
+          </button>
           
           <ul className={`nav-menu ${isMenuOpen ? 'active' : ''}`}>
             <li className="nav-item">
