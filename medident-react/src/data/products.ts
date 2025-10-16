@@ -48,19 +48,35 @@ export const products: Product[] = [
     benefits: [
       {
         icon: 'fas fa-shield-alt',
-        text: '24/7 Protection'
+        text: 'Round-the-clock sensitivity protection and pain relief'
       },
       {
         icon: 'fas fa-check-circle',
-        text: 'Clinically Proven'
+        text: 'Clinically proven formula trusted by dental professionals'
       },
       {
         icon: 'fas fa-leaf',
-        text: 'Fresh Mint Flavor'
+        text: 'Refreshing natural mint for long-lasting fresh breath'
       },
       {
         icon: 'fas fa-tooth',
-        text: 'Strengthens Enamel'
+        text: 'Strengthens and rebuilds weakened tooth enamel'
+      },
+      {
+        icon: 'fas fa-heart',
+        text: 'Gentle formula safe for daily use and sensitive gums'
+      },
+      {
+        icon: 'fas fa-sparkles',
+        text: 'Gradual whitening removes surface stains naturally'
+      },
+      {
+        icon: 'fas fa-certificate',
+        text: 'Made in Bangladesh with international quality standards'
+      },
+      {
+        icon: 'fas fa-clock',
+        text: 'Fast-acting relief within 2 weeks of regular use'
       }
     ],
     features: [
@@ -200,19 +216,35 @@ export const products: Product[] = [
     benefits: [
       {
         icon: 'fas fa-heart',
-        text: 'Gum Protection'
+        text: 'Advanced gum protection and inflammation reduction'
       },
       {
         icon: 'fas fa-shield-alt',
-        text: 'Anti-bacterial'
+        text: 'Powerful anti-bacterial formula fights gum disease'
       },
       {
         icon: 'fas fa-droplet',
-        text: 'Prevents Bleeding'
+        text: 'Prevents gum bleeding and promotes healing'
       },
       {
         icon: 'fas fa-leaf',
-        text: 'Natural Extracts'
+        text: 'Natural herbal extracts for gentle gum care'
+      },
+      {
+        icon: 'fas fa-tooth',
+        text: 'Dual action: gum care plus cavity protection'
+      },
+      {
+        icon: 'fas fa-wind',
+        text: 'Long-lasting fresh breath with antimicrobial action'
+      },
+      {
+        icon: 'fas fa-certificate',
+        text: 'Dentist-recommended formula for optimal gum health'
+      },
+      {
+        icon: 'fas fa-check-circle',
+        text: 'Clinically tested for safety and effectiveness'
       }
     ],
     features: [

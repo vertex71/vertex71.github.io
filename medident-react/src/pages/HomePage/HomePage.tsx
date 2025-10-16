@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useCart } from '../../contexts/CartContext';
+import { ProductBenefits } from './sections/ProductBenefits/product-benefits.exports';
 import './HomePage.scss';
 
 const HomePage = () => {
@@ -475,6 +476,8 @@ const HomePage = () => {
           </div>
         </div>
       </section>
+
+      <ProductBenefits />
 
       {/* Education Section */}
       <section className="education">
