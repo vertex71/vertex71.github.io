@@ -8,6 +8,18 @@
     box-sizing: border-box;
 }
 
+/* HomePage specific fixes */
+.home-page {
+    margin-bottom: 0;
+    padding-bottom: 0;
+}
+
+/* Contact section should have no bottom spacing */
+#contact {
+    margin-bottom: 0 !important;
+    padding-bottom: 0 !important;
+}
+
 html {
     scroll-behavior: smooth;
 }
@@ -18,6 +30,8 @@ body {
     color: #333;
     background-color: #fff;
     padding-top: 70px; /* Account for fixed header */
+    margin-bottom: 0;
+    padding-bottom: 0;
 }
 
 /* CSS Variables */
@@ -706,8 +720,9 @@ p {
 
 /* Contact Section */
 .contact {
-    padding: 80px 0;
+    padding: 80px 0 0;
     background: linear-gradient(135deg, $light-gray, #FFFFFF);
+    margin-bottom: 0;
 }
 
 .contact-content {
@@ -1307,6 +1322,56 @@ p {
     .product-badge {
         top: 1rem;
         right: 1rem;
+    }
+
+    /* Mobile-specific contact section fixes */
+    .contact {
+        padding-bottom: 0 !important;
+        margin-bottom: 0 !important;
+    }
+
+    /* Force homepage to have no bottom spacing */
+    body {
+        padding-bottom: 0 !important;
+        margin-bottom: 0 !important;
+    }
+
+    /* Ensure no spacing after last section */
+    section:last-child {
+        margin-bottom: 0 !important;
+        padding-bottom: 0 !important;
+    }
+
+    /* Aggressive mobile spacing removal */
+    main {
+        margin-bottom: 0 !important;
+        padding-bottom: 0 !important;
+    }
+
+    /* HomePage wrapper should have no bottom space */
+    .home-page-wrapper,
+    .homepage-container {
+        margin-bottom: 0 !important;
+        padding-bottom: 0 !important;
+    }
+
+    /* Contact form and content */
+    .contact-content,
+    .contact-form {
+        margin-bottom: 0 !important;
+        padding-bottom: 0 !important;
+    }
+
+    /* Any div containing sections */
+    div {
+        margin-bottom: 0 !important;
+    }
+
+    /* Root level fixes */
+    html, body {
+        height: 100% !important;
+        min-height: 100vh !important;
+        min-height: -webkit-fill-available !important;
     }
 }
 

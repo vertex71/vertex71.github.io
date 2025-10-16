@@ -4,9 +4,57 @@
 
 .App {
   min-height: 100vh;
+  min-height: -webkit-fill-available;
+  height: 100%;
   @include flex-column;
+  margin: 0;
+  padding: 0;
+  position: relative;
 }
 
 main {
-  flex: 1;
+  flex: 1 0 auto;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+/* Mobile-specific fixes */
+@media screen and (max-width: 768px) {
+  .App {
+    min-height: 100vh;
+    min-height: -webkit-fill-available;
+    min-height: 100dvh;
+    position: relative;
+  }
+  
+  main {
+    padding-bottom: 0;
+    margin-bottom: 0;
+    flex: 1;
+  }
+}
+
+/* Mobile footer extension for full screen coverage */
+@media screen and (max-width: 480px) {
+  .App {
+    min-height: 100vh;
+    min-height: 100dvh;
+    min-height: -webkit-fill-available;
+  }
+  
+  /* Add a spacer after footer to ensure full coverage */
+  .App::after {
+    content: '';
+    display: block;
+    height: 40px;
+    background: #2C3E50;
+    width: 100vw;
+    position: relative;
+    left: 50%;
+    right: 50%;
+    margin-left: -50vw;
+    margin-right: -50vw;
+    margin-top: -1px;
+  }
 }
