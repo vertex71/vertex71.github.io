@@ -730,8 +730,8 @@ const HomePage = () => {
           </div>
 
           {/* Certifications & Awards */}
-          <div className="certifications">
-            <h3 className="certifications-title">Certifications & Recognition</h3>
+          <div id="quality" className="certifications">
+            <h3 className="certifications-title">Quality Standards & Certifications</h3>
             <div className="certifications-grid">
               <div className="cert-item">
                 <i className="fas fa-certificate"></i>
