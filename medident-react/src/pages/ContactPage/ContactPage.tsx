@@ -1,14 +1,15 @@
 import React from 'react';
+import { CONTACT_PAGE } from '../../common';
 
 const ContactPage = () => {
   return (
     <div style={{ padding: '2rem', textAlign: 'center', minHeight: '60vh', display: 'flex', alignItems: 'center', justifyContent: 'center', flexDirection: 'column' }}>
-      <h1>Contact Us</h1>
-      <p>Get in touch with us! Contact form and company information coming soon.</p>
+      <h1>{CONTACT_PAGE.TITLE}</h1>
+      <p>{CONTACT_PAGE.MESSAGE}</p>
       <div style={{ marginTop: '2rem', textAlign: 'left' }}>
-        <p><strong>Address:</strong> House-10, Road-5, Block-B, Rampura, Banasree, Dhaka-1219, Bangladesh</p>
-        <p><strong>Phone:</strong> +880 1328990900</p>
-        <p><strong>Email:</strong> sales.vertex23@gmail.com</p>
+        <p><strong>{CONTACT_PAGE.CONTACT_INFO.ADDRESS_LABEL}</strong> {CONTACT_PAGE.CONTACT_INFO.ADDRESS}</p>
+        <p><strong>{CONTACT_PAGE.CONTACT_INFO.PHONE_LABEL}</strong> {CONTACT_PAGE.CONTACT_INFO.PHONE}</p>
+        <p><strong>{CONTACT_PAGE.CONTACT_INFO.EMAIL_LABEL}</strong> {CONTACT_PAGE.CONTACT_INFO.EMAIL}</p>
       </div>
     </div>
   );

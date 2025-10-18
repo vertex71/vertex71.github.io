@@ -1,6 +1,7 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useCart } from '../../../contexts/CartContext';
+import { HEADER } from '../../../common';
 import './Header.scss';
 
 const Header: React.FC = () => {
@@ -114,82 +115,82 @@ const Header: React.FC = () => {
       <nav className="navbar">
         <div className="nav-container">
           <button type="button" className="nav-logo" onClick={handleLogoClick}>
-            <img src="/assets/vi-logo.jpeg" alt="VERTEX International Logo" className="logo" />
-            <span className="brand-name">VERTEX International</span>
+            <img src="/assets/vi-logo.jpeg" alt={HEADER.BRANDING.ALT_TEXT} className="logo" />
+            <span className="brand-name">{HEADER.BRANDING.BRAND_NAME}</span>
           </button>
           
           <ul className={`nav-menu ${isMenuOpen ? 'active' : ''}`}>
             <li className="nav-item">
-              <button onClick={() => handleNavClick('home')} className="nav-link">Home</button>
+              <button onClick={() => handleNavClick('home')} className="nav-link">{HEADER.NAVIGATION.HOME}</button>
             </li>
             <li className="nav-item dropdown">
-              <button 
+              <button
                 onClick={() => {
                   if (window.innerWidth <= 767) {
                     toggleDropdown('products');
                   } else {
                     handleNavClick('products');
                   }
-                }} 
+                }}
                 className="nav-link"
               >
-                Products <i className={`fas fa-chevron-down ${openDropdown === 'products' ? 'open' : ''}`}></i>
+                {HEADER.NAVIGATION.PRODUCTS} <i className={`fas fa-chevron-down ${openDropdown === 'products' ? 'open' : ''}`}></i>
               </button>
               <div className={`dropdown-content ${openDropdown === 'products' ? 'active' : ''}`}>
                 <div className="dropdown-section">
-                  <h5>Our Products</h5>
+                  <h5>{HEADER.DROPDOWNS.PRODUCTS.TITLE}</h5>
                   <a href="#sensitive-care" onClick={() => setIsMenuOpen(false)}>
                     <i className="fas fa-tooth"></i>
-                    Medident Sensitive Care
+                    {HEADER.DROPDOWNS.PRODUCTS.SENSITIVE_CARE}
                   </a>
                   <a href="#gum-care" onClick={() => setIsMenuOpen(false)}>
                     <i className="fas fa-heart"></i>
-                    Medident-G Gum Care
+                    {HEADER.DROPDOWNS.PRODUCTS.GUM_CARE}
                   </a>
                 </div>
                 <div className="dropdown-section">
-                  <h5>Product Tools</h5>
+                  <h5>{HEADER.DROPDOWNS.PRODUCTS.TOOLS_TITLE}</h5>
                   <a href="#compare" onClick={() => setIsMenuOpen(false)}>
                     <i className="fas fa-balance-scale"></i>
-                    Compare Products
+                    {HEADER.DROPDOWNS.PRODUCTS.COMPARE_PRODUCTS}
                   </a>
                   <a href="#product-finder" onClick={() => setIsMenuOpen(false)}>
                     <i className="fas fa-search"></i>
-                    Find Right Product
+                    {HEADER.DROPDOWNS.PRODUCTS.FIND_RIGHT_PRODUCT}
                   </a>
                 </div>
                 <div className="dropdown-section">
                   <a href="#buy" className="dropdown-cta" onClick={() => setIsMenuOpen(false)}>
                     <i className="fas fa-shopping-cart"></i>
-                    Buy Online
+                    {HEADER.DROPDOWNS.PRODUCTS.BUY_ONLINE_CTA}
                   </a>
                 </div>
               </div>
             </li>
             <li className="nav-item dropdown">
-              <button 
+              <button
                 onClick={() => {
                   if (window.innerWidth <= 767) {
                     toggleDropdown('oral-health');
                   } else {
                     handleNavClick('sensitivity');
                   }
-                }} 
+                }}
                 className="nav-link"
               >
-                Oral Health <i className={`fas fa-chevron-down ${openDropdown === 'oral-health' ? 'open' : ''}`}></i>
+                {HEADER.NAVIGATION.ORAL_HEALTH} <i className={`fas fa-chevron-down ${openDropdown === 'oral-health' ? 'open' : ''}`}></i>
               </button>
               <div className={`dropdown-content ${openDropdown === 'oral-health' ? 'active' : ''}`}>
-                <a href="#sensitivity" onClick={() => setIsMenuOpen(false)}>Understanding Sensitivity</a>
-                <a href="#education" onClick={() => setIsMenuOpen(false)}>Dental Care Tips</a>
-                <a href="#faq" onClick={() => setIsMenuOpen(false)}>FAQ</a>
+                <a href="#sensitivity" onClick={() => setIsMenuOpen(false)}>{HEADER.DROPDOWNS.ORAL_HEALTH.UNDERSTANDING_SENSITIVITY}</a>
+                <a href="#education" onClick={() => setIsMenuOpen(false)}>{HEADER.DROPDOWNS.ORAL_HEALTH.DENTAL_CARE_TIPS}</a>
+                <a href="#faq" onClick={() => setIsMenuOpen(false)}>{HEADER.DROPDOWNS.ORAL_HEALTH.FAQ}</a>
               </div>
             </li>
             <li className="nav-item">
-              <button onClick={() => handleNavClick('about')} className="nav-link">About Us</button>
+              <button onClick={() => handleNavClick('about')} className="nav-link">{HEADER.NAVIGATION.ABOUT_US}</button>
             </li>
             <li className="nav-item">
-              <button onClick={() => handleNavClick('contact')} className="nav-link">Contact</button>
+              <button onClick={() => handleNavClick('contact')} className="nav-link">{HEADER.NAVIGATION.CONTACT}</button>
             </li>
             <li className="nav-item">
               <button onClick={handleCartClick} className="cart-btn">
@@ -200,7 +201,7 @@ const Header: React.FC = () => {
               </button>
             </li>
             <li className="nav-item">
-              <button onClick={() => handleNavClick('products')} className="nav-link cta-btn">Buy Online</button>
+              <button onClick={() => handleNavClick('products')} className="nav-link cta-btn">{HEADER.NAVIGATION.BUY_ONLINE}</button>
             </li>
           </ul>
           
