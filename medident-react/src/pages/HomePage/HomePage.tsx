@@ -2,6 +2,16 @@ import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useCart } from '../../contexts/CartContext';
 import { ProductBenefits } from './sections/ProductBenefits/product-benefits.exports';
+import {
+  HERO_SLIDES,
+  PRODUCT_SHOWCASE,
+  SENSITIVITY_QUIZ,
+  EDUCATION_SECTION,
+  HOME_PAGE_TESTIMONIALS,
+  VERTEX_ABOUT_SECTION,
+  HOME_PAGE_CONTACT,
+  IMAGE_MODAL
+} from '../../common';
 import './HomePage.scss';
 
 const HomePage = () => {
@@ -21,40 +31,40 @@ const HomePage = () => {
   const [zoomLevel, setZoomLevel] = useState(1);
   
   // Product variant state
-  
+
   const heroSlides = [
     {
       id: 1,
-      title: "Say Goodbye to Tooth Sensitivity",
-      subtitle: "Enjoy your favorite hot and cold foods again with Medident Sensitive Care",
-      description: "Clinically proven formula provides 24/7 protection from tooth sensitivity",
-      primaryCTA: "Shop Sensitive Care",
-      secondaryCTA: "Learn More",
-      backgroundClass: "slide-sensitivity",
-      productImage: "/assets/medident-sensetive-care.jpeg",
-      badge: "Most Popular"
+      title: HERO_SLIDES.SLIDE_1.TITLE,
+      subtitle: HERO_SLIDES.SLIDE_1.SUBTITLE,
+      description: HERO_SLIDES.SLIDE_1.DESCRIPTION,
+      primaryCTA: HERO_SLIDES.SLIDE_1.PRIMARY_CTA,
+      secondaryCTA: HERO_SLIDES.SLIDE_1.SECONDARY_CTA,
+      backgroundClass: HERO_SLIDES.SLIDE_1.BACKGROUND_CLASS,
+      productImage: HERO_SLIDES.SLIDE_1.PRODUCT_IMAGE,
+      badge: HERO_SLIDES.SLIDE_1.BADGE,
     },
     {
       id: 2,
-      title: "Healthy Gums, Confident Smile",
-      subtitle: "Advanced gum protection with Medident-G Gum Care toothpaste",
-      description: "Anti-bacterial formula prevents bleeding and strengthens gums naturally",
-      primaryCTA: "Shop Gum Care",
-      secondaryCTA: "Learn More",
-      backgroundClass: "slide-gum-care",
-      productImage: "/assets/medident-g.jpeg",
-      badge: "New Formula"
+      title: HERO_SLIDES.SLIDE_2.TITLE,
+      subtitle: HERO_SLIDES.SLIDE_2.SUBTITLE,
+      description: HERO_SLIDES.SLIDE_2.DESCRIPTION,
+      primaryCTA: HERO_SLIDES.SLIDE_2.PRIMARY_CTA,
+      secondaryCTA: HERO_SLIDES.SLIDE_2.SECONDARY_CTA,
+      backgroundClass: HERO_SLIDES.SLIDE_2.BACKGROUND_CLASS,
+      productImage: HERO_SLIDES.SLIDE_2.PRODUCT_IMAGE,
+      badge: HERO_SLIDES.SLIDE_2.BADGE,
     },
     {
       id: 3,
-      title: "Complete Oral Care Solutions",
-      subtitle: "From sensitivity relief to gum protection - Made in Bangladesh with pride",
-      description: "Choose the perfect solution for your oral health needs",
-      primaryCTA: "Shop All Products",
-      secondaryCTA: "Take Product Quiz",
-      backgroundClass: "slide-complete",
-      productImage: "/assets/medident-sensetive-care.jpeg",
-      badge: "Made in Bangladesh"
+      title: HERO_SLIDES.SLIDE_3.TITLE,
+      subtitle: HERO_SLIDES.SLIDE_3.SUBTITLE,
+      description: HERO_SLIDES.SLIDE_3.DESCRIPTION,
+      primaryCTA: HERO_SLIDES.SLIDE_3.PRIMARY_CTA,
+      secondaryCTA: HERO_SLIDES.SLIDE_3.SECONDARY_CTA,
+      backgroundClass: HERO_SLIDES.SLIDE_3.BACKGROUND_CLASS,
+      productImage: HERO_SLIDES.SLIDE_3.PRODUCT_IMAGE,
+      badge: HERO_SLIDES.SLIDE_3.BADGE,
     }
   ];
 
@@ -298,30 +308,30 @@ const HomePage = () => {
       <section id="products" className="product-showcase">
         <div className="container">
           <div className="section-header">
-            <h2 className="section-title">Our Complete Oral Care Range</h2>
-            <p className="section-subtitle">Choose the perfect solution for your oral health needs</p>
+            <h2 className="section-title">{PRODUCT_SHOWCASE.SECTION.TITLE}</h2>
+            <p className="section-subtitle">{PRODUCT_SHOWCASE.SECTION.SUBTITLE}</p>
           </div>
           
           <div className="products-grid">
             {/* Sensitive Care Product */}
             <div className="product-card" id="sensitive-care">
               <div className="product-badge">
-                <span className="badge featured">Most Popular</span>
+                <span className="badge featured">{PRODUCT_SHOWCASE.SENSITIVE_CARE.BADGE}</span>
               </div>
               <div className="product-image" onClick={() => openImageModal('sensitive-care', 0)}>
-                <img src="/assets/medident-4.png" alt="Medident Sensitive Care" />
+                <img src={PRODUCT_SHOWCASE.SENSITIVE_CARE.IMAGE} alt={PRODUCT_SHOWCASE.SENSITIVE_CARE.ALT_TEXT} />
               </div>
               <div className="product-info">
-                <div className="product-category">Sensitivity Relief</div>
+                <div className="product-category">{PRODUCT_SHOWCASE.SENSITIVE_CARE.CATEGORY}</div>
                 <h3 className="product-name">
-                  Medident Sensitive Care
+                  {PRODUCT_SHOWCASE.SENSITIVE_CARE.NAME}
                 </h3>
-                <p className="product-description">Advanced formula for immediate and lasting relief from tooth sensitivity</p>
+                <p className="product-description">{PRODUCT_SHOWCASE.SENSITIVE_CARE.DESCRIPTION}</p>
                 <ul className="product-benefits">
-                  <li><i className="fas fa-shield-alt"></i> 24/7 Protection</li>
-                  <li><i className="fas fa-check-circle"></i> Clinically Proven</li>
-                  <li><i className="fas fa-leaf"></i> Fresh Mint Flavor</li>
-                  <li><i className="fas fa-tooth"></i> Strengthens Enamel</li>
+                  <li><i className="fas fa-shield-alt"></i> {PRODUCT_SHOWCASE.SENSITIVE_CARE.BENEFITS.PROTECTION_24_7}</li>
+                  <li><i className="fas fa-check-circle"></i> {PRODUCT_SHOWCASE.SENSITIVE_CARE.BENEFITS.CLINICALLY_PROVEN}</li>
+                  <li><i className="fas fa-leaf"></i> {PRODUCT_SHOWCASE.SENSITIVE_CARE.BENEFITS.FRESH_MINT}</li>
+                  <li><i className="fas fa-tooth"></i> {PRODUCT_SHOWCASE.SENSITIVE_CARE.BENEFITS.STRENGTHENS_ENAMEL}</li>
                 </ul>
                 
                 <div className="product-price-summary">
@@ -335,10 +345,10 @@ const HomePage = () => {
                 <div className="product-actions">
                   <button className="btn btn-primary btn-full" onClick={() => handleQuickAddToCart('sensitive-care')}>
                     <i className="fas fa-shopping-cart"></i>
-                    Quick Add to Cart
+                    {PRODUCT_SHOWCASE.SENSITIVE_CARE.BUTTONS.ADD_TO_CART}
                   </button>
                   <button className="btn btn-secondary btn-outline" onClick={() => navigate('/product-details/sensitive-care')}>
-                    View Details
+                    {PRODUCT_SHOWCASE.SENSITIVE_CARE.BUTTONS.VIEW_DETAILS}
                   </button>
                 </div>
               </div>
@@ -347,22 +357,22 @@ const HomePage = () => {
             {/* Gum Care Product */}
             <div className="product-card" id="gum-care">
               <div className="product-badge">
-                <span className="badge new">New Formula</span>
+                <span className="badge new">{PRODUCT_SHOWCASE.GUM_CARE.BADGE}</span>
               </div>
               <div className="product-image" onClick={() => openImageModal('gum-care', 3)}>
-                <img src="/assets/medident-5.png" alt="Medident-G Gum Care" />
+                <img src={PRODUCT_SHOWCASE.GUM_CARE.IMAGE} alt={PRODUCT_SHOWCASE.GUM_CARE.ALT_TEXT} />
               </div>
               <div className="product-info">
-                <div className="product-category">Gum Health</div>
+                <div className="product-category">{PRODUCT_SHOWCASE.GUM_CARE.CATEGORY}</div>
                 <h3 className="product-name">
-                  Medident-G Gum Care
+                  {PRODUCT_SHOWCASE.GUM_CARE.NAME}
                 </h3>
-                <p className="product-description">Advanced gum protection formula for healthy gums and fresh breath</p>
+                <p className="product-description">{PRODUCT_SHOWCASE.GUM_CARE.DESCRIPTION}</p>
                 <ul className="product-benefits">
-                  <li><i className="fas fa-heart"></i> Gum Protection</li>
-                  <li><i className="fas fa-shield-alt"></i> Anti-bacterial</li>
-                  <li><i className="fas fa-droplet"></i> Prevents Bleeding</li>
-                  <li><i className="fas fa-leaf"></i> Natural Extracts</li>
+                  <li><i className="fas fa-heart"></i> {PRODUCT_SHOWCASE.GUM_CARE.BENEFITS.GUM_PROTECTION}</li>
+                  <li><i className="fas fa-shield-alt"></i> {PRODUCT_SHOWCASE.GUM_CARE.BENEFITS.ANTI_BACTERIAL}</li>
+                  <li><i className="fas fa-droplet"></i> {PRODUCT_SHOWCASE.GUM_CARE.BENEFITS.PREVENTS_BLEEDING}</li>
+                  <li><i className="fas fa-leaf"></i> {PRODUCT_SHOWCASE.GUM_CARE.BENEFITS.NATURAL_EXTRACTS}</li>
                 </ul>
                 
                 <div className="product-price-summary">
@@ -376,10 +386,10 @@ const HomePage = () => {
                 <div className="product-actions">
                   <button className="btn btn-primary btn-full" onClick={() => handleQuickAddToCart('gum-care')}>
                     <i className="fas fa-shopping-cart"></i>
-                    Quick Add to Cart
+                    {PRODUCT_SHOWCASE.GUM_CARE.BUTTONS.ADD_TO_CART}
                   </button>
                   <button className="btn btn-secondary btn-outline" onClick={() => navigate('/product-details/gum-care')}>
-                    View Details
+                    {PRODUCT_SHOWCASE.GUM_CARE.BUTTONS.VIEW_DETAILS}
                   </button>
                 </div>
               </div>
@@ -388,15 +398,15 @@ const HomePage = () => {
 
           {/* Product Comparison Section */}
           <div className="product-comparison" id="compare">
-            <h3>Not sure which product is right for you?</h3>
+            <h3>{PRODUCT_SHOWCASE.COMPARISON.TITLE}</h3>
             <div className="comparison-options">
               <button className="btn btn-secondary">
                 <i className="fas fa-balance-scale"></i>
-                Compare Products
+                {PRODUCT_SHOWCASE.COMPARISON.BUTTONS.COMPARE_PRODUCTS}
               </button>
               <button className="btn btn-primary">
                 <i className="fas fa-search"></i>
-                Take Product Quiz
+                {PRODUCT_SHOWCASE.COMPARISON.BUTTONS.TAKE_QUIZ}
               </button>
             </div>
           </div>
@@ -408,8 +418,8 @@ const HomePage = () => {
         <div className="container">
           <div className="quiz-container">
             <div className="quiz-header">
-              <h2>Do You Have Sensitive Teeth?</h2>
-              <p>Take our quick assessment to find out if Medident is right for you</p>
+              <h2>{SENSITIVITY_QUIZ.HEADER.TITLE}</h2>
+              <p>{SENSITIVITY_QUIZ.HEADER.SUBTITLE}</p>
             </div>
             
             <div className="quiz-content">
@@ -417,33 +427,33 @@ const HomePage = () => {
                 <>
                   {currentQuestion === 1 && (
                     <div className="quiz-question active">
-                      <h3>Do you experience sharp pain when eating ice cream or drinking hot beverages?</h3>
+                      <h3>{SENSITIVITY_QUIZ.QUESTIONS.QUESTION_1.TEXT}</h3>
                       <div className="quiz-options">
-                        <button className="quiz-option" onClick={() => handleQuizOption('yes')}>Yes, frequently</button>
-                        <button className="quiz-option" onClick={() => handleQuizOption('sometimes')}>Sometimes</button>
-                        <button className="quiz-option" onClick={() => handleQuizOption('no')}>Never</button>
+                        <button className="quiz-option" onClick={() => handleQuizOption('yes')}>{SENSITIVITY_QUIZ.QUESTIONS.QUESTION_1.OPTIONS.YES}</button>
+                        <button className="quiz-option" onClick={() => handleQuizOption('sometimes')}>{SENSITIVITY_QUIZ.QUESTIONS.QUESTION_1.OPTIONS.SOMETIMES}</button>
+                        <button className="quiz-option" onClick={() => handleQuizOption('no')}>{SENSITIVITY_QUIZ.QUESTIONS.QUESTION_1.OPTIONS.NO}</button>
                       </div>
                     </div>
                   )}
-                  
+
                   {currentQuestion === 2 && (
                     <div className="quiz-question active">
-                      <h3>Do you avoid certain foods because they cause tooth discomfort?</h3>
+                      <h3>{SENSITIVITY_QUIZ.QUESTIONS.QUESTION_2.TEXT}</h3>
                       <div className="quiz-options">
-                        <button className="quiz-option" onClick={() => handleQuizOption('yes')}>Yes, often</button>
-                        <button className="quiz-option" onClick={() => handleQuizOption('sometimes')}>Occasionally</button>
-                        <button className="quiz-option" onClick={() => handleQuizOption('no')}>No, never</button>
+                        <button className="quiz-option" onClick={() => handleQuizOption('yes')}>{SENSITIVITY_QUIZ.QUESTIONS.QUESTION_2.OPTIONS.YES}</button>
+                        <button className="quiz-option" onClick={() => handleQuizOption('sometimes')}>{SENSITIVITY_QUIZ.QUESTIONS.QUESTION_2.OPTIONS.SOMETIMES}</button>
+                        <button className="quiz-option" onClick={() => handleQuizOption('no')}>{SENSITIVITY_QUIZ.QUESTIONS.QUESTION_2.OPTIONS.NO}</button>
                       </div>
                     </div>
                   )}
-                  
+
                   {currentQuestion === 3 && (
                     <div className="quiz-question active">
-                      <h3>Does brushing your teeth sometimes cause discomfort?</h3>
+                      <h3>{SENSITIVITY_QUIZ.QUESTIONS.QUESTION_3.TEXT}</h3>
                       <div className="quiz-options">
-                        <button className="quiz-option" onClick={() => handleQuizOption('yes')}>Yes, it's painful</button>
-                        <button className="quiz-option" onClick={() => handleQuizOption('sometimes')}>Sometimes sensitive</button>
-                        <button className="quiz-option" onClick={() => handleQuizOption('no')}>No discomfort</button>
+                        <button className="quiz-option" onClick={() => handleQuizOption('yes')}>{SENSITIVITY_QUIZ.QUESTIONS.QUESTION_3.OPTIONS.YES}</button>
+                        <button className="quiz-option" onClick={() => handleQuizOption('sometimes')}>{SENSITIVITY_QUIZ.QUESTIONS.QUESTION_3.OPTIONS.SOMETIMES}</button>
+                        <button className="quiz-option" onClick={() => handleQuizOption('no')}>{SENSITIVITY_QUIZ.QUESTIONS.QUESTION_3.OPTIONS.NO}</button>
                       </div>
                     </div>
                   )}
@@ -483,37 +493,21 @@ const HomePage = () => {
       <section className="education">
         <div className="container">
           <div className="section-header">
-            <h2 className="section-title">Understanding Tooth Sensitivity</h2>
-            <p className="section-subtitle">Learn about causes, prevention, and treatment</p>
+            <h2 className="section-title">{EDUCATION_SECTION.HEADER.TITLE}</h2>
+            <p className="section-subtitle">{EDUCATION_SECTION.HEADER.SUBTITLE}</p>
           </div>
-          
+
           <div className="education-grid">
-            <div className="education-card">
-              <div className="card-icon">
-                <i className="fas fa-search"></i>
+            {EDUCATION_SECTION.EDUCATION_CARDS.map((card, index) => (
+              <div key={index} className="education-card">
+                <div className="card-icon">
+                  <i className={card.ICON}></i>
+                </div>
+                <h3>{card.TITLE}</h3>
+                <p>{card.DESCRIPTION}</p>
+                <a href={card.LINK_HREF} className="learn-more">{card.LINK_TEXT} <i className="fas fa-arrow-right"></i></a>
               </div>
-              <h3>What Causes Sensitivity?</h3>
-              <p>Tooth sensitivity occurs when the tooth's enamel wears down, exposing the underlying dentin and nerve endings.</p>
-              <a href="#learn-more" className="learn-more">Learn More <i className="fas fa-arrow-right"></i></a>
-            </div>
-            
-            <div className="education-card">
-              <div className="card-icon">
-                <i className="fas fa-shield-alt"></i>
-              </div>
-              <h3>Prevention Tips</h3>
-              <p>Use a soft-bristled toothbrush, avoid acidic foods, and choose toothpaste specifically designed for sensitive teeth.</p>
-              <a href="#prevention" className="learn-more">Learn More <i className="fas fa-arrow-right"></i></a>
-            </div>
-            
-            <div className="education-card">
-              <div className="card-icon">
-                <i className="fas fa-heart"></i>
-              </div>
-              <h3>Treatment Options</h3>
-              <p>Regular use of sensitivity toothpaste like Medident can provide relief and long-term protection.</p>
-              <a href="#treatment" className="learn-more">Learn More <i className="fas fa-arrow-right"></i></a>
-            </div>
+            ))}
           </div>
         </div>
       </section>
@@ -522,70 +516,30 @@ const HomePage = () => {
       <section className="testimonials">
         <div className="container">
           <div className="section-header">
-            <h2 className="section-title">What Our Customers Say</h2>
-            <p className="section-subtitle">Real experiences from real people</p>
+            <h2 className="section-title">{HOME_PAGE_TESTIMONIALS.HEADER.TITLE}</h2>
+            <p className="section-subtitle">{HOME_PAGE_TESTIMONIALS.HEADER.SUBTITLE}</p>
           </div>
-          
+
           <div className="testimonials-grid">
-            <div className="testimonial-card">
-              <div className="testimonial-content">
-                <div className="stars">
-                  <i className="fas fa-star"></i>
-                  <i className="fas fa-star"></i>
-                  <i className="fas fa-star"></i>
-                  <i className="fas fa-star"></i>
-                  <i className="fas fa-star"></i>
+            {HOME_PAGE_TESTIMONIALS.TESTIMONIALS_LIST.map((testimonial, index) => (
+              <div key={index} className="testimonial-card">
+                <div className="testimonial-content">
+                  <div className="stars">
+                    {[...Array(testimonial.RATING)].map((_, i) => (
+                      <i key={i} className="fas fa-star"></i>
+                    ))}
+                  </div>
+                  <p>"{testimonial.TEXT}"</p>
                 </div>
-                <p>"I've been using Medident for 6 months now, and my sensitivity issues are completely gone. Great local product!"</p>
-              </div>
-              <div className="testimonial-author">
-                <img src="/assets/customers/customer-1.svg" alt="Customer" className="author-image" />
-                <div className="author-info">
-                  <h4>Rashida Begum</h4>
-                  <span>Dhaka, Bangladesh</span>
-                </div>
-              </div>
-            </div>
-            
-            <div className="testimonial-card">
-              <div className="testimonial-content">
-                <div className="stars">
-                  <i className="fas fa-star"></i>
-                  <i className="fas fa-star"></i>
-                  <i className="fas fa-star"></i>
-                  <i className="fas fa-star"></i>
-                  <i className="fas fa-star"></i>
-                </div>
-                <p>"Finally, a Bangladeshi toothpaste that works as well as international brands. Proud to support local business."</p>
-              </div>
-              <div className="testimonial-author">
-                <img src="/assets/customers/customer-2.svg" alt="Customer" className="author-image" />
-                <div className="author-info">
-                  <h4>Karim Ahmed</h4>
-                  <span>Chittagong, Bangladesh</span>
+                <div className="testimonial-author">
+                  <img src={testimonial.IMAGE} alt="Customer" className="author-image" />
+                  <div className="author-info">
+                    <h4>{testimonial.NAME}</h4>
+                    <span>{testimonial.LOCATION}</span>
+                  </div>
                 </div>
               </div>
-            </div>
-            
-            <div className="testimonial-card">
-              <div className="testimonial-content">
-                <div className="stars">
-                  <i className="fas fa-star"></i>
-                  <i className="fas fa-star"></i>
-                  <i className="fas fa-star"></i>
-                  <i className="fas fa-star"></i>
-                  <i className="fas fa-star"></i>
-                </div>
-                <p>"My dentist recommended Medident, and I can now enjoy cold drinks without pain. Excellent value for money."</p>
-              </div>
-              <div className="testimonial-author">
-                <img src="/assets/customers/customer-3.svg" alt="Customer" className="author-image" />
-                <div className="author-info">
-                  <h4>Dr. Fatima Khan</h4>
-                  <span>Sylhet, Bangladesh</span>
-                </div>
-              </div>
-            </div>
+            ))}
           </div>
         </div>
       </section>
@@ -600,27 +554,18 @@ const HomePage = () => {
                 <h2 className="section-title">About VERTEX International</h2>
                 <p className="section-subtitle">Leading the future of oral care in Bangladesh since 2008</p>
               </div>
-              
+
               <div className="about-description">
                 <p className="about-intro">
-                  VERTEX International is a pioneering pharmaceutical and healthcare company based in Bangladesh, 
-                  dedicated to improving oral health through innovative, scientifically-backed products. 
-                  Since our establishment in 2008, we have been at the forefront of dental care innovation, 
-                  developing specialized solutions that meet the unique needs of Bangladeshi families.
+                  {VERTEX_ABOUT_SECTION.COMPANY_INTRO.PARAGRAPH_1}
                 </p>
-                
+
                 <p>
-                  Our flagship brand, Medident, represents our commitment to excellence in oral care. 
-                  We understand that oral health is fundamental to overall well-being, which is why we've 
-                  invested extensively in research and development to create products that provide real, 
-                  measurable benefits to our customers.
+                  {VERTEX_ABOUT_SECTION.COMPANY_INTRO.PARAGRAPH_2}
                 </p>
-                
+
                 <p>
-                  As a proud Bangladeshi company, we believe in supporting local communities while 
-                  maintaining international quality standards. Our state-of-the-art manufacturing 
-                  facility employs cutting-edge technology and adheres to strict quality control 
-                  measures to ensure every product meets the highest standards of safety and efficacy.
+                  {VERTEX_ABOUT_SECTION.COMPANY_INTRO.PARAGRAPH_3}
                 </p>
               </div>
             </div>
@@ -664,39 +609,17 @@ const HomePage = () => {
 
           {/* Core Values */}
           <div className="core-values">
-            <h3 className="values-title">Our Core Values</h3>
+            <h3 className="values-title">{VERTEX_ABOUT_SECTION.CORE_VALUES.TITLE}</h3>
             <div className="values-grid">
-              <div className="value-card">
-                <div className="value-icon">
-                  <i className="fas fa-microscope"></i>
+              {VERTEX_ABOUT_SECTION.CORE_VALUES.VALUES.map((value, index) => (
+                <div key={index} className="value-card">
+                  <div className="value-icon">
+                    <i className={value.ICON}></i>
+                  </div>
+                  <h4>{value.TITLE}</h4>
+                  <p>{value.DESCRIPTION}</p>
                 </div>
-                <h4>Innovation</h4>
-                <p>Continuously researching and developing new formulations to address evolving oral health needs.</p>
-              </div>
-              
-              <div className="value-card">
-                <div className="value-icon">
-                  <i className="fas fa-shield-alt"></i>
-                </div>
-                <h4>Quality</h4>
-                <p>Maintaining the highest standards in manufacturing, testing, and quality assurance processes.</p>
-              </div>
-              
-              <div className="value-card">
-                <div className="value-icon">
-                  <i className="fas fa-heart"></i>
-                </div>
-                <h4>Care</h4>
-                <p>Putting customer health and satisfaction at the center of everything we do.</p>
-              </div>
-              
-              <div className="value-card">
-                <div className="value-icon">
-                  <i className="fas fa-flag"></i>
-                </div>
-                <h4>Local Pride</h4>
-                <p>Contributing to Bangladesh's economy while serving our local communities with pride.</p>
-              </div>
+              ))}
             </div>
           </div>
 
@@ -705,65 +628,35 @@ const HomePage = () => {
             <div className="mission-vision-grid">
               <div className="mission-card">
                 <div className="card-header">
-                  <i className="fas fa-bullseye"></i>
-                  <h3>Our Mission</h3>
+                  <i className={VERTEX_ABOUT_SECTION.MISSION_VISION.MISSION.ICON}></i>
+                  <h3>{VERTEX_ABOUT_SECTION.MISSION_VISION.MISSION.TITLE}</h3>
                 </div>
-                <p>
-                  To provide innovative, effective, and affordable oral care solutions that empower 
-                  every Bangladeshi family to achieve optimal oral health, while contributing to 
-                  the nation's healthcare sector and economic growth.
-                </p>
+                <p>{VERTEX_ABOUT_SECTION.MISSION_VISION.MISSION.TEXT}</p>
               </div>
-              
+
               <div className="vision-card">
                 <div className="card-header">
-                  <i className="fas fa-eye"></i>
-                  <h3>Our Vision</h3>
+                  <i className={VERTEX_ABOUT_SECTION.MISSION_VISION.VISION.ICON}></i>
+                  <h3>{VERTEX_ABOUT_SECTION.MISSION_VISION.VISION.TITLE}</h3>
                 </div>
-                <p>
-                  To become Bangladesh's most trusted oral care brand and a leading pharmaceutical 
-                  company in South Asia, recognized for our commitment to innovation, quality, 
-                  and community well-being.
-                </p>
+                <p>{VERTEX_ABOUT_SECTION.MISSION_VISION.VISION.TEXT}</p>
               </div>
             </div>
           </div>
 
           {/* Certifications & Awards */}
           <div id="quality" className="certifications">
-            <h3 className="certifications-title">Quality Standards & Certifications</h3>
+            <h3 className="certifications-title">{VERTEX_ABOUT_SECTION.CERTIFICATIONS.TITLE}</h3>
             <div className="certifications-grid">
-              <div className="cert-item">
-                <i className="fas fa-certificate"></i>
-                <div className="cert-info">
-                  <h4>ISO 9001:2015</h4>
-                  <p>Quality Management System</p>
+              {VERTEX_ABOUT_SECTION.CERTIFICATIONS.ITEMS.map((cert, index) => (
+                <div key={index} className="cert-item">
+                  <i className={cert.ICON}></i>
+                  <div className="cert-info">
+                    <h4>{cert.TITLE}</h4>
+                    <p>{cert.DESCRIPTION}</p>
+                  </div>
                 </div>
-              </div>
-              
-              <div className="cert-item">
-                <i className="fas fa-leaf"></i>
-                <div className="cert-info">
-                  <h4>ISO 14001:2015</h4>
-                  <p>Environmental Management</p>
-                </div>
-              </div>
-              
-              <div className="cert-item">
-                <i className="fas fa-medkit"></i>
-                <div className="cert-info">
-                  <h4>BSTI Approved</h4>
-                  <p>Bangladesh Standards Certified</p>
-                </div>
-              </div>
-              
-              <div className="cert-item">
-                <i className="fas fa-award"></i>
-                <div className="cert-info">
-                  <h4>Best Local Brand</h4>
-                  <p>Bangladesh Business Awards 2023</p>
-                </div>
-              </div>
+              ))}
             </div>
           </div>
 
@@ -771,28 +664,15 @@ const HomePage = () => {
           <div className="social-responsibility">
             <div className="social-content">
               <div className="social-text">
-                <h3>Our Social Responsibility</h3>
-                <p>
-                  At VERTEX International, we believe in giving back to the community that has 
-                  supported our growth. Our social responsibility initiatives focus on:
-                </p>
+                <h3>{VERTEX_ABOUT_SECTION.SOCIAL_RESPONSIBILITY.TITLE}</h3>
+                <p>{VERTEX_ABOUT_SECTION.SOCIAL_RESPONSIBILITY.INTRO}</p>
                 <ul className="responsibility-list">
-                  <li>
-                    <i className="fas fa-graduation-cap"></i>
-                    <span><strong>Oral Health Education:</strong> Free dental awareness programs in schools and communities</span>
-                  </li>
-                  <li>
-                    <i className="fas fa-clinic-medical"></i>
-                    <span><strong>Healthcare Support:</strong> Sponsoring dental camps in rural areas</span>
-                  </li>
-                  <li>
-                    <i className="fas fa-seedling"></i>
-                    <span><strong>Environmental Care:</strong> Sustainable manufacturing practices and eco-friendly packaging</span>
-                  </li>
-                  <li>
-                    <i className="fas fa-hands-helping"></i>
-                    <span><strong>Community Development:</strong> Supporting local employment and skill development</span>
-                  </li>
+                  {VERTEX_ABOUT_SECTION.SOCIAL_RESPONSIBILITY.INITIATIVES.map((initiative, index) => (
+                    <li key={index}>
+                      <i className={initiative.ICON}></i>
+                      <span><strong>{initiative.TITLE}:</strong> {initiative.DESCRIPTION}</span>
+                    </li>
+                  ))}
                 </ul>
               </div>
               
@@ -846,36 +726,36 @@ const HomePage = () => {
         <div className="container">
           <div className="contact-content">
             <div className="contact-info">
-              <h2>Get in Touch</h2>
-              <p>Have questions about our products? We're here to help!</p>
-              
+              <h2>{HOME_PAGE_CONTACT.HEADER.TITLE}</h2>
+              <p>{HOME_PAGE_CONTACT.HEADER.SUBTITLE}</p>
+
               <div className="contact-details">
                 <div className="contact-item">
-                  <i className="fas fa-map-marker-alt"></i>
+                  <i className={HOME_PAGE_CONTACT.CONTACT_DETAILS.ADDRESS.ICON}></i>
                   <div>
-                    <h4>Address</h4>
-                    <p>House-10, Road-5, Block-B<br />Rampura, Banasree<br />Dhaka-1219, Bangladesh</p>
+                    <h4>{HOME_PAGE_CONTACT.CONTACT_DETAILS.ADDRESS.LABEL}</h4>
+                    <p>{HOME_PAGE_CONTACT.CONTACT_DETAILS.ADDRESS.TEXT_LINE_1}<br />{HOME_PAGE_CONTACT.CONTACT_DETAILS.ADDRESS.TEXT_LINE_2}<br />{HOME_PAGE_CONTACT.CONTACT_DETAILS.ADDRESS.TEXT_LINE_3}</p>
                   </div>
                 </div>
-                
+
                 <div className="contact-item">
-                  <i className="fas fa-phone"></i>
+                  <i className={HOME_PAGE_CONTACT.CONTACT_DETAILS.PHONE.ICON}></i>
                   <div>
-                    <h4>Phone</h4>
-                    <p>+880 1328990900</p>
+                    <h4>{HOME_PAGE_CONTACT.CONTACT_DETAILS.PHONE.LABEL}</h4>
+                    <p>{HOME_PAGE_CONTACT.CONTACT_DETAILS.PHONE.TEXT}</p>
                   </div>
                 </div>
-                
+
                 <div className="contact-item">
-                  <i className="fas fa-envelope"></i>
+                  <i className={HOME_PAGE_CONTACT.CONTACT_DETAILS.EMAIL.ICON}></i>
                   <div>
-                    <h4>Email</h4>
-                    <p>sales.vertex23@gmail.com</p>
+                    <h4>{HOME_PAGE_CONTACT.CONTACT_DETAILS.EMAIL.LABEL}</h4>
+                    <p>{HOME_PAGE_CONTACT.CONTACT_DETAILS.EMAIL.TEXT}</p>
                   </div>
                 </div>
               </div>
             </div>
-            
+
             <div className="contact-form">
               <form className="form">
                 <div className="form-group">
@@ -901,41 +781,41 @@ const HomePage = () => {
       {showImageModal && (
         <div className="image-modal-overlay" onClick={closeImageModal}>
           <div className="image-modal" onClick={e => e.stopPropagation()}>
-            <button className="modal-close" onClick={closeImageModal}>
-              <i className="fas fa-times"></i>
+            <button className="modal-close" onClick={closeImageModal} aria-label={IMAGE_MODAL.BUTTONS.CLOSE.ARIA_LABEL}>
+              <i className={IMAGE_MODAL.BUTTONS.CLOSE.ICON}></i>
             </button>
-            
+
             <div className="image-container">
-              <img 
-                src={getCurrentImages()[getAdjustedIndex()]} 
-                alt="Product view" 
+              <img
+                src={getCurrentImages()[getAdjustedIndex()]}
+                alt={IMAGE_MODAL.ALT_TEXT}
                 style={{ transform: `scale(${zoomLevel})` }}
                 className="modal-image"
               />
             </div>
-            
+
             <div className="image-controls">
               <div className="zoom-controls">
-                <button className="control-btn" onClick={zoomOut} disabled={zoomLevel <= 0.5}>
-                  <i className="fas fa-minus"></i>
+                <button className="control-btn" onClick={zoomOut} disabled={zoomLevel <= 0.5} aria-label={IMAGE_MODAL.BUTTONS.ZOOM_OUT.ARIA_LABEL}>
+                  <i className={IMAGE_MODAL.BUTTONS.ZOOM_OUT.ICON}></i>
                 </button>
-                <button className="control-btn reset-btn" onClick={resetZoom}>
-                  <i className="fas fa-expand-arrows-alt"></i>
+                <button className="control-btn reset-btn" onClick={resetZoom} aria-label={IMAGE_MODAL.BUTTONS.ZOOM_RESET.ARIA_LABEL}>
+                  <i className={IMAGE_MODAL.BUTTONS.ZOOM_RESET.ICON}></i>
                 </button>
-                <button className="control-btn" onClick={zoomIn} disabled={zoomLevel >= 3}>
-                  <i className="fas fa-plus"></i>
+                <button className="control-btn" onClick={zoomIn} disabled={zoomLevel >= 3} aria-label={IMAGE_MODAL.BUTTONS.ZOOM_IN.ARIA_LABEL}>
+                  <i className={IMAGE_MODAL.BUTTONS.ZOOM_IN.ICON}></i>
                 </button>
               </div>
-              
+
               <div className="navigation-controls">
-                <button className="nav-control prev" onClick={prevImage}>
-                  <i className="fas fa-chevron-left"></i>
+                <button className="nav-control prev" onClick={prevImage} aria-label={IMAGE_MODAL.BUTTONS.PREV_IMAGE.ARIA_LABEL}>
+                  <i className={IMAGE_MODAL.BUTTONS.PREV_IMAGE.ICON}></i>
                 </button>
                 <span className="image-counter">
                   {getAdjustedIndex() + 1} / {getCurrentImages().length}
                 </span>
-                <button className="nav-control next" onClick={nextImage}>
-                  <i className="fas fa-chevron-right"></i>
+                <button className="nav-control next" onClick={nextImage} aria-label={IMAGE_MODAL.BUTTONS.NEXT_IMAGE.ARIA_LABEL}>
+                  <i className={IMAGE_MODAL.BUTTONS.NEXT_IMAGE.ICON}></i>
                 </button>
               </div>
             </div>

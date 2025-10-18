@@ -98,7 +98,7 @@ export const VERTEX_ABOUT_SECTION = {
     SUBTITLE: 'Leading the future of oral care in Bangladesh since 2008',
   },
   COMPANY_INTRO: {
-    PARAGRAPH_1: 'VERTEX International is a pioneering pharmaceutical and healthcare company based in Bangladesh, dedicated to improving oral health through innovative, scientifically-backed products. Since our establishment in 2008, we have been at the forefront of dental care innovation, developing specialized solutions that meet the unique needs of Bangladeshi families.',
+    PARAGRAPH_1: 'VERTEX International is a healthcare company based in Bangladesh, dedicated to improving oral health through innovative, scientifically-backed products. Since our establishment in 2022, we have been at the forefront of dental care innovation, developing specialized solutions that meet the unique needs of Bangladeshi families.',
     PARAGRAPH_2: 'Our flagship brand, Medident, represents our commitment to excellence in oral care. We understand that oral health is fundamental to overall well-being, which is why we\'ve invested extensively in research and development to create products that provide real, measurable benefits to our customers.',
     PARAGRAPH_3: 'As a proud Bangladeshi company, we believe in supporting local communities while maintaining international quality standards. Our state-of-the-art manufacturing facility employs cutting-edge technology and adheres to strict quality control measures to ensure every product meets the highest standards of safety and efficacy.',
   },
