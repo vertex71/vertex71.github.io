@@ -343,10 +343,10 @@ const HomePage = () => {
                   <div className="size-info">100g tube</div>
                 </div>
                 <div className="product-actions">
-                  <button className="btn btn-primary btn-full" onClick={() => handleQuickAddToCart('sensitive-care')}>
+                  {/* <button className="btn btn-primary btn-full" onClick={() => handleQuickAddToCart('sensitive-care')}>
                     <i className="fas fa-shopping-cart"></i>
                     {PRODUCT_SHOWCASE.SENSITIVE_CARE.BUTTONS.ADD_TO_CART}
-                  </button>
+                  </button> */}
                   <button className="btn btn-secondary btn-outline" onClick={() => navigate('/product-details/sensitive-care')}>
                     {PRODUCT_SHOWCASE.SENSITIVE_CARE.BUTTONS.VIEW_DETAILS}
                   </button>
@@ -384,10 +384,10 @@ const HomePage = () => {
                   <div className="size-info">100g tube</div>
                 </div>
                 <div className="product-actions">
-                  <button className="btn btn-primary btn-full" onClick={() => handleQuickAddToCart('gum-care')}>
+                  {/* <button className="btn btn-primary btn-full" onClick={() => handleQuickAddToCart('gum-care')}>
                     <i className="fas fa-shopping-cart"></i>
                     {PRODUCT_SHOWCASE.GUM_CARE.BUTTONS.ADD_TO_CART}
-                  </button>
+                  </button> */}
                   <button className="btn btn-secondary btn-outline" onClick={() => navigate('/product-details/gum-care')}>
                     {PRODUCT_SHOWCASE.GUM_CARE.BUTTONS.VIEW_DETAILS}
                   </button>
@@ -552,7 +552,7 @@ const HomePage = () => {
             <div className="about-text">
               <div className="section-header">
                 <h2 className="section-title">About VERTEX International</h2>
-                <p className="section-subtitle">Leading the future of oral care in Bangladesh since 2008</p>
+                <p className="section-subtitle">Leading the future of oral care in Bangladesh since 2022</p>
               </div>
 
               <div className="about-description">

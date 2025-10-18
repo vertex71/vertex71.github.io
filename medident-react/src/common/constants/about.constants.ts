@@ -219,23 +219,23 @@ export const VERTEX_ABOUT_SECTION = {
         DESCRIPTION: 'Supporting local employment and skill development',
       },
     ],
-    COMMUNITY_IMPACT: {
-      TITLE: 'Community Impact',
-      STATS: [
-        {
-          NUMBER: '10,000+',
-          LABEL: 'Students Educated',
-        },
-        {
-          NUMBER: '50+',
-          LABEL: 'Health Camps',
-        },
-        {
-          NUMBER: '200+',
-          LABEL: 'Jobs Created',
-        },
-      ],
-    },
+    // COMMUNITY_IMPACT: {
+    //   TITLE: 'Community Impact',
+    //   STATS: [
+    //     {
+    //       NUMBER: '10,000+',
+    //       LABEL: 'Students Educated',
+    //     },
+    //     {
+    //       NUMBER: '50+',
+    //       LABEL: 'Health Camps',
+    //     },
+    //     {
+    //       NUMBER: '200+',
+    //       LABEL: 'Jobs Created',
+    //     },
+    //   ],
+    // },
   },
   CALL_TO_ACTION: {
     TITLE: 'Join the VERTEX International Family',

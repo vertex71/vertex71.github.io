@@ -192,14 +192,14 @@ const Header: React.FC = () => {
             <li className="nav-item">
               <button onClick={() => handleNavClick('contact')} className="nav-link">{HEADER.NAVIGATION.CONTACT}</button>
             </li>
-            <li className="nav-item">
+            {/* <li className="nav-item">
               <button onClick={handleCartClick} className="cart-btn">
                 <i className="fas fa-shopping-cart"></i>
                 {getTotalItems() > 0 && (
                   <span className="cart-count">{getTotalItems()}</span>
                 )}
               </button>
-            </li>
+            </li> */}
             <li className="nav-item">
               <button onClick={() => handleNavClick('products')} className="nav-link cta-btn">{HEADER.NAVIGATION.BUY_ONLINE}</button>
             </li>
