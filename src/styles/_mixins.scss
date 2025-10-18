@@ -1,0 +1,228 @@
+// SCSS Mixins for Medident React App
+
+// Responsive mixins
+@mixin mobile {
+  @media (max-width: #{$breakpoint-tablet - 1px}) {
+    @content;
+  }
+}
+
+@mixin tablet {
+  @media (min-width: #{$breakpoint-tablet}) and (max-width: #{$breakpoint-desktop - 1px}) {
+    @content;
+  }
+}
+
+@mixin desktop {
+  @media (min-width: #{$breakpoint-desktop}) {
+    @content;
+  }
+}
+
+@mixin large-screen {
+  @media (min-width: #{$breakpoint-large}) {
+    @content;
+  }
+}
+
+// Container mixin
+@mixin container {
+  max-width: $container-max-width;
+  margin: 0 auto;
+  padding: 0 $container-padding;
+  
+  @include mobile {
+    padding: 0 #{$container-padding / 2};
+  }
+}
+
+// Button mixins
+@mixin button-base {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: $spacing-sm;
+  padding: 12px 24px;
+  border: none;
+  border-radius: $border-radius;
+  font-weight: $font-weight-medium;
+  font-size: $font-size-base;
+  text-decoration: none;
+  text-align: center;
+  cursor: pointer;
+  transition: $transition;
+  font-family: inherit;
+  line-height: 1;
+  min-height: $button-height;
+  
+  &:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+  }
+  
+  &:focus {
+    outline: 2px solid $primary-color;
+    outline-offset: 2px;
+  }
+}
+
+@mixin button-hover-effect {
+  &:hover:not(:disabled) {
+    transform: translateY(-2px);
+    box-shadow: $shadow-medium;
+  }
+}
+
+// Card mixins
+@mixin card {
+  background: $white;
+  border-radius: $border-radius;
+  box-shadow: $shadow-light;
+  overflow: hidden;
+  transition: $transition;
+  
+  &:hover {
+    box-shadow: $shadow-medium;
+  }
+}
+
+@mixin card-padding {
+  padding: $spacing-lg;
+  
+  @include mobile {
+    padding: $spacing-md;
+  }
+}
+
+// Typography mixins
+@mixin heading-base {
+  font-family: $font-primary;
+  font-weight: $font-weight-semibold;
+  line-height: 1.2;
+  color: $text-dark;
+  margin: 0 0 $spacing-md 0;
+}
+
+@mixin h1 {
+  @include heading-base;
+  font-size: $font-size-4xl;
+  
+  @include mobile {
+    font-size: $font-size-3xl;
+  }
+}
+
+@mixin h2 {
+  @include heading-base;
+  font-size: $font-size-3xl;
+  
+  @include mobile {
+    font-size: $font-size-2xl;
+  }
+}
+
+@mixin h3 {
+  @include heading-base;
+  font-size: $font-size-2xl;
+  
+  @include mobile {
+    font-size: $font-size-xl;
+  }
+}
+
+@mixin body-text {
+  font-family: $font-secondary;
+  font-size: $font-size-base;
+  line-height: 1.6;
+  color: $text-light;
+}
+
+// Flexbox utilities
+@mixin flex-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+@mixin flex-between {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+@mixin flex-column {
+  display: flex;
+  flex-direction: column;
+}
+
+// Grid utilities
+@mixin grid-auto-fit($min-width: 250px) {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax($min-width, 1fr));
+  gap: $spacing-lg;
+}
+
+// Position utilities
+@mixin absolute-center {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+// Animation utilities
+@mixin fade-in($duration: 0.3s) {
+  animation: fadeIn $duration ease-out;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+// Form input mixin
+@mixin form-input {
+  width: 100%;
+  padding: 12px 16px;
+  border: 2px solid $border-color;
+  border-radius: $border-radius;
+  font-size: $font-size-base;
+  font-family: $font-secondary;
+  transition: $transition;
+  
+  &:focus {
+    outline: none;
+    border-color: $primary-color;
+    box-shadow: 0 0 0 3px rgba($primary-color, 0.1);
+  }
+  
+  &::placeholder {
+    color: $text-light;
+  }
+}
+
+// Truncate text
+@mixin truncate {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+// Visually hidden (for accessibility)
+@mixin visually-hidden {
+  position: absolute !important;
+  width: 1px !important;
+  height: 1px !important;
+  padding: 0 !important;
+  margin: -1px !important;
+  overflow: hidden !important;
+  clip: rect(0, 0, 0, 0) !important;
+  white-space: nowrap !important;
+  border: 0 !important;
+}
