@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Medident Image Generator</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 20px;
+            background: #f5f5f5;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        .image-item {
+            margin: 20px 0;
+            padding: 20px;
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        h2 {
+            color: #2E86C1;
+            border-bottom: 2px solid #2E86C1;
+            padding-bottom: 10px;
+        }
+        .download-link {
+            display: inline-block;
+            background: #2E86C1;
+            color: white;
+            padding: 10px 20px;
+            text-decoration: none;
+            border-radius: 5px;
+            margin: 10px 10px 10px 0;
+        }
+        .placeholder {
+            display: inline-block;
+            text-align: center;
+            color: white;
+            font-weight: bold;
+            margin: 10px;
+            border-radius: 8px;
+            line-height: 1.2;
+            padding: 20px;
+            box-sizing: border-box;
+        }
+        .logo {
+            width: 200px;
+            height: 60px;
+            background: linear-gradient(135deg, #2E86C1, #3498DB);
+            font-size: 24px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .product-main {
+            width: 400px;
+            height: 300px;
+            background: linear-gradient(135deg, #f8f9fa, #e9ecef);
+            color: #2E86C1;
+            font-size: 18px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+        .product-hero {
+            width: 600px;
+            height: 400px;
+            background: linear-gradient(135deg, #EBF3FD, #F8FBFF);
+            color: #2E86C1;
+            font-size: 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+        .customer-avatar {
+            width: 100px;
+            height: 100px;
+            background: linear-gradient(135deg, #58D68D, #2ECC71);
+            border-radius: 50%;
+            font-size: 12px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+        .manufacturing {
+            width: 600px;
+            height: 400px;
+            background: linear-gradient(135deg, #34495E, #2C3E50);
+            color: white;
+            font-size: 18px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+        .related-product {
+            width: 150px;
+            height: 150px;
+            background: linear-gradient(135deg, #F39C12, #E67E22);
+            color: white;
+            font-size: 14px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Medident Website Image Placeholders</h1>
+        <p>Right-click on any image below and select "Save Image As..." to download the placeholder image.</p>
+
+        <div class="image-item">
+            <h2>1. Logo (200x60px)</h2>
+            <canvas class="placeholder logo" width="200" height="60" id="logo"></canvas>
+            <br>
+            <strong>Filename:</strong> medident-logo.png<br>
+            <strong>Location:</strong> /images/medident-logo.png
+        </div>
+
+        <div class="image-item">
+            <h2>2. Hero Product Image (600x400px)</h2>
+            <canvas class="placeholder product-hero" width="600" height="400" id="hero-product"></canvas>
+            <br>
+            <strong>Filename:</strong> medident-hero-product.png<br>
+            <strong>Location:</strong> /images/medident-hero-product.png
+        </div>
+
+        <div class="image-item">
+            <h2>3. Product Showcase (400x300px)</h2>
+            <canvas class="placeholder product-main" width="400" height="300" id="product-showcase"></canvas>
+            <br>
+            <strong>Filename:</strong> medident-sensitive-care.png<br>
+            <strong>Location:</strong> /images/medident-sensitive-care.png
+        </div>
+
+        <div class="image-item">
+            <h2>4. Product Gallery - Main Large (800x600px)</h2>
+            <canvas class="placeholder" width="800" height="600" id="product-large" style="background: linear-gradient(135deg, #f8f9fa, #e9ecef); color: #2E86C1; font-size: 24px; display: flex; align-items: center; justify-content: center;"></canvas>
+            <br>
+            <strong>Filename:</strong> medident-sensitive-care-large.png<br>
+            <strong>Location:</strong> /images/products/medident-sensitive-care-large.png
+        </div>
+
+        <div class="image-item">
+            <h2>5. Product Thumbnails (200x150px each)</h2>
+            <canvas class="placeholder" width="200" height="150" id="product-front" style="background: linear-gradient(135deg, #3498DB, #2E86C1); color: white; font-size: 14px; display: flex; align-items: center; justify-content: center;"></canvas>
+            <canvas class="placeholder" width="200" height="150" id="product-back" style="background: linear-gradient(135deg, #58D68D, #2ECC71); color: white; font-size: 14px; display: flex; align-items: center; justify-content: center;"></canvas>
+            <canvas class="placeholder" width="200" height="150" id="product-side" style="background: linear-gradient(135deg, #F39C12, #E67E22); color: white; font-size: 14px; display: flex; align-items: center; justify-content: center;"></canvas>
+            <canvas class="placeholder" width="200" height="150" id="product-tube" style="background: linear-gradient(135deg, #9B59B6, #8E44AD); color: white; font-size: 14px; display: flex; align-items: center; justify-content: center;"></canvas>
+            <br>
+            <strong>Filenames:</strong> medident-front.png, medident-back.png, medident-side.png, medident-tube.png<br>
+            <strong>Location:</strong> /images/products/
+        </div>
+
+        <div class="image-item">
+            <h2>6. Customer Testimonial Avatars (100x100px each)</h2>
+            <canvas class="placeholder customer-avatar" width="100" height="100" id="customer-1"></canvas>
+            <canvas class="placeholder customer-avatar" width="100" height="100" id="customer-2"></canvas>
+            <canvas class="placeholder customer-avatar" width="100" height="100" id="customer-3"></canvas>
+            <br>
+            <strong>Filenames:</strong> customer-1.jpg, customer-2.jpg, customer-3.jpg<br>
+            <strong>Location:</strong> /images/customers/
+        </div>
+
+        <div class="image-item">
+            <h2>7. Manufacturing Facility (600x400px)</h2>
+            <canvas class="placeholder manufacturing" width="600" height="400" id="manufacturing"></canvas>
+            <br>
+            <strong>Filename:</strong> about-manufacturing.jpg<br>
+            <strong>Location:</strong> /images/company/about-manufacturing.jpg
+        </div>
+
+        <div class="image-item">
+            <h2>8. Product Page Reviewer Avatars (50x50px each)</h2>
+            <canvas class="placeholder" width="50" height="50" id="reviewer-1" style="background: linear-gradient(135deg, #E91E63, #AD1457); color: white; border-radius: 50%; font-size: 10px; display: flex; align-items: center; justify-content: center;"></canvas>
+            <canvas class="placeholder" width="50" height="50" id="reviewer-2" style="background: linear-gradient(135deg, #FF5722, #D84315); color: white; border-radius: 50%; font-size: 10px; display: flex; align-items: center; justify-content: center;"></canvas>
+            <canvas class="placeholder" width="50" height="50" id="reviewer-3" style="background: linear-gradient(135deg, #607D8B, #455A64); color: white; border-radius: 50%; font-size: 10px; display: flex; align-items: center; justify-content: center;"></canvas>
+            <br>
+            <strong>Filenames:</strong> reviewer-1.jpg, reviewer-2.jpg, reviewer-3.jpg<br>
+            <strong>Location:</strong> /images/customers/
+        </div>
+
+        <div class="image-item">
+            <h2>9. Related Products (150x150px each)</h2>
+            <canvas class="placeholder related-product" width="150" height="150" id="mouthwash"></canvas>
+            <canvas class="placeholder related-product" width="150" height="150" id="toothbrush"></canvas>
+            <canvas class="placeholder related-product" width="150" height="150" id="floss"></canvas>
+            <br>
+            <strong>Filenames:</strong> medident-mouthwash.png, medident-toothbrush.png, medident-floss.png<br>
+            <strong>Location:</strong> /images/products/
+        </div>
+
+        <div class="image-item">
+            <h2>Instructions</h2>
+            <ol>
+                <li>Right-click on each canvas image above</li>
+                <li>Select "Save Image As..." from the context menu</li>
+                <li>Save with the exact filename shown below each image</li>
+                <li>Place in the correct folder as indicated</li>
+                <li>The website will automatically use these images</li>
+            </ol>
+        </div>
+    </div>
+
+    <script>
+        // Generate canvas images
+        function drawCanvasText(canvasId, text, fontSize = '16px') {
+            const canvas = document.getElementById(canvasId);
+            const ctx = canvas.getContext('2d');
+            
+            // Set font
+            ctx.font = `${fontSize} Arial, sans-serif`;
+            ctx.fillStyle = 'white';
+            ctx.textAlign = 'center';
+            ctx.textBaseline = 'middle';
+            
+            // Add text
+            const lines = text.split('\n');
+            const lineHeight = parseInt(fontSize) * 1.2;
+            const startY = canvas.height / 2 - (lines.length - 1) * lineHeight / 2;
+            
+            lines.forEach((line, index) => {
+                ctx.fillText(line, canvas.width / 2, startY + index * lineHeight);
+            });
+        }
+
+        // Logo
+        drawCanvasText('logo', 'MEDIDENT', '20px');
+
+        // Hero product
+        drawCanvasText('hero-product', 'MEDIDENT\nSensitive Care\nToothpaste', '24px');
+
+        // Product showcase
+        drawCanvasText('product-showcase', 'MEDIDENT\nSensitive Care\n75ml', '18px');
+
+        // Product large
+        drawCanvasText('product-large', 'MEDIDENT\nSensitive Care\nDetailed View', '28px');
+
+        // Product thumbnails
+        drawCanvasText('product-front', 'Front View', '12px');
+        drawCanvasText('product-back', 'Back View', '12px');
+        drawCanvasText('product-side', 'Side View', '12px');
+        drawCanvasText('product-tube', 'Tube Only', '12px');
+
+        // Customer avatars
+        drawCanvasText('customer-1', 'R.B.', '14px');
+        drawCanvasText('customer-2', 'K.A.', '14px');
+        drawCanvasText('customer-3', 'F.K.', '14px');
+
+        // Manufacturing
+        drawCanvasText('manufacturing', 'VERTEX INTERNATIONAL\nManufacturing Facility\nDhaka, Bangladesh', '20px');
+
+        // Reviewer avatars
+        drawCanvasText('reviewer-1', 'F.R.', '8px');
+        drawCanvasText('reviewer-2', 'A.K.', '8px');
+        drawCanvasText('reviewer-3', 'N.S.', '8px');
+
+        // Related products
+        drawCanvasText('mouthwash', 'MEDIDENT\nMouthwash', '12px');
+        drawCanvasText('toothbrush', 'MEDIDENT\nToothbrush', '12px');
+        drawCanvasText('floss', 'MEDIDENT\nDental Floss', '12px');
+    </script>
+</body>
+</html>

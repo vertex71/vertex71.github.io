@@ -1,0 +1,288 @@
+// Global Styles - SCSS Version
+@import 'variables';
+@import 'mixins';
+
+// Reset and Base Styles
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  height: 100%;
+  min-height: 100vh;
+  min-height: -webkit-fill-available;
+}
+
+body {
+  font-family: $font-secondary;
+  line-height: 1.6;
+  color: $text-dark;
+  background-color: $white;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  height: 100%;
+  min-height: 100vh;
+  min-height: -webkit-fill-available;
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+}
+
+#root {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  margin: 0;
+  padding: 0;
+}
+
+/* Ensure no spacing at the bottom */
+main {
+  margin-bottom: 0;
+  padding-bottom: 0;
+}
+
+/* Remove bottom margins from last child elements */
+main > div > section:last-child,
+main > section:last-child,
+.contact {
+  margin-bottom: 0 !important;
+  padding-bottom: 0 !important;
+}
+
+/* Mobile viewport and spacing fixes */
+@media screen and (max-width: 768px) {
+  html {
+    height: 100%;
+    height: -webkit-fill-available;
+    height: 100dvh;
+  }
+  
+  body {
+    min-height: 100vh;
+    min-height: -webkit-fill-available;
+    min-height: 100dvh;
+    margin: 0 !important;
+    padding: 0 !important;
+  }
+  
+  #root {
+    min-height: 100vh;
+    min-height: -webkit-fill-available;
+    min-height: 100dvh;
+  }
+  
+  /* Ensure last section has no bottom space */
+  section:last-of-type,
+  div:last-child section:last-child {
+    margin-bottom: 0 !important;
+    padding-bottom: 0 !important;
+  }
+  
+  /* Force footer to stick to bottom with better positioning */
+  .footer {
+    margin-top: auto;
+    position: relative;
+  }
+}
+
+/* Specific mobile footer extension */
+@media screen and (max-width: 480px) {
+  .App {
+    min-height: 100vh;
+    min-height: 100dvh;
+    min-height: -webkit-fill-available;
+  }
+  
+  /* Add extra space after footer to fill screen */
+  .footer::after {
+    content: '';
+    display: block;
+    height: 30px;
+    background: #2C3E50;
+    width: 100vw;
+    position: relative;
+    left: 50%;
+    right: 50%;
+    margin-left: -50vw;
+    margin-right: -50vw;
+  }
+}
+
+/* iOS Safari specific fixes */
+@supports (-webkit-touch-callout: none) {
+  html {
+    height: -webkit-fill-available;
+  }
+  
+  body {
+    min-height: -webkit-fill-available;
+  }
+  
+  #root {
+    min-height: -webkit-fill-available;
+  }
+}
+
+// Typography
+h1, h2, h3, h4, h5, h6 {
+  font-family: $font-primary;
+  font-weight: $font-weight-semibold;
+  color: $text-dark;
+  margin-bottom: $spacing-md;
+}
+
+h1 { 
+  @include h1;
+}
+
+h2 { 
+  @include h2;
+}
+
+h3 { 
+  @include h3;
+}
+
+h4 { 
+  font-size: $font-size-xl;
+  
+  @include mobile {
+    font-size: $font-size-lg;
+  }
+}
+
+h5 {
+  font-size: $font-size-lg;
+  
+  @include mobile {
+    font-size: $font-size-base;
+  }
+}
+
+h6 {
+  font-size: $font-size-base;
+  
+  @include mobile {
+    font-size: $font-size-sm;
+  }
+}
+
+p {
+  @include body-text;
+  margin-bottom: $spacing-md;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+  transition: $transition-fast;
+  
+  &:hover {
+    color: $primary-color;
+  }
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+// Container
+.container {
+  @include container;
+}
+
+// Utility Classes
+.text {
+  &-center { text-align: center; }
+  &-left { text-align: left; }
+  &-right { text-align: right; }
+}
+
+// Margin utilities
+.mb {
+  &-xs { margin-bottom: $spacing-xs; }
+  &-sm { margin-bottom: $spacing-sm; }
+  &-md { margin-bottom: $spacing-md; }
+  &-lg { margin-bottom: $spacing-lg; }
+  &-xl { margin-bottom: $spacing-xl; }
+  &-xxl { margin-bottom: $spacing-xxl; }
+}
+
+.mt {
+  &-xs { margin-top: $spacing-xs; }
+  &-sm { margin-top: $spacing-sm; }
+  &-md { margin-top: $spacing-md; }
+  &-lg { margin-top: $spacing-lg; }
+  &-xl { margin-top: $spacing-xl; }
+  &-xxl { margin-top: $spacing-xxl; }
+}
+
+.mx {
+  &-auto { margin-left: auto; margin-right: auto; }
+}
+
+// Padding utilities
+.p {
+  &-xs { padding: $spacing-xs; }
+  &-sm { padding: $spacing-sm; }
+  &-md { padding: $spacing-md; }
+  &-lg { padding: $spacing-lg; }
+  &-xl { padding: $spacing-xl; }
+  &-xxl { padding: $spacing-xxl; }
+}
+
+// Flex utilities
+.d-flex { display: flex; }
+.flex {
+  &-center { @include flex-center; }
+  &-between { @include flex-between; }
+  &-column { @include flex-column; }
+  &-wrap { flex-wrap: wrap; }
+  &-grow-1 { flex-grow: 1; }
+}
+
+// Screen Reader Only
+.sr-only {
+  @include visually-hidden;
+}
+
+// Focus styles for accessibility
+*:focus {
+  outline: 2px solid $primary-color;
+  outline-offset: 2px;
+}
+
+// Print styles
+@media print {
+  .no-print {
+    display: none !important;
+  }
+  
+  body {
+    color: #000;
+    background: #fff;
+  }
+  
+  a[href]:after {
+    content: " (" attr(href) ")";
+  }
+}
+
+// Reduce motion for accessibility
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+  
+  html {
+    scroll-behavior: auto;
+  }
+}

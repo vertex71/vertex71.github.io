@@ -1,0 +1,265 @@
+// SCSS imports
+@import '../../../styles/variables';
+@import '../../../styles/mixins';
+.header {
+    background: $white;
+    box-shadow: $shadow-light;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+}
+
+.navbar {
+    padding: 1rem 0;
+}
+
+.navContainer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: $container-max-width;
+    margin: 0 auto;
+    padding: 0 $container-padding;
+}
+
+.navLogo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    text-decoration: none;
+}
+
+.logo {
+    height: 40px;
+    width: auto;
+}
+
+.brandName {
+    font-family: $font-primary;
+    font-weight: 700;
+    font-size: 1.5rem;
+    color: $primary-color;
+}
+
+.navMenu {
+    display: flex;
+    list-style: none;
+    gap: 2rem;
+    align-items: center;
+    margin: 0;
+    padding: 0;
+}
+
+.navItem {
+    position: relative;
+}
+
+.navLink {
+    text-decoration: none;
+    color: $text-dark;
+    font-weight: 500;
+    transition: $transition;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    padding: 0.5rem 0;
+}
+
+.navLink:hover {
+    color: $primary-color;
+}
+
+.navLink.active {
+    color: $primary-color;
+}
+
+.ctaBtn {
+    background: linear-gradient(135deg, $primary-color, #3498DB);
+    color: $white !important;
+    padding: 10px 20px;
+    border-radius: $border-radius;
+    text-decoration: none;
+    transition: $transition;
+}
+
+.ctaBtn:hover {
+    transform: translateY(-2px);
+    box-shadow: $shadow-medium;
+}
+
+/* Cart Icon */
+.cartIcon {
+    position: relative;
+    padding: 0.5rem;
+    color: $text-dark;
+    font-size: 1.2rem;
+    transition: $transition;
+}
+
+.cartIcon:hover {
+    color: $primary-color;
+}
+
+.cartBadge {
+    position: absolute;
+    top: 0;
+    right: 0;
+    background: $accent-color;
+    color: $white;
+    border-radius: 50%;
+    width: 20px;
+    height: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.75rem;
+    font-weight: bold;
+}
+
+/* Dropdown */
+.dropdown {
+    position: relative;
+}
+
+.dropdownContent {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background: $white;
+    min-width: 200px;
+    box-shadow: $shadow-medium;
+    border-radius: $border-radius;
+    padding: 1rem 0;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-10px);
+    transition: $transition;
+    z-index: 1001;
+}
+
+.dropdown:hover .dropdownContent {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+.dropdownLink {
+    display: block;
+    padding: 0.5rem 1rem;
+    color: $text-dark;
+    text-decoration: none;
+    transition: $transition;
+    white-space: nowrap;
+}
+
+.dropdownLink:hover {
+    background: $light-gray;
+    color: $primary-color;
+}
+
+/* Mobile Menu Toggle */
+.hamburger {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+    padding: 0.5rem;
+    gap: 4px;
+}
+
+.bar {
+    width: 25px;
+    height: 3px;
+    background: $text-dark;
+    transition: $transition;
+    border-radius: 2px;
+}
+
+.hamburger.active .bar:nth-child(1) {
+    transform: rotate(45deg) translate(6px, 6px);
+}
+
+.hamburger.active .bar:nth-child(2) {
+    opacity: 0;
+}
+
+.hamburger.active .bar:nth-child(3) {
+    transform: rotate(-45deg) translate(6px, -6px);
+}
+
+/* Mobile Styles */
+@media (max-width: 767px) {
+    .hamburger {
+        display: flex;
+    }
+
+    .navMenu {
+        position: fixed;
+        left: -100%;
+        top: 100%;
+        flex-direction: column;
+        background: $white;
+        width: 100%;
+        text-align: center;
+        transition: 0.3s;
+        box-shadow: $shadow-medium;
+        padding: 2rem 0;
+        gap: 0;
+    }
+
+    .navMenu.active {
+        left: 0;
+    }
+
+    .navItem {
+        width: 100%;
+    }
+
+    .navLink {
+        padding: 1rem;
+        justify-content: center;
+        border-bottom: 1px solid $border-color;
+    }
+
+    .navLink:last-child {
+        border-bottom: none;
+    }
+
+    .dropdownContent {
+        position: static;
+        opacity: 1;
+        visibility: visible;
+        transform: none;
+        box-shadow: none;
+        background: $light-gray;
+        margin-top: 0;
+    }
+
+    .dropdown:hover .dropdownContent {
+        transform: none;
+    }
+
+    .ctaBtn {
+        margin-top: 1rem;
+        display: inline-block;
+    }
+
+    .cartIcon {
+        position: fixed;
+        top: 1rem;
+        right: 4rem;
+        z-index: 1002;
+    }
+}
+
+/* Tablet Styles */
+@media (min-width: 768px) and (max-width: 1023px) {
+    .navMenu {
+        gap: 1.5rem;
+    }
+    
+    .brandName {
+        font-size: 1.3rem;
+    }
+}
