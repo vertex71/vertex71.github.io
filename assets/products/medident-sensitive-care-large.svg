@@ -1,0 +1,27 @@
+<svg width="800" height="600" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="largeGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#f8f9fa;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#e9ecef;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="tubeGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#2E86C1;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#3498DB;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+  <rect width="800" height="600" rx="20" fill="url(#largeGrad)"/>
+  
+  <!-- Large toothpaste tube -->
+  <rect x="300" y="150" width="200" height="300" rx="30" fill="url(#tubeGrad)"/>
+  <rect x="340" y="120" width="120" height="60" rx="15" fill="#58D68D"/>
+  
+  <!-- Detailed labeling -->
+  <text x="400" y="280" font-family="Arial, sans-serif" font-size="32" font-weight="bold" text-anchor="middle" fill="white">MEDIDENT</text>
+  <text x="400" y="310" font-family="Arial, sans-serif" font-size="20" text-anchor="middle" fill="white">SENSITIVE CARE</text>
+  <text x="400" y="335" font-family="Arial, sans-serif" font-size="16" text-anchor="middle" fill="white">Advanced Protection</text>
+  <text x="400" y="355" font-family="Arial, sans-serif" font-size="14" text-anchor="middle" fill="white">75ml / 2.5 fl oz</text>
+  
+  <!-- Product title -->
+  <text x="400" y="520" font-family="Arial, sans-serif" font-size="28" font-weight="bold" text-anchor="middle" fill="#2E86C1">MEDIDENT Sensitive Care</text>
+  <text x="400" y="550" font-family="Arial, sans-serif" font-size="18" text-anchor="middle" fill="#7F8C8D">Detailed Product View</text>
+</svg>
