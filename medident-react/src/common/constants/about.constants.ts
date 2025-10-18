@@ -172,26 +172,26 @@ export const VERTEX_ABOUT_SECTION = {
   CERTIFICATIONS: {
     TITLE: 'Quality Standards & Certifications',
     ITEMS: [
-      {
-        ICON: 'fas fa-certificate',
-        TITLE: 'ISO 9001:2015',
-        DESCRIPTION: 'Quality Management System',
-      },
-      {
-        ICON: 'fas fa-leaf',
-        TITLE: 'ISO 14001:2015',
-        DESCRIPTION: 'Environmental Management',
-      },
+      // {
+      //   ICON: 'fas fa-certificate',
+      //   TITLE: 'ISO 9001:2015',
+      //   DESCRIPTION: 'Quality Management System',
+      // },
+      // {
+      //   ICON: 'fas fa-leaf',
+      //   TITLE: 'ISO 14001:2015',
+      //   DESCRIPTION: 'Environmental Management',
+      // },
       {
         ICON: 'fas fa-medkit',
         TITLE: 'BSTI Approved',
         DESCRIPTION: 'Bangladesh Standards Certified',
       },
-      {
-        ICON: 'fas fa-award',
-        TITLE: 'Best Local Brand',
-        DESCRIPTION: 'Bangladesh Business Awards 2023',
-      },
+      // {
+      //   ICON: 'fas fa-award',
+      //   TITLE: 'Best Local Brand',
+      //   DESCRIPTION: 'Bangladesh Business Awards 2023',
+      // },
     ],
   },
   SOCIAL_RESPONSIBILITY: {

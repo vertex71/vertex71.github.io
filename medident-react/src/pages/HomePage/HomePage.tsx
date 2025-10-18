@@ -584,18 +584,18 @@ const HomePage = () => {
           {/* Company Statistics */}
           <div className="company-stats">
             <div className="stats-grid">
+              {/*<div className="stat-item">*/}
+              {/*  <div className="stat-number">15+</div>*/}
+              {/*  <div className="stat-label">Years of Excellence</div>*/}
+              {/*  <div className="stat-description">Serving Bangladesh since 2008</div>*/}
+              {/*</div>*/}
               <div className="stat-item">
-                <div className="stat-number">15+</div>
-                <div className="stat-label">Years of Excellence</div>
-                <div className="stat-description">Serving Bangladesh since 2008</div>
-              </div>
-              <div className="stat-item">
-                <div className="stat-number">50M+</div>
+                <div className="stat-number">1M+</div>
                 <div className="stat-label">Products Sold</div>
                 <div className="stat-description">Trusted by millions nationwide</div>
               </div>
               <div className="stat-item">
-                <div className="stat-number">500+</div>
+                <div className="stat-number">50+</div>
                 <div className="stat-label">Retail Partners</div>
                 <div className="stat-description">Available across Bangladesh</div>
               </div>
